@@ -1,0 +1,30 @@
+
+1. select title from titles;
+
+2. select * from titles where pub_id=1389;
+
+3. select * from titles where price Between 10 and 15;
+
+4. select title from titles where price is Null;
+
+5. select title from titles where title Like 'THE%';
+
+6. select title from titles where title not like '%v%';
+
+7. select * from titles order by royalty;
+
+8. select * from titles order by pub_id desc,type asc , price desc;
+
+9. select type,avg(price) from titles group by type; 
+
+10. select Distinct type from titles ;
+
+11. select TOP 2 * from titles order by price desc ;
+
+12. select  * from titles where type='business' and price<20 and advance>7000 ;
+
+13. select  pub_id,Count(title) as total from titles where price between 15 and 25 AND title LIKE '%IT%' GROUP BY pub_id having Count(title)>2 order by Count(title);
+
+14. select * from authors where state='CA';
+
+15. select state,COUNT(au_id) from authors group by state;

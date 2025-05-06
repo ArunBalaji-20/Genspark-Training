@@ -1,0 +1,95 @@
+Design the database for a shop which sells products
+Points for consideration
+  1) One product can be supplied by many suppliers
+  2) One supplier can supply many products
+  3) All customers details have to present
+  4) A customer can buy more than one product in every purchase
+  5) Bill for every purchase has to be stored
+  6) These are just details of one shop
+
+----------------------------------------------------------------------------------------------------
+
+create table country( 
+ country_id integer primary key,
+ Name varchar(30));
+
+create table categories(
+id  integer primary key,
+Name varchar(30) , 
+status varchar(30));
+
+create table state(
+state_id integer primary key, Name varchar(30), 
+country_id INT FOREIGN KEY REFERENCES country(country_id));
+
+create table city(
+city_id integer primary key, Name varchar(30),
+state_id INT FOREIGN KEY REFERENCES state( state_id));
+
+create table areas(
+zip_code integer primary key, Name varchar(30), 
+city_id INT FOREIGN KEY REFERENCES city( city_id));
+
+create table address(
+id integer primary key,
+Name varchar(30),
+door_number integer,
+addressline1 varchar(60) , 
+zip_code INT FOREIGN KEY REFERENCES areas( zip_code));
+
+
+ 
+create table supplier(
+sup_id integer primary key,
+contact_person varchar(30),
+phone Integer unique , 
+email varchar(40),
+status varchar(20),
+address_id INT Foreign key references address(id));
+
+CREATE TABLE product (
+    id INTEGER PRIMARY KEY,
+    Name VARCHAR(50),
+    unit_price DECIMAL(10, 2),
+    quantity INTEGER,
+    description TEXT,
+    image VARCHAR(255)
+);
+
+CREATE TABLE product_supplier (
+    transaction_id INTEGER PRIMARY KEY,
+    product_id INTEGER,
+    supplier_id INTEGER,
+    date_of_supply DATE,
+    quantity INTEGER,
+    FOREIGN KEY (product_id) REFERENCES product(id),
+    FOREIGN KEY (supplier_id) REFERENCES supplier(sup_id)
+);
+
+CREATE TABLE customer (
+    id INTEGER PRIMARY KEY,
+    Name VARCHAR(50),
+    Phone BIGINT,
+    age INTEGER,
+    address_id INTEGER,
+    FOREIGN KEY (address_id) REFERENCES address(id)
+);
+
+CREATE TABLE "order" (
+    order_number INTEGER PRIMARY KEY,
+    customer_id INTEGER,
+    Date_of_order DATE,
+    amount DECIMAL(10, 2),
+    order_status VARCHAR(30),
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+CREATE TABLE order_details (
+    id INTEGER PRIMARY KEY,
+    order_number INTEGER,
+    product_id INTEGER,
+    quantity INTEGER,
+    unit_price DECIMAL(10, 2),
+    FOREIGN KEY (order_number) REFERENCES "order"(order_number),
+    FOREIGN KEY (product_id) REFERENCES product(id)
+);
