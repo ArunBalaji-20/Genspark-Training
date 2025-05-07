@@ -1,0 +1,32 @@
+1. select * from cd.facilities;          
+
+2. select name , membercost from cd.facilities;
+
+3. select * from cd.facilities where membercost>0; 
+
+4. select  facid,name, membercost, monthlymaintenance  from cd.facilities where membercost < ((0.02)*monthlymaintenance) and membercost!=0;
+
+5. select * from cd.facilities where name like '%Tennis%';
+
+6. select * from cd.facilities where facid in (1,5) ;
+
+7. select name ,case when (monthlymaintenance>100) THEN 
+		    'expensive'
+			ELSE 
+			'cheap'
+	END AS cost
+FROM 
+    cd.facilities;
+
+8. select memid , surname,firstname,joindate from cd.members where joindate>('2012-08-31');
+
+9. select distinct surname from cd.members order by surname limit 10;
+
+10. get the signup date for last member 
+	1.method -1
+	select joindate as latest from cd.members order by joindate desc limit 1;
+	
+	2. method -2
+	select max(joindate) as latest from cd.members;
+11. select firstname , surname , joindate from cd.members where joindate=(select max(joindate) from cd.members);
+	 
