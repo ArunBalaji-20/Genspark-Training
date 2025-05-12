@@ -1,0 +1,81 @@
+Transactions
+
+ACID properties of txns
+
+1. Atomicity - Atomicity ensures that a transaction is treated as a single, indivisible unit of work. This means that either all the operations within the transaction are completed successfully, or none of them are
+
+2. Consistency - Consistency ensures that a transaction takes the database from one consistent state to another consistent state.
+
+3.Isolation - Isolation ensures that multiple transactions can execute concurrently without interfering with each other. 
+
+4. Durability-Durability ensures that once a transaction is committed, its changes are permanent and will survive any subsequent system failures
+
+--------------------------------------------------
+TCL commands
+1. Begin
+2. Commit
+3. rollback
+4 savepoint
+
+---------------------------------------------------------------------------
+example:
+select * from customer where customer_id=1
+
+begin;
+	update customer set first_name='testttt' where customer_id=1;
+	 select * from customer where customer_id=1;
+	 rollback; --untill here we can rollback change is not commited
+commit; -- if we commit once we can't rollback
+end;
+
+--------------------------------------------------------------
+Concurrency
+in PostgreSQL
+1. MVCC ( multi-version concurrency control) - readers and writers are not blocked, each have separate snapshot of transaction
+2. Isolation levels :4
+	1. read uncommitted - postgre not supported
+	2. read committed - default
+	3. repeatable read
+	4. serializable  -full isolation but slow
+-------------------------------------------------------------
+1. Dirty read
+to read uncommitted data
+set transcation isolation level read uncommitted
+begin transaction
+	query...
+commit or rollback cmd
+
+2. lost update
+	txn -a reads a record (100)
+	txb -b also reads same record (100)
+	txb -b updates from 100 to 70
+	txn -a updates from 100 to 150 ( the update made by b is lost)
+
+solution to lost update:
+	1. locking
+	2. versioning
+
+3. Non-Repeatable Read
+Definition: A transaction reads the same row twice and gets different values because another transaction modified (and committed) the data between the reads.
+	-- Transaction A
+	SELECT balance FROM accounts WHERE id = 1; -- Reads 100
+
+	-- Transaction B
+	UPDATE accounts SET balance = 200 WHERE id = 1;
+	COMMIT;
+
+	-- Transaction A
+	SELECT balance FROM accounts WHERE id = 1; -- Reads 200 now
+
+
+4. Phantom Read
+Definition: A transaction re-executes a query returning a set of rows and gets a different set the second time due to another transaction inserting/deleting rows that match the query's condition.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+-- Best Practices for Transactions
+1. Keep transactions short -> Improve Concurreny and Reduce Locking
+2. Use savepoints for complex flows -> Safer partial rollbacks
+3. Log failed trans for audits -> Traceability and Degugging
+4. Avoid user inputs during transactions -> Prevent long trans
+5. In production code, always wrap db ops inside try-catch with explicit commit and rollback.

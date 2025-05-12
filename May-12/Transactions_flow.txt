@@ -1,0 +1,40 @@
+---Transactions flow
+--creating two tables for demo
+--1) 
+create table demo1(id serial primary key,Name varchar(30),age int);
+--2)
+create table demo2(demId serial primary key , contact int,address varchar(25));
+
+--transactions-----------------------------
+BEGIN;
+
+INSERT INTO demo1(Name, age) VALUES ('arun', 21);
+INSERT INTO demo1(Name, age) VALUES ('balaji', 21);
+INSERT INTO demo1(Name, age) VALUES ('aaaaa', 0);
+UPDATE demo1 SET age = 24 WHERE name LIKE 'balaji';
+DELETE FROM demo1 WHERE age = 0;
+
+SAVEPOINT after_t1;
+
+DO $$
+BEGIN
+    BEGIN
+        INSERT INTO demo2(contact, address) VALUES (123, 'test1');
+        INSERT INTO demo2(contact, address) VALUES (222, 'test2');
+        UPDATE demo2 SET contact = 333 WHERE address LIKE 'test2';
+    EXCEPTION
+        WHEN OTHERS THEN
+            RAISE NOTICE 'txn 2 failed. Rolling back to savepoint.';
+    END;
+END;
+$$;
+
+rollback
+
+COMMIT;
+
+select * from demo1;
+select * from demo2;
+	
+		
+	
