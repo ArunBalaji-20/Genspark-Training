@@ -1,0 +1,23 @@
+Locking Mechanism
+
+PostgreSQL automatically applies locks , but we can control manually.
+
+types of locks
+
+1. Row-Level Lock
+2. Table-level lock
+3. advisory lock
+
+MVCC vs Locks
+
+
+table-level locks
+1.ACCESS SHARE (SELECT)
+2.ROW SHARE (SELECT FOR UPDATE)
+3.EXCLUSIVE
+4.ACCESS EXCLUSIVE
+
+example:
+begin
+lock table tblname
+in access share mode
