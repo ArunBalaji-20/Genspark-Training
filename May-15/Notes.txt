@@ -1,0 +1,30 @@
+authentication - pg_hba.conf file
+access control
+encryption
+auditing
+
+--------------------
+Grant command
+
+The GRANT command has two basic variants: 
+1) one that grants privileges on a database object (table, column, view, foreign table, sequence, database, foreign-data wrapper, foreign server, function, procedure, procedural language, large object, configuration parameter, schema, tablespace, or type)
+
+The possible privileges are: SELECT ,INSERT ,UPDATE,DELETE,TRUNCATE,REFERENCES ,TRIGGER ,CREATE, CONNECT ,TEMPORARY, EXECUTE, USAGE ,SET ,ALTER ,SYSTEM, MAINTAIN
+
+2)one that grants membership in a role.
+
+	This variant of the GRANT command grants membership in a role to one or more other roles, and the modification of membership options SET, INHERIT, and ADMIN;
+
+-------------------------------------------------------------------------
+examples: 
+Grant insert privilege to all users on table films:
+
+GRANT INSERT ON films TO PUBLIC;
+Grant all available privileges to user manuel on view kinds:
+
+GRANT ALL PRIVILEGES ON kinds TO manuel;
+Note that while the above will indeed grant all privileges if executed by a superuser or the owner of kinds, when executed by someone else it will only grant those permissions for which the someone else has grant options.
+
+Grant membership in role admins to user joe:
+
+GRANT admins TO joe;
