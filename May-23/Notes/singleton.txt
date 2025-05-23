@@ -1,0 +1,86 @@
+singleton
+
+-----------------
+1. Singleton
+	Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+	steps:
+	Add a private static field to the class for storing the singleton instance.
+
+Declare a public static creation method for getting the singleton instance.
+
+Implement “lazy initialization” inside the static method. It should create a new object on its first call and put it into the static field. The method should always return that instance on all subsequent calls.
+
+Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
+
+Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
+
+
+------------------------------------------------------
+example: 
+FileOperations.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DesignPatterns.Singleton
+{
+    public class FileOperations
+    {
+        private static FileOperations instance;
+        private  string name { get; set; } = string.Empty;
+        private FileOperations() { }
+
+        public static FileOperations GetInstance(string n)
+        {
+            if(instance == null)
+            {
+                instance = new FileOperations();
+                instance.name = n;
+                return instance;
+            }
+            return instance;
+        }
+
+        public  void TestFunction()
+        {
+            Console.WriteLine($"Testfunction called by: {name}");
+        }
+    }
+}
+
+
+---
+Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DesignPatterns.Singleton;
+namespace DesignPatterns
+{
+    public class program
+    {
+        public static void Main(string[] args)
+        {
+            FileOperations fileop1 = FileOperations.GetInstance("arun");
+
+            fileop1.TestFunction();
+
+            FileOperations fileop2 = FileOperations.GetInstance("balaji");
+
+            fileop2.TestFunction();
+        }
+        
+    }
+}
+
+----
+output:
+Testfunction called by: arun
+Testfunction called by: arun
