@@ -1,0 +1,36 @@
+<html>
+  <body>
+      <h2>SignalR Notification</h2>
+       <div id="msgs">
+
+       </div>
+      <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+        <script>
+            const connection = new signalR.HubConnectionBuilder()
+                                .withUrl("http://localhost:5082/notificationHub",{
+                                    withCredentials:true
+                                })
+                                .withAutomaticReconnect()
+                                .build();
+            connection.on("ReceiveNotification",(message)=>{
+                console.log("Received from SignalR:", message);
+                const placeHolder = document.getElementById("msgs");
+
+                const content = document.createElement("div");
+
+                const time = new Date().toLocaleTimeString();
+
+                content.innerHTML = `<strong>${message}</strong> <br><small>Received at ${time}</small>`;
+                placeHolder.prepend(content);
+            });
+
+            connection.start().then(()=>{
+                console.log("Connected to signalR")
+            })
+            .catch(err=>{
+                console.log("signalR connection Failed")
+            })
+            
+        </script>
+  </body>
+</html>
