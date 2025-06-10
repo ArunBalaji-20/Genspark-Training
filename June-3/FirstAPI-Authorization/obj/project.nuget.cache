@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VH6k/+6RQQE=",
+  "dgSpecHash": "Si7nskBbBLw=",
   "success": true,
-  "projectFilePath": "/Users/presidio/Documents/Repo/day18/FirstAPI/FirstAPI.csproj",
+  "projectFilePath": "/Users/presidio/Documents/Genspark-repo/Genspark-Training/June-3/FirstAPI-Authorization/FirstAPI.csproj",
   "expectedPackageFiles": [
     "/Users/presidio/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

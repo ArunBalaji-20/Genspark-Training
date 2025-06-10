@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+
+}
+
+.input-container{
+    font-size: 2rem;
+    gap:1rem;
+
+}
+
+.input-container input{
+    font-size: inherit;
+}
+.input-container button {
+    font-size: inherit; 
+    margin-left: 1rem;
+
+}

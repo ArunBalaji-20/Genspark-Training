@@ -1,0 +1,19 @@
+<p>first works!</p>
+<h2>
+    <!-- interpolation -->
+    Hello {{name}}
+</h2>
+<!-- <input type="text" #uname [value]="name"/>
+<button (click)="onButtonClick(uname.value)">Click Me</button> -->
+
+<!-- property binding -->
+ <input type="text" #uname [value]="name"/>
+
+ <!-- two way binding -->
+<input type="text" #uname [(ngModel)]="name"/>
+
+<!-- event binding -->
+<button (click)="onButtonClick(uname.value)">Click Me</button>
+
+<!-- property binding , toggling the icon  -->
+<i [class]="className" (click)="toggleLike()"></i>

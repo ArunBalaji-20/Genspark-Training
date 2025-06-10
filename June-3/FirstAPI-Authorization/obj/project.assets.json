@@ -3705,11 +3705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/presidio/Documents/Repo/day18/FirstAPI/FirstAPI.csproj",
+      "projectUniqueName": "/Users/presidio/Documents/Genspark-repo/Genspark-Training/June-3/FirstAPI-Authorization/FirstAPI.csproj",
       "projectName": "FirstAPI",
-      "projectPath": "/Users/presidio/Documents/Repo/day18/FirstAPI/FirstAPI.csproj",
+      "projectPath": "/Users/presidio/Documents/Genspark-repo/Genspark-Training/June-3/FirstAPI-Authorization/FirstAPI.csproj",
       "packagesPath": "/Users/presidio/.nuget/packages/",
-      "outputPath": "/Users/presidio/Documents/Repo/day18/FirstAPI/obj/",
+      "outputPath": "/Users/presidio/Documents/Genspark-repo/Genspark-Training/June-3/FirstAPI-Authorization/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/presidio/.nuget/NuGet/NuGet.Config"

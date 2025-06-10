@@ -1,0 +1,29 @@
+<h2>Products</h2>
+
+
+
+<div class="cart-container">
+  <i [class]="CartClassName">
+    <span id="cartCounts">{{ cartCount }}</span>
+  </i>
+</div>
+
+
+
+<div class="products-container">
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71Yumf4LypL._AC_UY1000_.jpg" alt="product1.png">
+        <p>Product 1</p>
+        <button (click)="AddToCart()">Add To Cart</button>
+    </div>
+    <div class="card">
+        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png" alt="product2.png">
+        <p>Product 2</p>
+        <button (click)="AddToCart()">Add To Cart</button>
+    </div>
+    <div class="card">
+        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/01190add819e47c8a092653b9fd29bac_9366/Runfalcon_5_Running_Shoes_Black_IH7758.jpg" alt="product3.png">
+        <p>Product 3</p>
+        <button (click)="AddToCart()">Add To Cart</button>
+    </div>
+</div>
