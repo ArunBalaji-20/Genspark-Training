@@ -1,0 +1,1066 @@
+2025-06-12 00:00:08.169 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-06-12 00:00:08.172 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-06-11T18:30:08.1721340Z"
+2025-06-12 00:00:08.172 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester|Dev)
+2025-06-12 00:00:08.173 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:00:08.173 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 401 0 null 3.9458ms
+2025-06-12 00:00:59.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-06-12 00:00:59.672 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-06-11T18:30:59.6722110Z"
+2025-06-12 00:00:59.674 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:00:59.674 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-06-12 00:00:59.679 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-06-12 00:00:59.689 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-06-12 00:00:59.718 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:00:59.729 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 50.7417ms
+2025-06-12 00:00:59.730 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-06-12 00:00:59.730 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 59.034ms
+2025-06-12 00:02:16.508 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - multipart/form-data; boundary=----WebKitFormBoundaryrhKTBiL9Bxdny5Xx 371494
+2025-06-12 00:02:16.509 +05:30 [INF] Request: POST /api/v1/Bugs/Report by Anonymous at "2025-06-11T18:32:16.5091730Z"
+2025-06-12 00:02:16.509 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester)
+2025-06-12 00:02:16.509 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:02:16.510 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - 401 0 null 2.0205ms
+2025-06-12 00:02:16.515 +05:30 [INF] Connection id "0HND92FU1DTRU", Request id "0HND92FU1DTRU:00000001": the application completed without reading the entire request body.
+2025-06-12 00:02:41.616 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/Report - null null
+2025-06-12 00:02:41.617 +05:30 [INF] Request: GET /api/v1/Bugs/Report by Anonymous at "2025-06-11T18:32:41.6174240Z"
+2025-06-12 00:02:41.632 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:02:41.633 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:02:41.633 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:02:41.633 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/Report - 405 0 null 16.8016ms
+2025-06-12 00:02:45.980 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - null 0
+2025-06-12 00:02:45.980 +05:30 [INF] Request: POST /api/v1/Bugs/Report by Anonymous at "2025-06-11T18:32:45.9804590Z"
+2025-06-12 00:02:45.982 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:02:45.982 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI)'
+2025-06-12 00:02:45.990 +05:30 [INF] Route matched with {action = "ReportBug", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugSubmission]] ReportBug(BugTrackingAPI.Models.DTO.BugSubmission) on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-06-12 00:02:45.998 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-12 00:02:46.006 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI) in 15.912ms
+2025-06-12 00:02:46.006 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI)'
+2025-06-12 00:02:46.006 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - 400 null application/problem+json; charset=utf-8 26.5897ms
+2025-06-12 00:05:17.921 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - multipart/form-data; boundary=--------------------------364370902142541081132904 727713
+2025-06-12 00:05:17.924 +05:30 [INF] Request: POST /api/v1/Bugs/Report by Anonymous at "2025-06-11T18:35:17.9240880Z"
+2025-06-12 00:05:17.943 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:05:17.945 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI)'
+2025-06-12 00:05:17.947 +05:30 [INF] Route matched with {action = "ReportBug", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugSubmission]] ReportBug(BugTrackingAPI.Models.DTO.BugSubmission) on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-06-12 00:05:18.015 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:05:18.055 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?', @p1='?' (DbType = Single), @p2='?', @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?' (DbType = Int64), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Bugs" ("BugName", "CvssScore", "Description", "ResolvedAt", "Screenshot", "Status", "SubmittedById", "SubmittedOn")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "BugId";
+2025-06-12 00:05:18.064 +05:30 [INF] Executing CreatedResult, writing value of type 'BugTrackingAPI.Models.DTO.BugSubmission'.
+2025-06-12 00:05:18.077 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI) in 129.6838ms
+2025-06-12 00:05:18.077 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ReportBug (BugTrackingAPI)'
+2025-06-12 00:05:18.079 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Bugs/Report - 201 null application/json; charset=utf-8 158.1288ms
+2025-06-12 00:05:30.157 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-06-12 00:05:30.159 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-06-11T18:35:30.1591810Z"
+2025-06-12 00:05:30.159 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester|Dev)
+2025-06-12 00:05:30.160 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:05:30.160 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 401 0 null 2.5652ms
+2025-06-12 00:07:59.378 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - application/json 39
+2025-06-12 00:07:59.379 +05:30 [INF] Request: POST /api/v1/BugComment/Comment by Anonymous at "2025-06-11T18:37:59.3793430Z"
+2025-06-12 00:07:59.382 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester|Dev)
+2025-06-12 00:07:59.382 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:07:59.383 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - 401 0 null 4.6912ms
+2025-06-12 00:08:44.572 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - null 0
+2025-06-12 00:08:44.572 +05:30 [INF] Request: POST /api/v1/BugComment/Comment by Anonymous at "2025-06-11T18:38:44.5724040Z"
+2025-06-12 00:08:44.583 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:08:44.583 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI)'
+2025-06-12 00:08:44.589 +05:30 [INF] Route matched with {action = "AddComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugCommentResponse]] AddComment(BugTrackingAPI.Models.DTO.BugCommentRequest) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:08:44.594 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:08:44.594 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI) in 4.9235ms
+2025-06-12 00:08:44.595 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI)'
+2025-06-12 00:08:44.595 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - 415 null application/problem+json; charset=utf-8 22.9603ms
+2025-06-12 00:09:14.628 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - application/json 58
+2025-06-12 00:09:14.628 +05:30 [INF] Request: POST /api/v1/BugComment/Comment by Anonymous at "2025-06-11T18:39:14.6288680Z"
+2025-06-12 00:09:14.630 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:09:14.630 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI)'
+2025-06-12 00:09:14.630 +05:30 [INF] Route matched with {action = "AddComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugCommentResponse]] AddComment(BugTrackingAPI.Models.DTO.BugCommentRequest) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:09:14.641 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:09:14.657 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:09:14.688 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BugComments" ("BugId", "Comment", "CommentedOn", "CommenterId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "CommentId";
+2025-06-12 00:09:14.691 +05:30 [INF] Executing CreatedResult, writing value of type 'BugTrackingAPI.Models.DTO.BugCommentResponse'.
+2025-06-12 00:09:14.693 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI) in 62.1944ms
+2025-06-12 00:09:14.693 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.AddComment (BugTrackingAPI)'
+2025-06-12 00:09:14.693 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugComment/Comment - 201 null application/json; charset=utf-8 64.9774ms
+2025-06-12 00:09:46.562 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=33 - null null
+2025-06-12 00:09:46.562 +05:30 [INF] Request: GET /api/v1/BugComment/GetComments by Anonymous at "2025-06-11T18:39:46.5629270Z"
+2025-06-12 00:09:46.563 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester|Dev)
+2025-06-12 00:09:46.563 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:09:46.563 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=33 - 401 0 null 1.2579ms
+2025-06-12 00:10:28.089 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=33 - null null
+2025-06-12 00:10:28.089 +05:30 [INF] Request: GET /api/v1/BugComment/GetComments by Anonymous at "2025-06-11T18:40:28.0896840Z"
+2025-06-12 00:10:28.090 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:10:28.091 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:28.094 +05:30 [INF] Route matched with {action = "GetAllComments", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]]] GetAllComments(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:10:28.100 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+2025-06-12 00:10:28.101 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-12 00:10:28.101 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI) in 7.3479ms
+2025-06-12 00:10:28.102 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:28.102 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=33 - 200 null application/json; charset=utf-8 12.8097ms
+2025-06-12 00:10:37.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=3 - null null
+2025-06-12 00:10:37.841 +05:30 [INF] Request: GET /api/v1/BugComment/GetComments by Anonymous at "2025-06-11T18:40:37.8414400Z"
+2025-06-12 00:10:37.843 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:10:37.844 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:37.844 +05:30 [INF] Route matched with {action = "GetAllComments", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]]] GetAllComments(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:10:37.845 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+2025-06-12 00:10:37.845 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-12 00:10:37.845 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI) in 1.2718ms
+2025-06-12 00:10:37.845 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:37.845 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=3 - 200 null application/json; charset=utf-8 4.762ms
+2025-06-12 00:10:41.956 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=5 - null null
+2025-06-12 00:10:41.957 +05:30 [INF] Request: GET /api/v1/BugComment/GetComments by Anonymous at "2025-06-11T18:40:41.9570340Z"
+2025-06-12 00:10:41.958 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:10:41.958 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:41.958 +05:30 [INF] Route matched with {action = "GetAllComments", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]]] GetAllComments(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:10:41.959 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+2025-06-12 00:10:41.959 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-12 00:10:41.959 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI) in 0.9996ms
+2025-06-12 00:10:41.960 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetAllComments (BugTrackingAPI)'
+2025-06-12 00:10:41.960 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=5 - 200 null application/json; charset=utf-8 3.3456ms
+2025-06-12 00:11:16.419 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null 0
+2025-06-12 00:11:16.420 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:41:16.4202600Z"
+2025-06-12 00:11:16.422 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:11:16.422 +05:30 [INF] Request origin http://localhost:5258 does not have permission to access the resource.
+2025-06-12 00:11:16.423 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:16.427 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:11:16.430 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:11:16.430 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 2.6186ms
+2025-06-12 00:11:16.430 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:16.431 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 400 null application/problem+json; charset=utf-8 11.1877ms
+2025-06-12 00:11:42.063 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:11:42.063 +05:30 [INF] Request: GET /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:41:42.0634940Z"
+2025-06-12 00:11:42.064 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:42 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:11:42.064 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:42 PM'.
+2025-06-12 00:11:42.064 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:11:42.064 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:11:42.065 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 405 0 null 1.8432ms
+2025-06-12 00:11:47.306 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:11:47.306 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:41:47.3062420Z"
+2025-06-12 00:11:47.306 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:47 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:11:47.307 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:47 PM'.
+2025-06-12 00:11:47.307 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:47.307 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:11:47.308 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:11:47.308 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 0.8315ms
+2025-06-12 00:11:47.308 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:47.308 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 400 null application/problem+json; charset=utf-8 2.4095ms
+2025-06-12 00:11:55.823 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:11:55.823 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:41:55.8233320Z"
+2025-06-12 00:11:55.823 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:55 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:11:55.824 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:41:55 PM'.
+2025-06-12 00:11:55.824 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:55.824 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:11:55.825 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:11:55.825 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 0.7859ms
+2025-06-12 00:11:55.825 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:11:55.825 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 400 null application/problem+json; charset=utf-8 2.4221ms
+2025-06-12 00:12:01.586 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=5 - null null
+2025-06-12 00:12:01.586 +05:30 [INF] Request: GET /api/v1/BugComment/GetComments by Anonymous at "2025-06-11T18:42:01.5865230Z"
+2025-06-12 00:12:01.587 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:42:01 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:12:01.587 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:42:01 PM'.
+2025-06-12 00:12:01.587 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Tester|Dev)
+2025-06-12 00:12:01.587 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:12:01.587 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugComment/GetComments?bugId=5 - 401 0 null 1.6638ms
+2025-06-12 00:12:06.688 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:12:06.689 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:42:06.6890480Z"
+2025-06-12 00:12:06.689 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:42:06 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:12:06.689 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:42:06 PM'.
+2025-06-12 00:12:06.689 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:12:06.690 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:12:06.690 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:12:06.690 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 0.7494ms
+2025-06-12 00:12:06.690 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:12:06.691 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 400 null application/problem+json; charset=utf-8 2.1882ms
+2025-06-12 00:12:46.570 +05:30 [INF] Application is shutting down...
+2025-06-12 00:12:56.422 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 00:12:56.617 +05:30 [INF] Now listening on: http://localhost:5258
+2025-06-12 00:12:56.620 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 00:12:56.620 +05:30 [INF] Hosting environment: Development
+2025-06-12 00:12:56.621 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-06-12 00:13:26.631 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:13:26.659 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:43:26.6576890Z"
+2025-06-12 00:13:26.787 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:43:26 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:13:26.809 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:35:52 PM', Current time (UTC): '6/11/2025 6:43:26 PM'.
+2025-06-12 00:13:26.813 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-12 00:13:26.817 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:13:26.821 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 401 0 null 191.3272ms
+2025-06-12 00:14:12.528 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/Refresh - application/json 67
+2025-06-12 00:14:12.530 +05:30 [INF] Request: POST /api/v1/Authentication/Refresh by Anonymous at "2025-06-11T18:44:12.5302980Z"
+2025-06-12 00:14:12.536 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:32:05 PM', Current time (UTC): '6/11/2025 6:44:12 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:14:12.536 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:32:05 PM', Current time (UTC): '6/11/2025 6:44:12 PM'.
+2025-06-12 00:14:12.538 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-12 00:14:12.539 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:14:12.539 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/Refresh - 401 0 null 10.8563ms
+2025-06-12 00:14:31.670 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 56
+2025-06-12 00:14:31.671 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-11T18:44:31.6714510Z"
+2025-06-12 00:14:31.673 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:31:06 PM', Current time (UTC): '6/11/2025 6:44:31 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:14:31.674 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:31:06 PM', Current time (UTC): '6/11/2025 6:44:31 PM'.
+2025-06-12 00:14:31.675 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:14:31.701 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-12 00:14:32.952 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:14:33.508 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-12 00:14:33.538 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-12 00:14:33.554 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 1849.6645ms
+2025-06-12 00:14:33.555 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:14:33.564 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 1893.6272ms
+2025-06-12 00:15:04.164 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-06-12 00:15:04.168 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-06-11T18:45:04.1684990Z"
+2025-06-12 00:15:04.213 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:15:04.224 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:15:04.229 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-06-12 00:15:04.240 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-06-12 00:15:04.245 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:15:04.258 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 28.5932ms
+2025-06-12 00:15:04.258 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:15:04.258 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 94.5755ms
+2025-06-12 00:15:17.720 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - null null
+2025-06-12 00:15:17.721 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:45:17.7214310Z"
+2025-06-12 00:15:17.783 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:15:17.784 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:15:17.788 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:15:17.797 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:15:17.806 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+WHERE b."CommentId" = @__key_0
+LIMIT 1
+2025-06-12 00:15:17.807 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:15:17.819 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 30.1548ms
+2025-06-12 00:15:17.819 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:15:17.819 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=8 - 400 null application/problem+json; charset=utf-8 98.9403ms
+2025-06-12 00:15:55.202 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=5 - null null
+2025-06-12 00:15:55.202 +05:30 [INF] Request: DELETE /api/v1/BugComment/Delete by Anonymous at "2025-06-11T18:45:55.2029100Z"
+2025-06-12 00:15:55.207 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:15:55.208 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:15:55.208 +05:30 [INF] Route matched with {action = "DeleteComment", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.String]] DeleteComment(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-06-12 00:15:55.210 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:15:55.212 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+WHERE b."CommentId" = @__key_0
+LIMIT 1
+2025-06-12 00:15:55.230 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+WHERE b."CommentId" = @__key_0
+LIMIT 1
+2025-06-12 00:15:55.250 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "BugComments"
+WHERE "CommentId" = @p0;
+2025-06-12 00:15:55.254 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-12 00:15:55.255 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI) in 46.6695ms
+2025-06-12 00:15:55.255 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.DeleteComment (BugTrackingAPI)'
+2025-06-12 00:15:55.256 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5258/api/v1/BugComment/Delete?commentId=5 - 200 null text/plain; charset=utf-8 53.9324ms
+2025-06-12 00:16:48.205 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:16:48.206 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:46:48.2059990Z"
+2025-06-12 00:16:48.206 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-12 00:16:48.206 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:16:48.207 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 401 0 null 1.793ms
+2025-06-12 00:17:32.382 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Assign - null null
+2025-06-12 00:17:32.383 +05:30 [INF] Request: GET /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:47:32.3831840Z"
+2025-06-12 00:17:32.385 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:17:32.386 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:17:32.386 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:17:32.386 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Assign - 405 0 null 4.5085ms
+2025-06-12 00:17:36.647 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Assign - null null
+2025-06-12 00:17:36.647 +05:30 [INF] Request: OPTIONS /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:47:36.6472230Z"
+2025-06-12 00:17:36.649 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:17:36.649 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:17:36.649 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:17:36.649 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Assign - 405 0 null 2.8189ms
+2025-06-12 00:18:05.411 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:18:05.411 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:48:05.4116700Z"
+2025-06-12 00:18:05.413 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:18:05.414 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:05.418 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:18:05.433 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:18:05.453 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:18:05.481 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:18:05.482 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 63.6731ms
+2025-06-12 00:18:05.482 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:05.482 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 71.365ms
+2025-06-12 00:18:15.854 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:18:15.854 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:48:15.8546150Z"
+2025-06-12 00:18:15.856 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:18:15.856 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:15.856 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:18:15.858 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:18:15.859 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:18:15.864 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:18:15.868 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:18:15.869 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 12.3868ms
+2025-06-12 00:18:15.869 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:15.869 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 15.4317ms
+2025-06-12 00:18:30.106 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-06-12 00:18:30.106 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-06-11T18:48:30.1069340Z"
+2025-06-12 00:18:30.109 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:18:30.109 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:18:30.109 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-06-12 00:18:30.111 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-06-12 00:18:30.111 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:18:30.112 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 2.0493ms
+2025-06-12 00:18:30.112 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:18:30.112 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 5.8015ms
+2025-06-12 00:18:44.517 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:18:44.518 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:48:44.5187000Z"
+2025-06-12 00:18:44.520 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:18:44.520 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:44.520 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:18:44.521 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:18:44.522 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:18:44.523 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:18:44.525 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:18:44.526 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:18:44.527 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 6.3491ms
+2025-06-12 00:18:44.527 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:18:44.527 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 9.6806ms
+2025-06-12 00:19:36.407 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:19:36.407 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:49:36.4077210Z"
+2025-06-12 00:19:36.421 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:19:36.422 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:19:36.422 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:19:36.425 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:19:36.427 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:19:36.428 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:19:36.428 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 6.1603ms
+2025-06-12 00:19:36.429 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:19:36.429 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 22.1449ms
+2025-06-12 00:20:00.332 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:20:00.332 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:50:00.3327340Z"
+2025-06-12 00:20:00.335 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:20:00.335 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:00.335 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:20:00.336 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:20:00.337 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:00.338 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:20:00.339 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 3.3667ms
+2025-06-12 00:20:00.339 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:00.339 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 7.6074ms
+2025-06-12 00:20:06.867 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:20:06.868 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:50:06.8681860Z"
+2025-06-12 00:20:06.870 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:20:06.870 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:06.870 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:20:06.871 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:20:06.872 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:06.873 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:20:06.873 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 2.3799ms
+2025-06-12 00:20:06.873 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:06.873 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 5.9847ms
+2025-06-12 00:20:14.771 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:20:14.771 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:50:14.7714160Z"
+2025-06-12 00:20:14.773 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:20:14.773 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:14.773 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:20:14.774 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:20:14.775 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:14.776 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:14.777 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:20:14.777 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 3.9187ms
+2025-06-12 00:20:14.777 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:14.777 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 400 null application/problem+json; charset=utf-8 6.8672ms
+2025-06-12 00:20:23.187 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:20:23.188 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T18:50:23.1880760Z"
+2025-06-12 00:20:23.189 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:20:23.190 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:23.190 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:20:23.191 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:20:23.193 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:23.194 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:20:23.195 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:20:23.196 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:20:23.227 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int64), @p3='?' (DbType = Int64), @p4='?', @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BugAssignments" ("AssignedById", "AssignedDate", "BugId", "DevId", "ResolutionStatus", "ResolvedOn")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "AssignmentId";
+2025-06-12 00:20:23.233 +05:30 [INF] Executing CreatedResult, writing value of type 'BugTrackingAPI.Models.DTO.BugAssignmentResponse'.
+2025-06-12 00:20:23.250 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 59.8966ms
+2025-06-12 00:20:23.250 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:20:23.251 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 201 null application/json; charset=utf-8 63.3186ms
+2025-06-12 00:21:23.125 +05:30 [INF] Request starting HTTP/1.1 PATCH http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - null 0
+2025-06-12 00:21:23.126 +05:30 [INF] Request: PATCH /api/v1/BugsManagement/Resolve by Anonymous at "2025-06-11T18:51:23.1264580Z"
+2025-06-12 00:21:23.127 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Dev|Admin)
+2025-06-12 00:21:23.128 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:21:23.128 +05:30 [INF] Request finished HTTP/1.1 PATCH http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - 401 0 null 2.5897ms
+2025-06-12 00:21:57.670 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - null null
+2025-06-12 00:21:57.670 +05:30 [INF] Request: GET /api/v1/BugsManagement/Resolve by Anonymous at "2025-06-11T18:51:57.6708480Z"
+2025-06-12 00:21:57.672 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:21:57.672 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:21:57.672 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-12 00:21:57.672 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - 405 0 null 2.04ms
+2025-06-12 00:22:21.763 +05:30 [INF] Request starting HTTP/1.1 PATCH http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - null 0
+2025-06-12 00:22:21.763 +05:30 [INF] Request: PATCH /api/v1/BugsManagement/Resolve by Anonymous at "2025-06-11T18:52:21.7633040Z"
+2025-06-12 00:22:21.764 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:22:21.765 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.ResolveBugs (BugTrackingAPI)'
+2025-06-12 00:22:21.770 +05:30 [INF] Route matched with {action = "ResolveBugs", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] ResolveBugs(Int64) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:22:21.773 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:22:21.775 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:22:21.781 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+WHERE b."AssignmentId" = @__key_0
+LIMIT 1
+2025-06-12 00:22:21.782 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-12 00:22:21.783 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.ResolveBugs (BugTrackingAPI) in 12.5521ms
+2025-06-12 00:22:21.783 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.ResolveBugs (BugTrackingAPI)'
+2025-06-12 00:22:21.783 +05:30 [INF] Request finished HTTP/1.1 PATCH http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=2 - 400 null application/problem+json; charset=utf-8 20.4459ms
+2025-06-12 00:23:15.626 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-06-12 00:23:15.627 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-06-11T18:53:15.6278150Z"
+2025-06-12 00:23:15.629 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:23:15.630 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-06-12 00:23:15.633 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-06-12 00:23:15.640 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-06-12 00:23:15.642 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:23:15.644 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 10.0487ms
+2025-06-12 00:23:15.644 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-06-12 00:23:15.644 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 17.8532ms
+2025-06-12 00:38:15.720 +05:30 [INF] Application is shutting down...
+2025-06-12 00:38:27.197 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-12 00:38:27.380 +05:30 [INF] Now listening on: http://localhost:5258
+2025-06-12 00:38:27.382 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-12 00:38:27.383 +05:30 [INF] Hosting environment: Development
+2025-06-12 00:38:27.383 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-06-12 00:38:27.825 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/index.html - null null
+2025-06-12 00:38:27.925 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/index.html - 200 null text/html;charset=utf-8 101.4223ms
+2025-06-12 00:38:27.966 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/index.html - null null
+2025-06-12 00:38:27.970 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/index.html - 200 null text/html;charset=utf-8 3.7813ms
+2025-06-12 00:38:28.067 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - null null
+2025-06-12 00:38:28.256 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 189.013ms
+2025-06-12 00:38:39.720 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-06-12 00:38:39.724 +05:30 [INF] Request: GET /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-06-11T19:08:39.7232820Z"
+2025-06-12 00:38:39.811 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-12 00:38:39.814 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:38:39.815 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 401 0 null 94.4983ms
+2025-06-12 00:38:55.476 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 56
+2025-06-12 00:38:55.476 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-11T19:08:55.4766620Z"
+2025-06-12 00:38:55.494 +05:30 [INF] CORS policy execution failed.
+2025-06-12 00:38:55.495 +05:30 [INF] Request origin http://localhost:5258 does not have permission to access the resource.
+2025-06-12 00:38:55.496 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:38:55.521 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-12 00:38:56.704 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:38:57.211 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-12 00:38:57.242 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-12 00:38:57.258 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 1733.0669ms
+2025-06-12 00:38:57.258 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:38:57.268 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 1791.9961ms
+2025-06-12 00:39:11.771 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-06-12 00:39:11.772 +05:30 [INF] Request: GET /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-06-11T19:09:11.7720280Z"
+2025-06-12 00:39:11.849 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:39:11.857 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:39:11.860 +05:30 [INF] Route matched with {action = "GetAssignedList", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AssignedResponse]]] GetAssignedList() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:39:11.871 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:39:11.892 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.924 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.929 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.930 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.931 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.932 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.932 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.933 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.934 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.935 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:39:11.936 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AssignedResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:39:11.944 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI) in 83.1557ms
+2025-06-12 00:39:11.944 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:39:11.945 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 200 null application/json; charset=utf-8 173.4293ms
+2025-06-12 00:40:05.983 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:40:05.984 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T19:10:05.9843830Z"
+2025-06-12 00:40:05.988 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:59:33 PM', Current time (UTC): '6/11/2025 7:10:05 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:40:06.007 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:59:33 PM', Current time (UTC): '6/11/2025 7:10:05 PM'.
+2025-06-12 00:40:06.009 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-12 00:40:06.011 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-12 00:40:06.011 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 401 0 null 28.3629ms
+2025-06-12 00:40:15.399 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 56
+2025-06-12 00:40:15.399 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-11T19:10:15.3998530Z"
+2025-06-12 00:40:15.401 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:31:06 PM', Current time (UTC): '6/11/2025 7:10:15 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-12 00:40:15.402 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 6:31:06 PM', Current time (UTC): '6/11/2025 7:10:15 PM'.
+2025-06-12 00:40:15.402 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:40:15.403 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-12 00:40:15.467 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:40:15.736 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-12 00:40:15.737 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-12 00:40:15.737 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 334.676ms
+2025-06-12 00:40:15.737 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-12 00:40:15.738 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 338.5363ms
+2025-06-12 00:40:52.911 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-06-12 00:40:52.912 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-06-11T19:10:52.9122550Z"
+2025-06-12 00:40:52.914 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:40:52.915 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:40:52.920 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-06-12 00:40:52.927 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-06-12 00:40:52.928 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:40:52.931 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 11.3401ms
+2025-06-12 00:40:52.935 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-06-12 00:40:52.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 24.3666ms
+2025-06-12 00:40:59.553 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - application/json 30
+2025-06-12 00:40:59.553 +05:30 [INF] Request: POST /api/v1/BugsManagement/Assign by Anonymous at "2025-06-11T19:10:59.5539420Z"
+2025-06-12 00:40:59.556 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:40:59.556 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:40:59.560 +05:30 [INF] Route matched with {action = "AssignBugsToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.BugAssignmentResponse]] AssignBugsToDev(BugTrackingAPI.Models.DTO.BugAssignmentRequest) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:40:59.568 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:40:59.571 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:40:59.573 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:40:59.575 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:40:59.577 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-12 00:40:59.607 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int64), @p3='?' (DbType = Int64), @p4='?', @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BugAssignments" ("AssignedById", "AssignedDate", "BugId", "DevId", "ResolutionStatus", "ResolvedOn")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "AssignmentId";
+2025-06-12 00:40:59.613 +05:30 [INF] Executing CreatedResult, writing value of type 'BugTrackingAPI.Models.DTO.BugAssignmentResponse'.
+2025-06-12 00:40:59.629 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI) in 69.1016ms
+2025-06-12 00:40:59.629 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.AssignBugsToDev (BugTrackingAPI)'
+2025-06-12 00:40:59.629 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/BugsManagement/Assign - 201 null application/json; charset=utf-8 76.2133ms
+2025-06-12 00:41:07.699 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-06-12 00:41:07.699 +05:30 [INF] Request: GET /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-06-11T19:11:07.6996580Z"
+2025-06-12 00:41:07.702 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:41:07.702 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:41:07.702 +05:30 [INF] Route matched with {action = "GetAssignedList", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AssignedResponse]]] GetAssignedList() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:41:07.703 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:41:07.704 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.705 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.706 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.707 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.708 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.709 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.710 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.711 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.712 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.713 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.714 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.715 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:07.715 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AssignedResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:41:07.716 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI) in 13.2806ms
+2025-06-12 00:41:07.716 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:41:07.716 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 200 null application/json; charset=utf-8 17.1478ms
+2025-06-12 00:41:52.638 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-06-12 00:41:52.639 +05:30 [INF] Request: GET /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-06-11T19:11:52.6392410Z"
+2025-06-12 00:41:52.641 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:41:52.641 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:41:52.641 +05:30 [INF] Route matched with {action = "GetAssignedList", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AssignedResponse]]] GetAssignedList() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:41:52.641 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:41:52.642 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.643 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.643 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.644 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.644 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.645 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.646 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.646 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.647 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.647 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.648 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.648 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-06-12 00:41:52.648 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AssignedResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:41:52.649 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI) in 7.7257ms
+2025-06-12 00:41:52.649 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-06-12 00:41:52.649 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 200 null application/json; charset=utf-8 10.5875ms
+2025-06-12 00:42:14.270 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-06-12 00:42:14.270 +05:30 [INF] Request: GET /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-06-11T19:12:14.2708600Z"
+2025-06-12 00:42:14.272 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:42:14.273 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-06-12 00:42:14.276 +05:30 [INF] Route matched with {action = "GetAvailableDevs", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AvailableDev]]] GetAvailableDevs() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:42:14.279 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:42:14.286 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-06-12 00:42:14.288 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AvailableDev, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:42:14.290 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI) in 14.2072ms
+2025-06-12 00:42:14.290 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-06-12 00:42:14.291 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - 200 null application/json; charset=utf-8 20.5835ms
+2025-06-12 00:42:46.599 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-06-12 00:42:46.599 +05:30 [INF] Request: GET /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-06-11T19:12:46.5999370Z"
+2025-06-12 00:42:46.601 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-12 00:42:46.601 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-06-12 00:42:46.601 +05:30 [INF] Route matched with {action = "GetAvailableDevs", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AvailableDev]]] GetAvailableDevs() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-06-12 00:42:46.602 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-06-12 00:42:46.602 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-06-12 00:42:46.603 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AvailableDev, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-12 00:42:46.603 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI) in 1.5074ms
+2025-06-12 00:42:46.603 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-06-12 00:42:46.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - 200 null application/json; charset=utf-8 4.2607ms
+2025-06-12 00:43:58.534 +05:30 [INF] Application is shutting down...
