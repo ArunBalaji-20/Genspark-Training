@@ -1,0 +1,21 @@
+<!-- <p>recipe works!</p> -->
+
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="recipe?.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Name: {{recipe?.name}}</h5>
+      <p class="card-text">Cuisine: {{recipe?.cuisine}}</p>
+      <p class="card-text">Cooking Time: {{recipe?.cookTimeMinutes}} min</p>
+      <h6 class="card-subtitle mb-2 text-muted">Ingredients:</h6>
+      @if(recipe?.ingredients){
+        <p class="card-text">{{recipe?.ingredients}}</p>
+      }
+      @else {
+            <p class="card-text">Ingredients not available for this recipe</p>
+      }
+    
+    </div>
+  </div>
+
+
+

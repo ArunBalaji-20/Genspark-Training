@@ -1,0 +1,32 @@
+<!-- 
+
+@if(recipes){
+    <div class="recipe-container">
+        @for(item of recipes; track item.id){
+            
+            <app-recipe [recipe]="item"></app-recipe>
+        }
+    </div>
+}
+@else {
+    <div class="no-recipe-container">
+      <h2> No Recipes Available</h2> 
+    </div>
+}
+
+ -->
+
+ @if (recipes().length > 0) {
+  <div class="recipe-container">
+    @for (item of recipes(); track item.id) {
+      <app-recipe [recipe]="item"></app-recipe>
+    }
+  </div>
+}
+@else {
+  <div class="no-recipe-container">
+    <h2>No Recipes Available</h2>
+  </div>
+}
+
+ 
