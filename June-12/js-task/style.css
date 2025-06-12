@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    margin-top: 2rem;
+    gap:2rem;
+}
+
+.container input{
+    /* padding: 1rem; */
+    width: 4rem;
+    height: 2rem;
+    margin-top: 1rem;
+}
