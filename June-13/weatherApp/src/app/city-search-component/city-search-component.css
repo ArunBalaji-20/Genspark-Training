@@ -1,0 +1,17 @@
+.container{
+    margin-top: 2rem;
+    margin-left: 40%;
+    display: flex;
+    gap: 1rem;
+}
+
+.container button{
+    padding: 0.3rem;
+
+}
+
+.container input{
+    /* border: 20% solid black; */
+    border: none;
+    background-color: rgb(168, 211, 211);
+}

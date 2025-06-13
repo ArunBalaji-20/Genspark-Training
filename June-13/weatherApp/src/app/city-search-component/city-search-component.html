@@ -1,0 +1,6 @@
+
+<div class="container">
+    <input type="text" placeholder="enter city name" [(ngModel)]="cityname">
+<button (click)="search()"> search</button>
+</div>
+<app-weather-card-component [weatherData]="weatherData()"></app-weather-card-component>
