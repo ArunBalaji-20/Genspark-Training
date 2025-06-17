@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="productinp.thumbnail" alt="Card image cap">
+  <div class="card-body">
+    @if(searchTerm==productinp.title)
+    {
+        <h5 class="card-title-match">{{productinp.title}}</h5>
+    }
+    <h5 class="card-title">{{ productinp.title }}</h5>
+    <!-- <button class="btn btn-primary">Buy for {{ productinp.price }}</button> -->
+     <button class="btn btn-primary" (click)="handleProductClick(productinp.id)">click to know More</button>
+  </div>
+</div>

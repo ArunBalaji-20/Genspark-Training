@@ -1,0 +1,38 @@
+<!-- <p>products works!</p> -->
+<!-- <form class="form-inline my-2 my-lg-0" (ngSubmit)="handleSearchProducts()"> -->
+
+  @if (route.firstChild == null) {
+    <div class="form-inline">
+        <label for="form-control">Search : </label>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchString" (input)="handleSearchProducts()">
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button> -->
+    </div>
+      
+@if (!loading) {
+  @if (products.length === 0 && searchString.trim() !== "") {
+    <div class="products-list">
+      <h2>No products found</h2>
+   
+    </div>
+  } @else {
+    <div class="products-list">
+      @for (item of products; track $index) {
+        <app-product [productinp]="item" [searchTerm]="searchString"></app-product>
+      }
+    </div>
+  }
+} @else {
+  <div class="products-list">
+    <!-- <h3>Loading</h3> -->
+       <div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+</div>
+  </div>
+}
+}
+@else {
+<router-outlet></router-outlet>
+
+}
+
+<!-- <input type="text" [(ngModel)]="searchString" (input)="handleSearchProducts()"/> -->

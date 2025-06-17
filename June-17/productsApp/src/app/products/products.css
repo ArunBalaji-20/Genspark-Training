@@ -1,0 +1,36 @@
+.form-inline{
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+    justify-content: center;
+}
+
+.form-inline input{
+    width: 25%;
+    margin-top: 2rem;
+    
+}
+
+.form-inline label{
+    margin-top: 2.3rem;
+    font-size: larger;
+}
+
+.products-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; 
+  padding: 20px;
+  margin-left:5rem;
+  opacity: 0;
+   animation: fadeIn 01s ease-in forwards;
+}
+
+
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
