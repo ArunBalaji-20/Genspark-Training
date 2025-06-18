@@ -1,0 +1,52 @@
+
+<form (ngSubmit)="handleSubmisson()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">FirstName</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="FirstName" [(ngModel)]="user.firstName" name="firstName">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">LastName</label>
+      <input type="text" class="form-control" id="inputPassword4" placeholder="LastName" [(ngModel)]="user.lastName" name="lastName">
+    </div>
+  </div>
+  <div class="form-group col-md-4">
+      <label for="inputState">Gender</label>
+      <select id="inputState" class="form-control" [(ngModel)]="user.gender" name="gender">
+        <option selected>Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    
+  </div>
+  <div class="form-group col-md-4">
+      <label for="inputState">Role</label>
+      <select id="inputState" class="form-control" [(ngModel)]="user.role" name="role">
+        <option selected>Choose...</option>
+        <option>Admin</option>
+        <option>User</option>
+      </select>
+    </div>
+  <div class="form-row ">
+    <div class="form-group col-md-4">
+      <label for="inputCity">age</label>
+      <input type="text" class="form-control" id="inputCity" [(ngModel)]="user.age" name="age">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control" [(ngModel)]="user.state" name="state">
+        <option selected>Choose...</option>
+        <option>Tamil Nadu</option>
+        <option>Kerala</option>
+      </select>
+    </div>
+   
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+@if(isAdded)
+{
+    <h4>User {{user.firstName}} {{user.lastName}}  Added Successfully...</h4>
+}

@@ -1,0 +1,16 @@
+.charts-row {
+  display: flex;
+  justify-content: space-around; /* or space-between / center */
+  align-items: flex-start;
+  flex-wrap: wrap; /* in case it goes to smaller screen */
+  margin-top: 20px;
+}
+
+.chart-container {
+  width: 45%; /* you can adjust as needed */
+  min-width: 300px;
+}
+
+#genderChart{
+    max-height: 100%;
+}
