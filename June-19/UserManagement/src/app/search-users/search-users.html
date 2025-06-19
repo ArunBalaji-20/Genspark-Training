@@ -1,0 +1,22 @@
+
+
+<input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchString" (input)="handleSearchUsers()">
+<div class="card-row">
+  @if(loading) {
+    <h1>Loading...</h1>
+  }
+  @else if(users.length === 0) {
+    <h1>No users found</h1>
+  }
+  @else {
+    @for(user of users; track $index) {
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Email: {{user.email}}</h5>
+          <p class="card-text">Role: {{user.role}}</p>
+        </div>
+      </div>
+    }
+  }
+
+</div>

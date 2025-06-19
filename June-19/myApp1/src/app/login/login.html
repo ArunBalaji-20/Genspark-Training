@@ -1,0 +1,66 @@
+<!-- ***template driven validation***  -->
+<!-- <div class="loginDiv"> ***template driven validation***
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.username" #un="ngModel"/>
+    @if(un.control.touched && un.control.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.password" #pass="ngModel"/>
+     @if(pass.control.touched && pass.control.errors)
+    {
+        <span class="alert alert-danger">Psssword cannot be empty</span>
+    }
+    <button class="btn btn-success" (click)="handleLogin(un,pass)">Login</button>
+</div> -->
+
+
+<!-- reactive from validation -->
+<!-- <form [formGroup]="loginForm" class="loginDiv" (ngSubmit)="handleLogin()">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" formControlName="un" />
+    @if(un.touched && un.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" formControlName="pass" />
+     @if(pass.touched && pass.errors)
+    {
+        <span class="alert alert-danger">Psssword cannot be empty</span>
+    }
+    <button class="btn btn-success" [disabled]="loginForm.invalid" >Login</button>
+</form> -->
+
+
+<!-- custom error validation  -->
+
+<form [formGroup]="loginForm" class="loginDiv" (ngSubmit)="handleLogin()">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" formControlName="un" />
+    @if(un.touched && un.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" formControlName="pass" />
+     @if(pass.touched && pass.errors)
+    {
+        @if (pass.errors?.required) {
+            <span class="alert alert-danger">Password cannot be empty</span>
+        }
+        @if (pass.errors?.lenError) {
+            <span class="alert alert-danger">Password cannot be less than 5 chars</span>
+        }
+
+    }
+    <button class="btn btn-success" [disabled]="loginForm.invalid" >Login</button>
+</form>
+
+<form name="myForm">
+  <input name="myInput" ng-model="myInput" required>
+</form>
+
+<p>The input's valid state is:</p>
+<h1>{{myForm.myInput.$valid}}</h1>

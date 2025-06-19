@@ -1,0 +1,104 @@
+<!-- <p>add-users works!</p>
+<form [formGroup]="AddUsersForm" (ngSubmit)="handleFormsSubmission()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" name="email" >
+
+      @if(email.touched && email.errors)
+    {
+        <span class="alert alert-danger">Invalid EmailId</span>
+    }
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="pass" name="pass" >
+     @if(pass.touched && pass.errors)
+    {
+        @if(pass.errors?.lenError)
+        {
+             <span class="alert alert-danger ">password must be greater than 6 characters</span>
+        }
+        @if(pass.errors?.required)
+        {
+            <span class="alert alert-danger ">password cannot be empty</span>
+
+        }
+    }
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" formControlName="confirmPass" name="confirmPass">
+    
+        @if(AddUsersForm.hasError('matchError') && confirmPass.touched) {
+            <span class="alert alert-danger">password does not match</span>
+        }
+        @if(confirmPass.touched  && confirmPass.errors?.required)
+        {
+            <span class="alert alert-danger ">confirm password cannot be empty</span>
+
+        }
+    
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Role</label>
+    <input type="text" class="form-control" id="role-box" placeholder="role" formControlName="role" name="role">
+    @if(role.touched && role.errors?.forbiddenRole) {
+        <span class="alert alert-danger">This role is not allowed.</span>
+    }
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Add User</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="AddUsersForm" (ngSubmit)="handleFormsSubmission()">
+            <div class="form-group mb-3">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" name="email" >
+              @if(email.touched && email.errors) {
+                <span class="invalid-feedback d-block mt-1">Invalid EmailId</span>
+              }
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="pass" name="pass" >
+              @if(pass.touched && pass.errors) {
+                @if(pass.errors?.lenError) {
+                  <span class="invalid-feedback d-block mt-1">Password must be greater than 6 characters</span>
+                }
+                @if(pass.errors?.required) {
+                  <span class="invalid-feedback d-block mt-1">Password cannot be empty</span>
+                }
+              }
+            </div>
+            <div class="form-group mb-3">
+              <label for="exampleInputPassword2">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" formControlName="confirmPass" name="confirmPass">
+              @if(AddUsersForm.hasError('matchError') && confirmPass.touched) {
+                <span class="invalid-feedback d-block mt-1">Passwords do not match</span>
+              }
+              @if(confirmPass.touched && confirmPass.errors?.required) {
+                <span class="invalid-feedback d-block mt-1">Confirm password cannot be empty</span>
+              }
+            </div>
+            <div class="form-group mb-4">
+              <label for="role-box">Role</label>
+              <input type="text" class="form-control" id="role-box" placeholder="role" formControlName="role" name="role">
+              @if(role.touched && role.errors?.forbiddenRole) {
+                <span class="invalid-feedback d-block mt-1">This role is not allowed.</span>
+              }
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
