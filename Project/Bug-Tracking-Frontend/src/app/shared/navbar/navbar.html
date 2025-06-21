@@ -1,0 +1,230 @@
+<!-- <p>navbar works!</p> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">BugTrackingApp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+        <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> -->
+        <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+
+
+        <!-- Not Logged In -->
+        @if (!authService.isLoggedIn()) {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Not Logged In</a>
+          </li>
+        }
+
+        <!-- Admin -->
+        @if (authService.role() === 'Admin') {
+          <!-- <h1>admin</h1> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="bellDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                (click)="handleBell()">
+                <i [class]="bellClassName" id="bell"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
+                <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
+            </ul>
+            </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="bugsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Bugs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="bugsDropdown">
+                <li>
+                <a class="dropdown-item" routerLink="/admin/bugs/assign">Assign</a>
+                </li>
+                <li>
+                <a class="dropdown-item" routerLink="/admin/bugs/report">Report</a>
+                </li>
+                <li>
+                <a class="dropdown-item" routerLink="/admin/bugs/status">Status</a>
+            </li>
+        </ul>
+        </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="bugsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Management
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="bugsDropdown">
+                <li>
+                <a class="dropdown-item" routerLink="/admin/manage/employees">Manage Employees</a>
+                </li>
+                <li>
+                <a class="dropdown-item" routerLink="/admin/manage/add">Add</a>
+            </li>
+        </ul>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/chat">Chat</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="profileDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <!-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown"> -->
+
+                    <li><span class="dropdown-item-text">Email: {{authService.email()}}</span></li>
+                    <li><span class="dropdown-item-text">Role: {{authService.role()}}</span></li>
+                </ul>
+            </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" (click)="handleLogout()">LogOut</a>
+          </li>
+          
+        }
+
+        <!-- Tester -->
+        @if (authService.role() === 'Tester') {
+          <!-- <h1>tester</h1> -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="bellDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                (click)="handleBell()">
+                <i [class]="bellClassName" id="bell"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
+                <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
+            </ul>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tester/chat">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tester/report">Report</a>
+          </li>
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="profileDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <!-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown"> -->
+
+                    <li><span class="dropdown-item-text">Email: {{authService.email()}}</span></li>
+                    <li><span class="dropdown-item-text">Role: {{authService.role()}}</span></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" routerLink="/" (click)="handleLogout()">LogOut</a>
+          </li>
+        }
+
+        <!-- Developer -->
+        @if (authService.role() === 'Dev') {
+          <!-- <h1>dev</h1> -->
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="bellDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                (click)="handleBell()">
+                <i [class]="bellClassName" id="bell"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
+                <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
+            </ul>
+            </li>
+           <li class="nav-item">
+            <a class="nav-link" routerLink="/myBugs">my-bugs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/developer/chat">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/developer/resolve">Resolve</a>
+          </li>
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+                href="#"
+                id="profileDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                    <!-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown"> -->
+
+                    <li><span class="dropdown-item-text">Email: {{authService.email()}}</span></li>
+                    <li><span class="dropdown-item-text">Role: {{authService.role()}}</span></li>
+                </ul>
+            </li>
+             <li class="nav-item">
+            <a class="nav-link" routerLink="/" (click)="handleLogout()">LogOut</a>
+          </li>
+        }
+
+      </ul>
+
+      <!-- Right side: show when logged in -->
+      <!-- @if (authService.isLoggedIn()) {
+        <div class="d-flex">
+          <span class="navbar-text me-3">
+            <h1>Logged IN</h1>
+          </span>
+        </div>
+      } -->
+
+    </div>
+  </div>
+</nav>

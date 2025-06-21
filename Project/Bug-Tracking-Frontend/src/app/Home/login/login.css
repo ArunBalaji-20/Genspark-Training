@@ -1,0 +1,4 @@
+.custom-alert {
+  width: 35%; /* or 400px or w-50 */
+  margin: 2% auto 0 auto; /* top 5%, center horizontally */
+}

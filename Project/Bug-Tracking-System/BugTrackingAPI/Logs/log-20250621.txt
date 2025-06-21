@@ -1,0 +1,1445 @@
+2025-06-21 18:48:56.689 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-21 18:48:56.898 +05:30 [INF] Now listening on: http://localhost:5258
+2025-06-21 18:48:56.900 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 18:48:56.901 +05:30 [INF] Hosting environment: Development
+2025-06-21 18:48:56.901 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-06-21 18:49:18.846 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 56
+2025-06-21 18:49:18.950 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:19:18.9487270Z"
+2025-06-21 18:49:19.051 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 7:25:15 PM', Current time (UTC): '6/21/2025 1:19:19 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-06-21 18:49:19.073 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '6/11/2025 7:25:15 PM', Current time (UTC): '6/21/2025 1:19:19 PM'.
+2025-06-21 18:49:19.076 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 18:49:19.111 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 18:49:20.581 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 18:49:21.129 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 18:49:21.158 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 18:49:21.180 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 2065.1268ms
+2025-06-21 18:49:21.182 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 18:49:21.195 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 2351.8271ms
+2025-06-21 19:13:27.059 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:13:27.068 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:43:27.0687190Z"
+2025-06-21 19:13:27.073 +05:30 [INF] CORS policy execution failed.
+2025-06-21 19:13:27.073 +05:30 [INF] Request origin http://localhost:4200 does not have permission to access the resource.
+2025-06-21 19:13:27.074 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 15.8568ms
+2025-06-21 19:16:03.727 +05:30 [INF] Application is shutting down...
+2025-06-21 19:16:13.349 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-21 19:16:13.490 +05:30 [INF] Now listening on: http://localhost:5258
+2025-06-21 19:16:13.493 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 19:16:13.494 +05:30 [INF] Hosting environment: Development
+2025-06-21 19:16:13.494 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-06-21 19:16:33.853 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:16:33.924 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:46:33.9227490Z"
+2025-06-21 19:16:33.954 +05:30 [INF] CORS policy execution failed.
+2025-06-21 19:16:33.954 +05:30 [INF] Request origin http://localhost:4200 does not have permission to access the resource.
+2025-06-21 19:16:33.958 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 106.885ms
+2025-06-21 19:19:04.727 +05:30 [INF] Application is shutting down...
+2025-06-21 19:19:13.171 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-21 19:19:13.312 +05:30 [INF] Now listening on: http://localhost:5258
+2025-06-21 19:19:13.315 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 19:19:13.315 +05:30 [INF] Hosting environment: Development
+2025-06-21 19:19:13.315 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-06-21 19:19:24.799 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:19:24.874 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:49:24.8731010Z"
+2025-06-21 19:19:24.916 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:19:24.923 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 125.8451ms
+2025-06-21 19:19:24.929 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 27
+2025-06-21 19:19:24.941 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:49:24.9409920Z"
+2025-06-21 19:19:24.943 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:19:24.944 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:19:24.965 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:19:25.114 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-21 19:19:25.155 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 186.7569ms
+2025-06-21 19:19:25.156 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:19:25.158 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 400 null application/problem+json; charset=utf-8 227.9666ms
+2025-06-21 19:23:17.087 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:23:17.089 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:53:17.0898150Z"
+2025-06-21 19:23:17.094 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:23:17.094 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 7.1616ms
+2025-06-21 19:23:17.095 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 26
+2025-06-21 19:23:17.096 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:53:17.0963020Z"
+2025-06-21 19:23:17.096 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:23:17.096 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:23:17.097 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:23:17.106 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-21 19:23:17.106 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 9.3821ms
+2025-06-21 19:23:17.107 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:23:17.107 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 400 null application/problem+json; charset=utf-8 11.9427ms
+2025-06-21 19:23:28.972 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:23:28.974 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:53:28.9738870Z"
+2025-06-21 19:23:28.974 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:23:28.975 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.3134ms
+2025-06-21 19:23:28.976 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 26
+2025-06-21 19:23:28.976 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:53:28.9764570Z"
+2025-06-21 19:23:28.976 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:23:28.976 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:23:28.977 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:23:28.981 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-21 19:23:28.981 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 4.6479ms
+2025-06-21 19:23:28.982 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:23:28.982 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 400 null application/problem+json; charset=utf-8 6.4266ms
+2025-06-21 19:25:06.482 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:25:06.483 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:55:06.4838650Z"
+2025-06-21 19:25:06.484 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:25:06.484 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.1366ms
+2025-06-21 19:25:06.485 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:25:06.485 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:55:06.4858240Z"
+2025-06-21 19:25:06.486 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:25:06.486 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:25:06.486 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:25:07.626 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:25:08.145 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:25:08.166 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:25:08.175 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 1688.3943ms
+2025-06-21 19:25:08.175 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:25:08.182 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 1697.2883ms
+2025-06-21 19:25:20.158 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:25:20.159 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:55:20.1596110Z"
+2025-06-21 19:25:20.160 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:25:20.160 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.6079ms
+2025-06-21 19:25:20.161 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:25:20.161 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:55:20.1619620Z"
+2025-06-21 19:25:20.162 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:25:20.162 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:25:20.162 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:25:20.189 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:25:20.472 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:25:20.473 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:25:20.473 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 311.0155ms
+2025-06-21 19:25:20.473 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:25:20.474 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 313.0224ms
+2025-06-21 19:26:08.858 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:26:08.859 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:56:08.8591430Z"
+2025-06-21 19:26:08.859 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:26:08.859 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.1348ms
+2025-06-21 19:26:08.861 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 46
+2025-06-21 19:26:08.862 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:56:08.8620730Z"
+2025-06-21 19:26:08.862 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:26:08.862 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:26:08.862 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:26:08.926 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:26:09.064 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 19:26:09.065 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 201.9346ms
+2025-06-21 19:26:09.065 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:26:09.065 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 204.0987ms
+2025-06-21 19:28:23.351 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:28:23.351 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T13:58:23.3519420Z"
+2025-06-21 19:28:23.352 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:28:23.352 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4328ms
+2025-06-21 19:28:23.353 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:28:23.354 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T13:58:23.3542930Z"
+2025-06-21 19:28:23.355 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:28:23.355 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:28:23.355 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:28:23.358 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:28:23.508 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:28:23.509 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:28:23.509 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 153.5447ms
+2025-06-21 19:28:23.509 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:28:23.509 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 156.1382ms
+2025-06-21 19:37:30.287 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:37:30.288 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:30.2884300Z"
+2025-06-21 19:37:30.288 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:30.289 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.8775ms
+2025-06-21 19:37:30.290 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:37:30.291 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:30.2912710Z"
+2025-06-21 19:37:30.291 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:30.292 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:30.292 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:37:30.307 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:37:30.452 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:37:30.452 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:37:30.453 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 160.561ms
+2025-06-21 19:37:30.453 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:30.453 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 162.894ms
+2025-06-21 19:37:35.055 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:37:35.056 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:35.0564440Z"
+2025-06-21 19:37:35.056 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:35.057 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:35.057 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:37:35.059 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:37:35.212 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:37:35.212 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:37:35.213 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 155.3981ms
+2025-06-21 19:37:35.213 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:35.214 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 158.9247ms
+2025-06-21 19:37:48.097 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:37:48.099 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:48.0993000Z"
+2025-06-21 19:37:48.099 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:48.100 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.4605ms
+2025-06-21 19:37:48.101 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:37:48.101 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:48.1016550Z"
+2025-06-21 19:37:48.102 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:48.102 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.102 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:37:48.104 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:37:48.257 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:37:48.257 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:37:48.257 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 155.3804ms
+2025-06-21 19:37:48.257 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.258 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 156.8947ms
+2025-06-21 19:37:48.297 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:37:48.298 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:48.2985080Z"
+2025-06-21 19:37:48.298 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:48.299 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.299 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:37:48.300 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:37:48.442 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:37:48.443 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:37:48.443 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 144.04ms
+2025-06-21 19:37:48.443 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.443 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 145.6094ms
+2025-06-21 19:37:48.480 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:37:48.480 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:07:48.4809270Z"
+2025-06-21 19:37:48.481 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:37:48.481 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.481 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:37:48.483 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:37:48.624 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:37:48.625 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:37:48.625 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 143.9361ms
+2025-06-21 19:37:48.625 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:37:48.625 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 145.4303ms
+2025-06-21 19:38:07.948 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:38:07.948 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:08:07.9487570Z"
+2025-06-21 19:38:07.949 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:38:07.949 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.1028ms
+2025-06-21 19:38:07.950 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:38:07.950 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:08:07.9506190Z"
+2025-06-21 19:38:07.950 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:38:07.950 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:38:07.951 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:38:07.952 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:38:08.106 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:38:08.106 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:38:08.106 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 155.5947ms
+2025-06-21 19:38:08.107 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:38:08.107 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 156.9483ms
+2025-06-21 19:39:00.922 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:39:00.923 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:00.9233010Z"
+2025-06-21 19:39:00.923 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:00.924 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.7813ms
+2025-06-21 19:39:00.925 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:39:00.926 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:00.9260640Z"
+2025-06-21 19:39:00.926 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:00.926 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:00.927 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:39:00.930 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:39:01.079 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:39:01.079 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:39:01.079 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 152.2864ms
+2025-06-21 19:39:01.079 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:01.080 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 154.5231ms
+2025-06-21 19:39:20.735 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:39:20.736 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:20.7369330Z"
+2025-06-21 19:39:20.737 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:20.737 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.627ms
+2025-06-21 19:39:20.738 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 44
+2025-06-21 19:39:20.739 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:20.7392520Z"
+2025-06-21 19:39:20.739 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:20.739 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:20.740 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:39:20.744 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:39:20.744 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 19:39:20.745 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 5.4089ms
+2025-06-21 19:39:20.746 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:20.746 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 7.7551ms
+2025-06-21 19:39:31.572 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:39:31.572 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:31.5729510Z"
+2025-06-21 19:39:31.573 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:31.573 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4172ms
+2025-06-21 19:39:31.575 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:39:31.575 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:09:31.5756990Z"
+2025-06-21 19:39:31.576 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:39:31.576 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:31.576 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:39:31.578 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:39:31.725 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:39:31.725 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:39:31.726 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 149.4271ms
+2025-06-21 19:39:31.726 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:39:31.726 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 151.7146ms
+2025-06-21 19:40:18.346 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:40:18.347 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:10:18.3477460Z"
+2025-06-21 19:40:18.348 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:40:18.348 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.9139ms
+2025-06-21 19:40:18.349 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 45
+2025-06-21 19:40:18.350 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:10:18.3508360Z"
+2025-06-21 19:40:18.351 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:40:18.351 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:18.351 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:40:18.355 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:40:18.355 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 19:40:18.355 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 2.9851ms
+2025-06-21 19:40:18.356 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:18.356 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 6.6209ms
+2025-06-21 19:40:28.396 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:40:28.397 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:10:28.3969790Z"
+2025-06-21 19:40:28.397 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:40:28.397 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.1796ms
+2025-06-21 19:40:28.398 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:40:28.399 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:10:28.3992250Z"
+2025-06-21 19:40:28.399 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:40:28.399 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:28.399 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:40:28.402 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:40:28.555 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:40:28.555 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:40:28.556 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 156.1623ms
+2025-06-21 19:40:28.556 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:28.556 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 157.5398ms
+2025-06-21 19:40:32.436 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:40:32.437 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:10:32.4372250Z"
+2025-06-21 19:40:32.437 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:40:32.437 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:32.437 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:40:32.439 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:40:32.595 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:40:32.595 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:40:32.595 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 158.0066ms
+2025-06-21 19:40:32.596 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:40:32.596 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 159.4503ms
+2025-06-21 19:43:49.163 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:43:49.164 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:13:49.1646950Z"
+2025-06-21 19:43:49.165 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:43:49.165 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.2889ms
+2025-06-21 19:43:49.166 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:43:49.168 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:13:49.1681670Z"
+2025-06-21 19:43:49.170 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:43:49.170 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:43:49.171 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:43:49.190 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:43:49.357 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:43:49.357 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:43:49.358 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 186.527ms
+2025-06-21 19:43:49.358 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:43:49.358 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 191.4158ms
+2025-06-21 19:45:58.475 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:45:58.476 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:15:58.4765640Z"
+2025-06-21 19:45:58.477 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:45:58.477 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.4425ms
+2025-06-21 19:45:58.478 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:45:58.478 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:15:58.4788750Z"
+2025-06-21 19:45:58.479 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:45:58.479 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:45:58.479 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:45:58.484 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:45:58.647 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:45:58.647 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:45:58.648 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 168.6666ms
+2025-06-21 19:45:58.648 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:45:58.648 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 169.8897ms
+2025-06-21 19:47:57.768 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:47:57.768 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:17:57.7689700Z"
+2025-06-21 19:47:57.769 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:47:57.769 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4802ms
+2025-06-21 19:47:57.770 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:47:57.771 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:17:57.7713790Z"
+2025-06-21 19:47:57.771 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:47:57.771 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:47:57.772 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:47:57.773 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:47:57.925 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:47:57.926 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:47:57.926 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 154.4947ms
+2025-06-21 19:47:57.926 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:47:57.927 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 156.2218ms
+2025-06-21 19:48:46.204 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:48:46.205 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:18:46.2053760Z"
+2025-06-21 19:48:46.205 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:48:46.205 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.1385ms
+2025-06-21 19:48:46.206 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:48:46.207 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:18:46.2071300Z"
+2025-06-21 19:48:46.207 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:48:46.207 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:48:46.207 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:48:46.212 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:48:46.360 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:48:46.361 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:48:46.361 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 153.7264ms
+2025-06-21 19:48:46.361 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:48:46.361 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 154.9035ms
+2025-06-21 19:58:51.557 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 19:58:51.558 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:28:51.5588480Z"
+2025-06-21 19:58:51.559 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:58:51.559 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.5602ms
+2025-06-21 19:58:51.560 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 19:58:51.560 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:28:51.5606340Z"
+2025-06-21 19:58:51.560 +05:30 [INF] CORS policy execution successful.
+2025-06-21 19:58:51.560 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:58:51.561 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 19:58:51.584 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 19:58:51.748 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 19:58:51.748 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 19:58:51.749 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 187.9076ms
+2025-06-21 19:58:51.749 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 19:58:51.749 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 189.1586ms
+2025-06-21 20:14:22.634 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:14:22.635 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:44:22.6353760Z"
+2025-06-21 20:14:22.635 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:14:22.635 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.2878ms
+2025-06-21 20:14:22.636 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 20:14:22.637 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:44:22.6371790Z"
+2025-06-21 20:14:22.637 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:14:22.637 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:14:22.637 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:14:22.652 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:14:22.796 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 20:14:22.796 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 20:14:22.796 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 158.6457ms
+2025-06-21 20:14:22.796 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:14:22.797 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 160.2819ms
+2025-06-21 20:18:08.247 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:18:08.248 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:48:08.2484040Z"
+2025-06-21 20:18:08.248 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:18:08.248 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4596ms
+2025-06-21 20:18:08.249 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 20:18:08.249 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:48:08.2498270Z"
+2025-06-21 20:18:08.250 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:18:08.250 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:18:08.250 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:18:08.251 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:18:08.390 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 20:18:08.391 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 20:18:08.391 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 140.865ms
+2025-06-21 20:18:08.391 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:18:08.391 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 142.0908ms
+2025-06-21 20:29:26.318 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:29:26.320 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T14:59:26.3200850Z"
+2025-06-21 20:29:26.320 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:29:26.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.5196ms
+2025-06-21 20:29:26.321 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 44
+2025-06-21 20:29:26.321 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T14:59:26.3217460Z"
+2025-06-21 20:29:26.321 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:29:26.322 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:29:26.322 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:29:26.334 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:29:26.334 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 20:29:26.334 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 12.6866ms
+2025-06-21 20:29:26.335 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:29:26.335 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 13.8672ms
+2025-06-21 20:30:54.843 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:30:54.844 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:00:54.8443230Z"
+2025-06-21 20:30:54.844 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:30:54.844 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.605ms
+2025-06-21 20:30:54.845 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 46
+2025-06-21 20:30:54.846 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:00:54.8460440Z"
+2025-06-21 20:30:54.846 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:30:54.846 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:30:54.846 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:30:54.848 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:30:54.848 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 20:30:54.848 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 2.3263ms
+2025-06-21 20:30:54.849 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:30:54.849 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 3.4859ms
+2025-06-21 20:32:10.084 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:32:10.085 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:02:10.0851590Z"
+2025-06-21 20:32:10.085 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:32:10.085 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4464ms
+2025-06-21 20:32:10.086 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 46
+2025-06-21 20:32:10.086 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:02:10.0869090Z"
+2025-06-21 20:32:10.087 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:32:10.087 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:32:10.087 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:32:10.088 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:32:10.089 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 20:32:10.089 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 2.1793ms
+2025-06-21 20:32:10.089 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:32:10.089 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 3.4186ms
+2025-06-21 20:32:29.707 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:32:29.708 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:02:29.7085360Z"
+2025-06-21 20:32:29.708 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:32:29.709 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.1609ms
+2025-06-21 20:32:29.709 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 44
+2025-06-21 20:32:29.710 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:02:29.7101730Z"
+2025-06-21 20:32:29.710 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:32:29.710 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:32:29.710 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:32:29.712 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:32:29.712 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 20:32:29.712 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 2.0668ms
+2025-06-21 20:32:29.712 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:32:29.713 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 3.2281ms
+2025-06-21 20:36:38.441 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:36:38.442 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:06:38.4424600Z"
+2025-06-21 20:36:38.442 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:36:38.442 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.5485ms
+2025-06-21 20:36:38.443 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 46
+2025-06-21 20:36:38.444 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:06:38.4442050Z"
+2025-06-21 20:36:38.444 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:36:38.444 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:36:38.444 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:36:38.460 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:36:38.601 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 20:36:38.601 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 156.5682ms
+2025-06-21 20:36:38.601 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:36:38.601 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 157.9192ms
+2025-06-21 20:39:35.017 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 20:39:35.018 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:09:35.0186850Z"
+2025-06-21 20:39:35.019 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:39:35.019 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.5484ms
+2025-06-21 20:39:35.020 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 20:39:35.020 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:09:35.0206740Z"
+2025-06-21 20:39:35.020 +05:30 [INF] CORS policy execution successful.
+2025-06-21 20:39:35.021 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:39:35.021 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 20:39:35.023 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 20:39:35.167 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 20:39:35.168 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 20:39:35.168 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 147.3731ms
+2025-06-21 20:39:35.169 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 20:39:35.169 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 148.8629ms
+2025-06-21 21:03:53.407 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:03:53.413 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:33:53.4135260Z"
+2025-06-21 21:03:53.414 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:03:53.415 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 7.6038ms
+2025-06-21 21:03:53.416 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:03:53.416 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:33:53.4167880Z"
+2025-06-21 21:03:53.416 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:03:53.417 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:03:53.417 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:03:53.446 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:03:53.592 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:03:53.593 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:03:53.594 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 177.0847ms
+2025-06-21 21:03:53.594 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:03:53.594 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 178.4453ms
+2025-06-21 21:04:51.835 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:04:51.837 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:34:51.8376810Z"
+2025-06-21 21:04:51.839 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:04:51.840 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 4.8693ms
+2025-06-21 21:04:51.841 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:04:51.841 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:34:51.8418680Z"
+2025-06-21 21:04:51.842 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:04:51.842 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:04:51.842 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:04:51.850 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:04:51.993 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:04:51.994 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:04:51.994 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 151.7196ms
+2025-06-21 21:04:51.994 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:04:51.994 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 153.1252ms
+2025-06-21 21:05:14.131 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:05:14.132 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:35:14.1322260Z"
+2025-06-21 21:05:14.132 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:05:14.132 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.3229ms
+2025-06-21 21:05:14.134 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:05:14.134 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:35:14.1343980Z"
+2025-06-21 21:05:14.134 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:05:14.134 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:05:14.134 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:05:14.137 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:05:14.285 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:05:14.285 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:05:14.285 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 150.7655ms
+2025-06-21 21:05:14.285 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:05:14.285 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 151.9506ms
+2025-06-21 21:07:21.160 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:07:21.161 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:37:21.1616880Z"
+2025-06-21 21:07:21.162 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:07:21.163 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.4643ms
+2025-06-21 21:07:21.164 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:07:21.164 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:37:21.1644510Z"
+2025-06-21 21:07:21.164 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:07:21.164 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:07:21.165 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:07:21.173 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:07:21.317 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:07:21.318 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:07:21.318 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 153.1581ms
+2025-06-21 21:07:21.318 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:07:21.319 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 154.831ms
+2025-06-21 21:08:13.194 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:08:13.196 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:38:13.1963250Z"
+2025-06-21 21:08:13.197 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:08:13.197 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.4572ms
+2025-06-21 21:08:13.198 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:08:13.198 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:38:13.1986000Z"
+2025-06-21 21:08:13.198 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:08:13.198 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:08:13.198 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:08:13.202 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:08:13.347 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:08:13.348 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:08:13.348 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 148.802ms
+2025-06-21 21:08:13.348 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:08:13.349 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 151.5002ms
+2025-06-21 21:08:27.969 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:08:27.969 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T15:38:27.9696850Z"
+2025-06-21 21:08:27.969 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:08:27.969 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 0.6074ms
+2025-06-21 21:08:27.970 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 53
+2025-06-21 21:08:27.971 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T15:38:27.9710360Z"
+2025-06-21 21:08:27.971 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:08:27.971 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:08:27.971 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:08:27.979 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:08:28.122 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:08:28.123 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:08:28.123 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 151.9866ms
+2025-06-21 21:08:28.123 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:08:28.123 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 153.047ms
+2025-06-21 21:32:54.198 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:32:54.199 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T16:02:54.1997180Z"
+2025-06-21 21:32:54.199 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:32:54.200 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.9221ms
+2025-06-21 21:32:54.200 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 21:32:54.201 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T16:02:54.2012390Z"
+2025-06-21 21:32:54.201 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:32:54.201 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:32:54.201 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:32:54.224 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:32:54.370 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:32:54.370 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:32:54.371 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 169.3388ms
+2025-06-21 21:32:54.371 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:32:54.371 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 170.6394ms
+2025-06-21 21:34:03.630 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 21:34:03.631 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T16:04:03.6314950Z"
+2025-06-21 21:34:03.631 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:34:03.631 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.4703ms
+2025-06-21 21:34:03.632 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 53
+2025-06-21 21:34:03.633 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T16:04:03.6335890Z"
+2025-06-21 21:34:03.633 +05:30 [INF] CORS policy execution successful.
+2025-06-21 21:34:03.633 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:34:03.633 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 21:34:03.637 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 21:34:03.780 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 21:34:03.781 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 21:34:03.782 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 148.1275ms
+2025-06-21 21:34:03.782 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 21:34:03.782 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 150.0422ms
+2025-06-21 22:15:47.718 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 22:15:47.721 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T16:45:47.7216350Z"
+2025-06-21 22:15:47.723 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:15:47.724 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 5.4189ms
+2025-06-21 22:15:47.725 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 49
+2025-06-21 22:15:47.726 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T16:45:47.7260250Z"
+2025-06-21 22:15:47.726 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:15:47.726 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:15:47.727 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 22:15:47.748 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 22:15:47.750 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 22:15:47.752 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 25.0024ms
+2025-06-21 22:15:47.752 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:15:47.752 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 401 null text/plain; charset=utf-8 27.4899ms
+2025-06-21 22:15:53.581 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 22:15:53.582 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T16:45:53.5821930Z"
+2025-06-21 22:15:53.582 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:15:53.582 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 0.6798ms
+2025-06-21 22:15:53.583 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 22:15:53.583 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T16:45:53.5837550Z"
+2025-06-21 22:15:53.583 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:15:53.583 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:15:53.584 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 22:15:53.586 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 22:15:53.782 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 22:15:53.782 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 22:15:53.783 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 198.9152ms
+2025-06-21 22:15:53.783 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:15:53.783 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 200.0138ms
+2025-06-21 22:36:27.881 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 22:36:27.883 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:06:27.8829880Z"
+2025-06-21 22:36:27.883 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:36:27.884 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.8728ms
+2025-06-21 22:36:27.885 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 22:36:27.885 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:06:27.8852560Z"
+2025-06-21 22:36:27.885 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:36:27.885 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:36:27.885 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 22:36:27.904 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 22:36:28.067 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 22:36:28.068 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 22:36:28.069 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 182.7276ms
+2025-06-21 22:36:28.070 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 22:36:28.070 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 185.3043ms
+2025-06-21 22:54:06.525 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 22:54:06.526 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:24:06.5265290Z"
+2025-06-21 22:54:06.527 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:54:06.527 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 2.3059ms
+2025-06-21 22:54:06.528 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 22:54:06.532 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:24:06.5327230Z"
+2025-06-21 22:54:06.535 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:54:06.535 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 22:54:06.577 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 22:54:06.600 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 22:54:06.600 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 22.5691ms
+2025-06-21 22:54:06.600 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 22:54:06.600 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 401 null text/plain; charset=utf-8 71.9367ms
+2025-06-21 22:55:41.685 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 22:55:41.687 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:25:41.6865390Z"
+2025-06-21 22:55:41.687 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:55:41.687 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 2.5675ms
+2025-06-21 22:55:41.688 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 22:55:41.689 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:25:41.6899080Z"
+2025-06-21 22:55:41.690 +05:30 [INF] CORS policy execution successful.
+2025-06-21 22:55:41.690 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 22:55:41.690 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 22:55:41.692 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-21 22:55:41.692 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 2.1373ms
+2025-06-21 22:55:41.692 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 22:55:41.692 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 401 null text/plain; charset=utf-8 4.6013ms
+2025-06-21 23:02:05.082 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:02:05.083 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:32:05.0833250Z"
+2025-06-21 23:02:05.083 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:02:05.083 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.7393ms
+2025-06-21 23:02:05.085 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:02:05.086 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:32:05.0861340Z"
+2025-06-21 23:02:05.086 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:02:05.086 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:02:05.087 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:02:05.132 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:02:05.292 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:02:05.294 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:02:05.295 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 207.4052ms
+2025-06-21 23:02:05.295 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:02:05.296 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 210.4648ms
+2025-06-21 23:02:25.584 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:02:25.584 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:32:25.5845900Z"
+2025-06-21 23:02:25.584 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:02:25.586 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 2.699ms
+2025-06-21 23:02:25.587 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:02:25.588 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:32:25.5880470Z"
+2025-06-21 23:02:25.766 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:02:25.785 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:02:25.785 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:02:25.785 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:02:25.819 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:02:25.837 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:02:25.853 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:02:25.910 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:02:25.918 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:02:25.923 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 138.1746ms
+2025-06-21 23:02:25.924 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:02:25.924 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 336.9726ms
+2025-06-21 23:03:21.710 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:03:21.712 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:33:21.7124730Z"
+2025-06-21 23:03:21.712 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:21.712 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.2189ms
+2025-06-21 23:03:21.713 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:03:21.715 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:33:21.7151570Z"
+2025-06-21 23:03:21.716 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:21.716 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:03:21.716 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:03:21.720 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:03:21.864 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:03:21.865 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:03:21.866 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 149.7433ms
+2025-06-21 23:03:21.866 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:03:21.866 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 152.968ms
+2025-06-21 23:03:41.393 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:03:41.395 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:33:41.3959010Z"
+2025-06-21 23:03:41.396 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:41.397 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 4.053ms
+2025-06-21 23:03:41.398 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:03:41.399 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:33:41.3990260Z"
+2025-06-21 23:03:41.412 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:03:41.413 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:41.413 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:03:41.414 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:03:41.417 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:03:41.418 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:03:41.421 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:03:41.423 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:03:41.424 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:03:41.424 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 9.7224ms
+2025-06-21 23:03:41.424 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:03:41.424 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 26.2054ms
+2025-06-21 23:03:52.026 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:03:52.026 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:33:52.0268830Z"
+2025-06-21 23:03:52.027 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:52.027 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.129ms
+2025-06-21 23:03:52.028 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:03:52.029 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:33:52.0290190Z"
+2025-06-21 23:03:52.029 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:03:52.029 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:03:52.029 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:03:52.033 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:03:52.193 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:03:52.194 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:03:52.195 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 166.4933ms
+2025-06-21 23:03:52.196 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:03:52.196 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 167.7445ms
+2025-06-21 23:04:51.394 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:04:51.395 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:34:51.3952240Z"
+2025-06-21 23:04:51.395 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:04:51.395 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 0.9689ms
+2025-06-21 23:04:51.396 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:04:51.397 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:34:51.3975230Z"
+2025-06-21 23:04:51.404 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:04:51.405 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:04:51.405 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:04:51.405 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:04:51.406 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:04:51.407 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:04:51.408 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:04:51.414 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:04:51.415 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:04:51.415 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 10.1602ms
+2025-06-21 23:04:51.415 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:04:51.416 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 19.4111ms
+2025-06-21 23:09:16.702 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:09:16.703 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:39:16.7030320Z"
+2025-06-21 23:09:16.703 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:09:16.704 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 2.7024ms
+2025-06-21 23:09:16.706 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:09:16.706 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:39:16.7067750Z"
+2025-06-21 23:09:16.706 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:09:16.707 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:09:16.707 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:09:16.729 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:09:16.876 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:09:16.876 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:09:16.877 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 170.3776ms
+2025-06-21 23:09:16.878 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:09:16.878 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 171.8364ms
+2025-06-21 23:14:25.093 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:14:25.094 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:44:25.0946290Z"
+2025-06-21 23:14:25.094 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:25.094 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 1.3401ms
+2025-06-21 23:14:25.095 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:14:25.095 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:44:25.0959460Z"
+2025-06-21 23:14:25.115 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:14:25.115 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:25.115 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:14:25.115 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:14:25.118 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:14:25.119 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:14:25.124 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:14:25.128 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:14:25.128 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:14:25.129 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 13.1592ms
+2025-06-21 23:14:25.129 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:14:25.129 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 33.5485ms
+2025-06-21 23:14:37.955 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:14:37.957 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:44:37.9575560Z"
+2025-06-21 23:14:37.957 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:37.957 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 1.9893ms
+2025-06-21 23:14:37.958 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 21
+2025-06-21 23:14:37.959 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:44:37.9593140Z"
+2025-06-21 23:14:37.964 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2025-06-21 23:14:38.002 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2025-06-21 23:14:38.003 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:38.003 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:14:38.003 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:14:38.004 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-21 23:14:38.005 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 1.9841ms
+2025-06-21 23:14:38.005 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:14:38.005 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 400 null application/problem+json; charset=utf-8 46.7305ms
+2025-06-21 23:14:56.517 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:14:56.518 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:44:56.5180190Z"
+2025-06-21 23:14:56.518 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:56.518 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.0339ms
+2025-06-21 23:14:56.519 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:14:56.519 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:44:56.5196840Z"
+2025-06-21 23:14:56.519 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:14:56.519 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:14:56.520 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:14:56.524 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:14:56.664 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:14:56.665 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:14:56.665 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 145.3775ms
+2025-06-21 23:14:56.665 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:14:56.666 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 146.5998ms
+2025-06-21 23:15:01.084 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:15:01.084 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:45:01.0847670Z"
+2025-06-21 23:15:01.084 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:01.085 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 0.9296ms
+2025-06-21 23:15:01.086 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:15:01.086 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:45:01.0864690Z"
+2025-06-21 23:15:01.088 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:15:01.088 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:01.088 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:15:01.088 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:15:01.090 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:15:01.091 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:15:01.092 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:15:01.094 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:15:01.094 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:15:01.095 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 6.4582ms
+2025-06-21 23:15:01.095 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:15:01.095 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 9.7134ms
+2025-06-21 23:15:16.468 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:15:16.468 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:45:16.4685200Z"
+2025-06-21 23:15:16.468 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:16.468 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 0.503ms
+2025-06-21 23:15:16.469 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 53
+2025-06-21 23:15:16.469 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:45:16.4698320Z"
+2025-06-21 23:15:16.470 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:16.470 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:15:16.470 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:15:16.471 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:15:16.614 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:15:16.614 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:15:16.614 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 144.1404ms
+2025-06-21 23:15:16.614 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:15:16.614 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 145.0798ms
+2025-06-21 23:15:21.802 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:15:21.803 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:45:21.8032240Z"
+2025-06-21 23:15:21.803 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:21.803 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 1.177ms
+2025-06-21 23:15:21.805 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:15:21.805 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T17:45:21.8055410Z"
+2025-06-21 23:15:21.807 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:15:21.807 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:15:21.807 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:15:21.808 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:15:21.809 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:15:21.810 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:15:21.812 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:15:21.813 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:15:21.813 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:15:21.815 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 6.419ms
+2025-06-21 23:15:21.815 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:15:21.815 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 10.2392ms
+2025-06-21 23:22:50.555 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:22:50.556 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T17:52:50.5565850Z"
+2025-06-21 23:22:50.556 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:22:50.556 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 1.0415ms
+2025-06-21 23:22:50.557 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:22:50.558 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T17:52:50.5582100Z"
+2025-06-21 23:22:50.558 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:22:50.558 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:22:50.558 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:22:50.572 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:22:50.716 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:22:50.716 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:22:50.716 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 158.2067ms
+2025-06-21 23:22:50.717 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:22:50.717 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 159.3197ms
+2025-06-21 23:36:45.550 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:36:45.552 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T18:06:45.5514570Z"
+2025-06-21 23:36:45.552 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:36:45.552 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 2.6101ms
+2025-06-21 23:36:45.553 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:36:45.553 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T18:06:45.5539710Z"
+2025-06-21 23:36:45.572 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:36:45.573 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:36:45.573 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:36:45.573 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:36:45.578 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:36:45.579 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:36:45.582 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:36:45.585 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:36:45.586 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:36:45.586 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 12.651ms
+2025-06-21 23:36:45.586 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:36:45.586 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 32.7723ms
+2025-06-21 23:36:54.260 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:36:54.261 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T18:06:54.2610340Z"
+2025-06-21 23:36:54.261 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:36:54.261 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 0.5567ms
+2025-06-21 23:36:54.262 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:36:54.262 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T18:06:54.2625790Z"
+2025-06-21 23:36:54.262 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:36:54.262 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:36:54.263 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:36:54.268 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:36:54.407 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:36:54.407 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:36:54.407 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 144.4336ms
+2025-06-21 23:36:54.407 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:36:54.407 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 145.5836ms
+2025-06-21 23:37:03.714 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - null null
+2025-06-21 23:37:03.715 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/logout by Anonymous at "2025-06-21T18:07:03.7152490Z"
+2025-06-21 23:37:03.715 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:37:03.715 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/logout - 204 null null 0.7753ms
+2025-06-21 23:37:03.717 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - application/json 63
+2025-06-21 23:37:03.718 +05:30 [INF] Request: POST /api/v1/Authentication/logout by Anonymous at "2025-06-21T18:07:03.7182730Z"
+2025-06-21 23:37:03.720 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-06-21 23:37:03.720 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:37:03.721 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:37:03.721 +05:30 [INF] Route matched with {action = "Logout", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(BugTrackingAPI.Models.DTOs.LogOutRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:37:03.722 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."RefreshToken" = @__token_0
+LIMIT 1
+2025-06-21 23:37:03.724 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."Id", r."EmployeeId", r."RefreshToken", r."RefreshTokenExpiryTime"
+FROM "RefreshTokens" AS r
+WHERE r."Id" = @__key_0
+LIMIT 1
+2025-06-21 23:37:03.725 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "RefreshTokens"
+WHERE "Id" = @p0;
+2025-06-21 23:37:03.728 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "BlackListedTokens" ("ExpiryDate", "Token")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-06-21 23:37:03.728 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-21 23:37:03.729 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI) in 7.2157ms
+2025-06-21 23:37:03.729 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.Logout (BugTrackingAPI)'
+2025-06-21 23:37:03.729 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/logout - 200 null application/json; charset=utf-8 12.1188ms
+2025-06-21 23:37:11.024 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-06-21 23:37:11.024 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-06-21T18:07:11.0244800Z"
+2025-06-21 23:37:11.024 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:37:11.024 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 0.6549ms
+2025-06-21 23:37:11.025 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-06-21 23:37:11.026 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-06-21T18:07:11.0260430Z"
+2025-06-21 23:37:11.026 +05:30 [INF] CORS policy execution successful.
+2025-06-21 23:37:11.026 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:37:11.026 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-06-21 23:37:11.027 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-06-21 23:37:11.171 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-06-21 23:37:11.171 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-06-21 23:37:11.171 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 145.1285ms
+2025-06-21 23:37:11.172 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-06-21 23:37:11.172 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 146.4642ms
