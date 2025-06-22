@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center mt-4">
+  <div style="
+      max-height: 500px;          /* Vertical height (rows scroll if too many) */
+      overflow-y: auto;           /* Vertical scroll */
+      overflow-x: auto;           /* Horizontal scroll if table too wide */
+      width: 100%;                /* Full width */
+  ">
+    <table class="table table-hover table-dark custom-table w-100">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">EmployeeId</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Manage</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if(isFetching)
+        {
+          <tr>
+            <td colspan="6" class="text-center">Loading...</td>
+          </tr>
+        }
+        <tr *ngFor="let emp of employees; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ emp.employeeId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.role }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="confirmDelete(emp.employeeId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,1 +1,60 @@
-<p>report works!</p>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-danger text-white">
+          <h4 class="mb-0">Submit Bug Report</h4>
+        </div>
+        <div class="card-body bg-light">
+          <form [formGroup]="bugReportForm" (ngSubmit)="handleBugReportSubmission()">
+            <!-- Bug Title -->
+            <div class="form-group mb-3">
+              <label for="bugTitle" class="fw-bold">Bug Name</label>
+              <input type="text" class="form-control" id="bugTitle" placeholder="Enter bug title" formControlName="BugName" name="BugName">
+            </div>
+
+            <!-- Bug Description -->
+            <div class="form-group mb-3">
+              <label for="bugDescription" class="fw-bold">Description</label>
+              <textarea class="form-control" id="bugDescription" rows="4" placeholder="Describe the bug in detail" formControlName="Description" name="Description"></textarea>
+            </div>
+
+
+
+            <!-- File Upload -->
+            <div class="form-group mb-4">
+              <label for="attachment" class="fw-bold">Screenshot </label>
+              <input type="file" class="form-control" id="attachment" (change)="onFileSelected($event)" formControlName="Screenshot" name="Screenshot" >>
+            </div>
+                     <!-- Severity -->
+         <div class="form-group mb-4">
+    <label for="severityRange" class="fw-bold">
+        CVSS Score (1 - 10): <span>{{ bugReportForm.get('CvssScore')?.value }}</span>
+    </label>
+    <input type="range" class="form-range" min="1" max="10" id="severityRange"
+        formControlName="CvssScore"
+        (input)="updateCvssScoreDisplay($event)" />
+</div>
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-dark w-100">Submit Report</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@if(statusMessage) {
+  <div class="alert alert-success custom-alert" role="alert">
+    Report submitted successfully!
+</div>
+}
+
+@if(errorMessage) {
+  <div class="alert alert-danger custom-alert" role="alert">
+    Error Occurred While Submitting Report!
+  </div>
+}

@@ -1,0 +1,79 @@
+
+
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Add New Employee</h4>
+        </div>
+        <div class="card-body bg-light">
+          <form [formGroup]="employeeForm" (ngSubmit)="handleEmployeeSubmission()">
+
+            <!-- Employee Name -->
+            <div class="form-group mb-3">
+              <label for="employeeName" class="fw-bold">Employee Name</label>
+              <input type="text" class="form-control" id="employeeName" placeholder="Enter employee name"
+                formControlName="name" name="name">
+              <div class="text-danger mt-1" *ngIf="employeeForm.get('name')?.touched && employeeForm.get('name')?.invalid">
+                Name is required.
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="employeeEmail" class="fw-bold">Email</label>
+              <input type="email" class="form-control" id="employeeEmail" placeholder="Enter email"
+                formControlName="email" name="email">
+              <div class="text-danger mt-1" *ngIf="employeeForm.get('email')?.touched && employeeForm.get('email')?.invalid">
+                <div *ngIf="employeeForm.get('email')?.errors?.['required']">Email is required.</div>
+                <div *ngIf="employeeForm.get('email')?.errors?.['email']">Invalid email format.</div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group mb-3">
+              <label for="employeePassword" class="fw-bold">Password</label>
+              <input type="password" class="form-control" id="employeePassword" placeholder="Enter password"
+                formControlName="password" name="password">
+              <div class="text-danger mt-1" *ngIf="employeeForm.get('password')?.touched && employeeForm.get('password')?.invalid">
+                Password is required.
+              </div>
+            </div>
+
+            <!-- Role -->
+            <div class="form-group mb-4">
+              <label for="employeeRole" class="fw-bold">Role</label>
+              <select class="form-select" id="employeeRole" formControlName="role" name="role">
+                <option value="">Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Dev">Dev</option>
+                <option value="Tester">Tester</option>
+              </select>
+              <div class="text-danger mt-1" *ngIf="employeeForm.get('role')?.touched && employeeForm.get('role')?.invalid">
+                Role is required.
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-dark w-100" [disabled]="employeeForm.invalid">Add Employee</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success / Error Alerts -->
+@if(successMessage) {
+  <div class="alert alert-success custom-alert mt-3" role="alert">
+    Employee added successfully!
+  </div>
+}
+@if(validationErrors) {
+  <div class="alert alert-danger custom-alert mt-3" role="alert">
+    {{ validationErrors }}
+  </div>
+}

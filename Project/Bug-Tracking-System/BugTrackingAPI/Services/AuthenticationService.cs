@@ -31,7 +31,7 @@ namespace BugTrackingAPI.Services
             var existingUser = await _employeeRepository.GetEmployeeByEmail(UserReg.Email);
             if (existingUser != null)
             {
-                throw new Exception("Username already taken");
+                throw new Exception("Email already taken");
             }
 
             var encryptedData = await _encryptionService.EncryptData(new EncryptModel

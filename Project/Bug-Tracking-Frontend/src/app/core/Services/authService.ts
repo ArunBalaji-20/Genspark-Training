@@ -92,7 +92,7 @@ logoutAPI() {
 
  
 
-  private getCookie(name: string): string | null {
+  public getCookie(name: string): string | null {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     return match ? match[2] : null;
   }

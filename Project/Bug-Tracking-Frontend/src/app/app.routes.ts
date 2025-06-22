@@ -10,6 +10,8 @@ import { Status } from './shared/status/status';
 import { Chat } from './shared/chat/chat';
 import { Resolve } from './developer/resolve/resolve';
 import { authGuard } from './auth-guard';
+import { Manage } from './admin/manage/manage';
+import { Add } from './admin/add/add';
 
 export const routes: Routes = [
     {path:'login',component:Login},
@@ -26,6 +28,8 @@ export const routes: Routes = [
       { path: 'status', component: Status}
     ]
   },
+   {path:'admin/manage/employees',component:Manage,canActivate:[authGuard],data:{roles:['Admin']}},
+   {path:'admin/manage/add',component:Add,canActivate:[authGuard],data:{roles:['Admin']}},
 
     {path:'tester/report',component:Report,canActivate:[authGuard],data: { roles: ['Tester']}},
     {path:'tester/chat',component:Chat,canActivate:[authGuard],data: { roles: ['Tester']}},

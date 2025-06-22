@@ -48,7 +48,8 @@ namespace BugTrackingAPI.Controllers
         public async Task<ActionResult<string>> DeleteEmployee([FromQuery] long EmployeeId)
         {
             var message = await _employeeManagementService.DeleteEmployee(EmployeeId);
-            return Ok(message);
+            // return Ok(message);
+            return NoContent();
         }
     }
 }
