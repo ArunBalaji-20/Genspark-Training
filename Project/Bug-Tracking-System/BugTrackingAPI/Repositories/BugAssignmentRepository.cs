@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BugTrackingAPI.Repositories
 {
-    public class BugsAssignmentRepository : Repository<long, BugAssignment>
+    public class BugsAssignmentRepository : Repository<long, BugAssignment>,IBugManagementRepository
     {
         public BugsAssignmentRepository(BugContext context) : base(context)
         {
@@ -15,7 +15,7 @@ namespace BugTrackingAPI.Repositories
 
         public override async Task<BugAssignment> Get(long key)
         {
-            return await _bugContext.BugAssignments.FirstOrDefaultAsync(e => e.AssignmentId == key);
+            return await _bugContext.BugAssignments.FirstOrDefaultAsync(e => e.BugId == key);
         }
 
         public override async Task<IEnumerable<BugAssignment>> GetAll()
@@ -24,7 +24,14 @@ namespace BugTrackingAPI.Repositories
 
         }
 
-        
+        public async Task<IEnumerable<BugResponse>> GetBugsAssignedToMe(long devId)
+        {
+            var bugs = await _bugContext
+            .Database
+            .SqlQueryRaw<BugResponse>("SELECT * FROM GetBugsAssignedToDev({0});", devId)
+            .ToListAsync();
 
+            return bugs;
+        }
     }
 }

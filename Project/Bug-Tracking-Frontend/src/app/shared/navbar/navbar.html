@@ -35,7 +35,7 @@
           <!-- <h1>admin</h1> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="bellDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -44,10 +44,27 @@
                 <i [class]="bellClassName" id="bell"></i>
             </a>
 
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
-                <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
-                <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
-            </ul>
+            <!-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown"> -->
+                 <!-- <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                </li> -->
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications; let i = index" class="px-2 py-1">
+                    <div class="d-flex justify-content-between align-items-start">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                    <button type="button" class="btn btn-sm btn-close ms-2" aria-label="Close" (click)="dismissNotification(i)"></button>
+                    </div>
+                </li>
+                </ul>
+
+      
+            <!-- </ul> -->
             </li>
 
           <li class="nav-item">
@@ -55,7 +72,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="bugsDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -64,7 +81,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="bugsDropdown">
                 <li>
-                <a class="dropdown-item" routerLink="/admin/bugs/assign">Assign</a>
+                <a class="dropdown-item" routerLink="/admin/bugs/submitted">Assign</a>
                 </li>
                 <li>
                 <a class="dropdown-item" routerLink="/admin/bugs/report">Report</a>
@@ -77,7 +94,7 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+              
                 id="bugsDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -94,11 +111,11 @@
         </ul>
         </li>
          <li class="nav-item">
-            <a class="nav-link" routerLink="/admin/chat">Chat</a>
+            <a class="nav-link" routerLink="/admin/chatList">Chat</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+              
                 id="profileDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -124,7 +141,7 @@
           <!-- <h1>tester</h1> -->
                 <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="bellDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -133,20 +150,35 @@
                 <i [class]="bellClassName" id="bell"></i>
             </a>
 
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <!-- <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                </li> -->
                 <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
                 <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
-            </ul>
+                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications; let i = index" class="px-2 py-1">
+                    <div class="d-flex justify-content-between align-items-start">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                    <button type="button" class="btn btn-sm btn-close ms-2" aria-label="Close" (click)="dismissNotification(i)"></button>
+                    </div>
+                </li>
+                </ul>
             </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/tester/chat">Chat</a>
+            <a class="nav-link" routerLink="/tester/chatList">Chat</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/tester/report">Report</a>
           </li>
            <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="profileDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -170,7 +202,7 @@
           <!-- <h1>dev</h1> -->
                 <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="bellDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -179,23 +211,39 @@
                 <i [class]="bellClassName" id="bell"></i>
             </a>
 
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <!-- <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                </li> -->
                 <!-- <li><span class="dropdown-item-text">Notification 1</span></li> -->
                 <!-- <li><span class="dropdown-item-text">Notification 2</span></li> -->
-            </ul>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bellDropdown">
+                <li *ngIf="notifications.length === 0">
+                    <span class="dropdown-item-text text-muted">No new notifications</span>
+                </li>
+                <li *ngFor="let note of notifications; let i = index" class="px-2 py-1">
+                    <div class="d-flex justify-content-between align-items-start">
+                    <span class="dropdown-item-text">{{ note }}</span>
+                    <button type="button" class="btn btn-sm btn-close ms-2" aria-label="Close" (click)="dismissNotification(i)"></button>
+                    </div>
+                </li>
+                </ul>
+                 
             </li>
            <li class="nav-item">
-            <a class="nav-link" routerLink="/myBugs">my-bugs</a>
+            <a class="nav-link" routerLink="/developer/myBugs">my-bugs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/developer/chat">Chat</a>
+            <a class="nav-link" routerLink="/developer/chatList">Chat</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/developer/resolve">Resolve</a>
-          </li>
+          </li> -->
            <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="profileDropdown"
                 role="button"
                 data-bs-toggle="dropdown"

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BugTrackingAPI.Controllers
 {
     [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class BugsManagementController : ControllerBase
@@ -21,6 +22,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpPost("Assign")]
+        [MapToApiVersion("1.0")]
         [Authorize(Roles = "Admin")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -46,6 +48,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpPatch("Resolve")]
+        [MapToApiVersion("1.0")]
         [Authorize(Roles = "Dev,Admin")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -70,7 +73,11 @@ namespace BugTrackingAPI.Controllers
             return Ok(result);
         }
 
+
+
+
         [HttpGet("Available/Devs")]
+        [MapToApiVersion("1.0")]
         [Authorize(Roles = "Admin")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -85,6 +92,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpGet("Get/Assigned/Lists")]
+        [MapToApiVersion("1.0")]
         [Authorize]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -95,6 +103,54 @@ namespace BugTrackingAPI.Controllers
         public async Task<ActionResult<IEnumerable<AssignedResponse>>> GetAssignedList()
         {
             var result = await _BugManagementService.GetAssignedList();
+            return Ok(result);
+        }
+
+        [HttpGet("assigned/mybugs")]
+        [Authorize(Roles = "Dev")]
+        [MapToApiVersion("2.0")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugResponse>>> GetBugsAssignedToMe()
+        {
+            var SubmitterEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (SubmitterEmail == null)
+            {
+                throw new Exception("Not logged In");
+            }
+
+            var bugs = await _BugManagementService.GetBugsAssignedToMe(SubmitterEmail);
+            return Ok(bugs);
+        }
+        
+        [HttpPatch("Update/InProgress")]
+        [MapToApiVersion(2.0)]
+        [Authorize(Roles = "Dev,Admin")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<BugAssignmentResponse>> UpdateStatusInProgress([FromQuery] long BugId)
+        {
+            var SubmitterEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (SubmitterEmail == null)
+            {
+                throw new Exception("Not logged In");
+            }
+
+            var result = await _BugManagementService.UpdateInProgress(BugId, SubmitterEmail);
+            if (result == null)
+            {
+                throw new Exception("error occured while submmitting bug");
+            }
             return Ok(result);
         }
 

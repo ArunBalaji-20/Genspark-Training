@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { authService } from '../../core/Services/authService';
 import { RouterLink } from '@angular/router';
+import { NotificationService } from '../../core/Services/notificationService';
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +10,25 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class Navbar {
+export class Navbar implements OnInit {
 
   isLoggedIn:Boolean=false;
   role:any;
   bellClassName:string="bi bi-bell";
-    constructor(public authService:authService)
+    notifications: string[] = [];
+    constructor(public authService:authService,public notificationService:NotificationService)
     {
       this.isLoggedIn=authService.isLoggedIn();
       this.role=authService.role();
       console.log(`role from nav:${this.role}`)
     }
+  ngOnInit(): void {
+    this.notificationService.notifications$.subscribe(n => {
+      this.notifications = n;
+      this.bellClassName = n.length ? 'bi bi-bell-fill text-danger' : 'bi bi-bell';
+      console.log(this.notifications)
+    });
+  }
   handleLogout()
   {
     this.authService.logoutAPI().subscribe({
@@ -57,4 +66,9 @@ export class Navbar {
 
     }
   }
+  dismissNotification(index: number): void {
+  this.notifications.splice(index, 1);
+  this.notificationService.updateNotifications(this.notifications);
+}
+
 }

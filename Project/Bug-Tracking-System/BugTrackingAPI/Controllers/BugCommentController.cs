@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.SignalR;
 namespace BugTrackingAPI.Controllers
 {
     [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class BugCommentController : ControllerBase
@@ -32,6 +33,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpPost("Comment")]
+        [MapToApiVersion("1.0")]
         [CustomExceptionFilter]
         [Authorize(Roles = "Admin,Tester,Dev")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -57,6 +59,7 @@ namespace BugTrackingAPI.Controllers
 
 
         [HttpGet("GetComments")]
+        [MapToApiVersion("1.0")]
         [CustomExceptionFilter]
         [Authorize(Roles = "Admin,Tester,Dev")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -72,6 +75,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpDelete("Delete")]
+        [MapToApiVersion("1.0")]
         [CustomExceptionFilter]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -88,9 +92,26 @@ namespace BugTrackingAPI.Controllers
             {
                 throw new Exception("Not logged In");
             }
-            var result = await _bugCommentService.DeleteComments(commentId,SubmitterEmail,role);
+            var result = await _bugCommentService.DeleteComments(commentId, SubmitterEmail, role);
             return Ok(result);
         }
+        
+        [HttpGet("GetComments")] //v2 api
+        [MapToApiVersion("2.0")]
+        [CustomExceptionFilter]
+        [Authorize(Roles = "Admin,Tester,Dev")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugAllCommentsResponse>>> GetCommentsV2([FromQuery] long bugId)
+        {
+            var result = await _bugCommentService.GetAllCommentsForBugV2(bugId);
+            return Ok(result);
+
+        }
+
 
 
     }

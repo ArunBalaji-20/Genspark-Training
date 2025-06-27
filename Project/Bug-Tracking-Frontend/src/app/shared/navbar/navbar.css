@@ -17,6 +17,7 @@
     margin-top: 0;
     z-index: 1000;
     transform: translateX(-40px); /* move dropdown 20px to left */
+    /* width: 200%; */
 }
 
 #bell:hover{

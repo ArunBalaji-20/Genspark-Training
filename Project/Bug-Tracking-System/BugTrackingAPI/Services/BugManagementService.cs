@@ -11,14 +11,17 @@ namespace BugTrackingAPI.Services
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IRepository<long, Bugs> _bugsRepository;
         private readonly IRepository<long, BugAssignment> _bugAssignment;
+        private readonly IBugManagementRepository _bugManagementRepository;
 
         public BugManagementService(IEmployeeRepository employeeRepository,
                           IRepository<long, Bugs> bugsRepository,
-                          IRepository<long, BugAssignment> bugAssignment)
+                          IRepository<long, BugAssignment> bugAssignment,
+                          IBugManagementRepository bugManagementRepository)
         {
             _employeeRepository = employeeRepository;
             _bugsRepository = bugsRepository;
             _bugAssignment = bugAssignment;
+            _bugManagementRepository = bugManagementRepository;
         }
 
         public async Task<BugAssignmentResponse> AssignBugToDevs(long bugId, long devId, string email)
@@ -38,6 +41,14 @@ namespace BugTrackingAPI.Services
             {
                 throw new Exception(" Bug is fixed.");
             }
+            if (isBugResolved.Status == "InProgress" )
+            {
+                throw new Exception("Developer is working on the bug");
+            }
+            if (isBugResolved.Status == "Assigned")
+            {
+                throw new Exception("Bug already assigned");
+            }
 
             var isDevAvailable = await _employeeRepository.Get(devId);
 
@@ -51,7 +62,7 @@ namespace BugTrackingAPI.Services
 
             var devAssignmentsCount = AllAssignments
             .Where(a => a.DevId == devId &&
-                (a.ResolutionStatus.ToLower() == "ongoing" || a.ResolutionStatus.ToLower() == "in progress"))
+                (a.ResolutionStatus.ToLower() == "Assigned" || a.ResolutionStatus.ToLower() == "InProgress")) //made changes in status names
             .Count();
 
             if (devAssignmentsCount >= 3)
@@ -67,12 +78,16 @@ namespace BugTrackingAPI.Services
                 BugId = bugId,
                 DevId = devId,
                 AssignedById = adminId,
-                ResolutionStatus = "ongoing",
+                // ResolutionStatus = "ongoing",
+                ResolutionStatus="Assigned",
                 ResolvedOn = null
 
             };
 
             await _bugAssignment.Add(bugAssignment);
+
+            isBugResolved.Status = "Assigned";
+            await _bugsRepository.Update(isBugResolved.BugId,isBugResolved);
 
             var bugAssignmentResponse = new BugAssignmentResponse
             {
@@ -107,16 +122,20 @@ namespace BugTrackingAPI.Services
             var bugDetails = await _bugAssignment.Get(bugId);
             if (bugDetails == null)
             {
-                throw new Exception("invalid Bug id");
+                throw new Exception("invalid Bug id or bug not yet assigned");
             }
             if (bugDetails.ResolutionStatus == "Resolved")
             {
                 throw new Exception("Bug already fixed");
             }
-            if (ResolverId != bugDetails.DevId)
+            if (bugDetails.ResolutionStatus == "Submitted")
             {
-                throw new Exception("You cannot fix this bug because it is not assigned to you");
+                throw new Exception("Bug Not yet assigned");
             }
+            if (ResolverId != bugDetails.DevId)
+                {
+                    throw new Exception("You cannot fix this bug because it is not assigned to you");
+                }
             //updating bug assignment db
             bugDetails.ResolutionStatus = "Resolved";
             bugDetails.ResolvedOn = DateTime.UtcNow;
@@ -157,7 +176,7 @@ namespace BugTrackingAPI.Services
             var bugAssignments = await _bugAssignment.GetAll();
 
             var notAvailableDevIds = bugAssignments
-                .Where(b => b.ResolutionStatus == "ongoing")
+                .Where(b => b.ResolutionStatus == "InProgress" || b.ResolutionStatus=="Assigned")
                 .GroupBy(b => b.DevId)
                 .Where(g => g.Count() >= 3)
                 .Select(g => g.Key)
@@ -198,6 +217,73 @@ namespace BugTrackingAPI.Services
                 }
 
                 return assignedResponses;
+        }
+
+        public async Task<IEnumerable<BugResponse>> GetBugsAssignedToMe(string email)
+        {
+            long DevId = await GetBugSubmitterId(email);
+
+            var bugs = await _bugManagementRepository.GetBugsAssignedToMe(DevId);
+            return bugs;
+            
+        }
+
+
+        // public async Task<> UpdateInProgress()
+        public async Task<BugAssignmentResponse> UpdateInProgress(long bugId, string email)
+        {
+            var BugData = await _bugsRepository.Get(bugId);
+            var ResolverId = await GetBugSubmitterId(email);
+            var bugDetails = await _bugAssignment.Get(bugId);
+            if (bugDetails == null)
+            {
+                throw new Exception("invalid Bug id or bug not yet assigned");
+            }
+            if (bugDetails.ResolutionStatus == "Resolved")
+            {
+                throw new Exception("Bug already fixed");
+            }
+            if (bugDetails.ResolutionStatus == "Submitted")
+            {
+                throw new Exception("Bug Not yet assigned");
+            }
+            if (ResolverId != bugDetails.DevId)
+                {
+                    throw new Exception("You cannot fix this bug because it is not assigned to you");
+                }
+            //updating bug assignment db
+            bugDetails.ResolutionStatus = "InProgress";
+            bugDetails.ResolvedOn = DateTime.UtcNow;
+            await _bugAssignment.Update(bugId, bugDetails);
+
+            //updating bugs db
+            BugData.ResolvedAt = DateTime.UtcNow;
+            BugData.Status = "InProgress";
+            await _bugsRepository.Update(bugId, BugData);
+
+            var bugAssignmentResponse = new BugAssignmentResponse
+            {
+                AssignedDate = bugDetails.AssignedDate,
+                BugId = bugDetails.BugId,
+                DevId = bugDetails.DevId,
+                AssignedById = bugDetails.AssignedById,
+                ResolutionStatus = bugDetails.ResolutionStatus,
+                Bug = new BugResponse
+                {
+                    BugId = BugData.BugId,
+                    BugName = BugData.BugName,
+                    Description = BugData.Description,
+                    Screenshot = BugData.Screenshot,
+                    CvssScore = BugData.CvssScore,
+                    SubmittedOn = BugData.SubmittedOn,
+                    ResolvedAt = BugData.ResolvedAt,
+                    Status = BugData.Status,
+                    SubmittedById = BugData.SubmittedById
+                }
+            };
+
+            return bugAssignmentResponse;
+
         }
         
         private async Task<long> GetBugSubmitterId(string email)

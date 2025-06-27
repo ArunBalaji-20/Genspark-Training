@@ -1,0 +1,84 @@
+<!-- <p>chat-list works!</p> -->
+<div class="d-flex justify-content-center mt-4">
+  <div style="
+      max-height: 500px;          /* Vertical height (rows scroll if too many) */
+      overflow-y: auto;           /* Vertical scroll */
+      overflow-x: auto;           /* Horizontal scroll if table too wide */
+      width: 100%;                /* Full width */
+  ">
+      @if(mybugs.length==0)
+        {
+            <p id="nobugs">No bugs assigned to you</p>
+           
+        }
+      @else {
+
+      
+    <table class="table table-hover table-dark custom-table w-100">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">bugName</th>
+          <th scope="col">description</th>
+          <th scope="col">submittedOn</th>
+          <th scope="col">resolvedAt</th>
+          <th scope="col">status</th>
+          <th scope="col">submittedById</th>
+          <th scope="col">Chat</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        @if(isFetching)
+        {
+          <tr>
+            <td colspan="6" class="text-center">Loading...</td>
+          </tr>
+        }
+    
+        
+            <tr *ngFor="let bug of mybugs; let i = index"> 
+           <th scope="row">{{ i + 1 }}</th>
+          <td>{{ bug.bugName }}</td>
+          <td>{{ bug.description }}</td>
+          <td>{{ bug.submittedOn }}</td> 
+          @if(bug.resolvedAt)
+          {
+          <td>{{ bug.resolvedAt }}</td> 
+
+          }
+          @else {
+          <td>Yet to be Resolved</td> 
+
+          }
+          <td>{{ bug.status }}</td> 
+          <td>{{ bug.submittedById }}</td> 
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="handleChat(bug.bugId)" >Enter chat </button>
+          </td> 
+
+          
+           
+         </tr>
+        
+       
+      </tbody>
+    </table>
+}
+  </div>
+
+</div>
+
+  <!-- "$id": "1",
+  "$values": [
+    {
+      "$id": "2",
+      "bugId": 1,
+      "bugName": "SQL Injection",
+      "description": "Time based Sql Injection found in dashboard",
+      "screenshot": "/Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI/screenshots/bf7eae7a-9216-4f68-9337-9ec934b1a881.png",
+      "cvssScore": 9,
+      "submittedOn": "2025-06-09T14:34:14.673572Z",
+      "resolvedAt": "2025-06-09T17:51:52.385667Z",
+      "status": "Resolved",
+      "submittedById": 1 -->

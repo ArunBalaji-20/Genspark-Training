@@ -1,1 +1,92 @@
-<p>assign works!</p>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Bug Details</h4>
+        </div>
+
+        <div class="card-body bg-light">
+          <form [formGroup]="bugAssignForm" (ngSubmit)="handleAssignment()">
+
+            <!-- Bug Id (readonly) -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Bug ID</label>
+              <input type="text" class="form-control" [value]="bug?.bugId" readonly>
+            </div>
+
+            <!-- screenshot -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Screenshot</label>
+              <img [src]="getScreenshotUrl()" alt="bug screenshot" class="img-fluid rounded border" >
+            </div>
+
+            <!-- Bug Name -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Bug Name</label>
+              <input type="text" class="form-control" [value]="bug?.bugName" readonly>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Description</label>
+              <textarea class="form-control" rows="4" [value]="bug?.description" readonly></textarea>
+            </div>
+
+            <!-- CVSS Score -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">CVSS Score</label>
+              <input type="text" class="form-control" [value]="bug?.cvssScore" readonly>
+            </div>
+
+            <!-- Submitted On -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Submitted On</label>
+              <input type="text" class="form-control" [value]="bug?.submittedOn" readonly>
+            </div>
+
+            <!-- Resolved At -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Resolved At</label>
+              <input type="text" class="form-control" [value]="bug?.resolvedAt ? bug?.resolvedAt : 'Yet to be resolved'" readonly>
+            </div>
+             <!-- status -->
+            <div class="form-group mb-3">
+              <label class="fw-bold">Status</label>
+              <input type="text" class="form-control" [value]="bug?.status" readonly>
+            </div>
+          
+           <div class="form-group mb-4">
+            <label class="fw-bold">Assign Developer</label>
+            <select class="form-select" formControlName="AssignedDevId" required>
+                <option value="" disabled selected>Select a developer</option>
+                <option *ngFor="let dev of availableDevs" [value]="dev.employeeId">
+                {{ dev.name }}
+                </option>
+            </select>
+            </div>
+
+            <!-- Update button -->
+            <button type="submit" class="btn btn-success w-100">Update Status</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@if (statusMessage) {
+  <div class="alert alert-success custom-alert" role="alert">
+    {{statusMessage}}
+  </div>
+} 
+
+<!-- Error message -->
+ @if (errorMessage) {
+  <div class="alert alert-danger  custom-alert" role="alert">
+    Error: {{errorMessage}}!!
+  </div>
+}

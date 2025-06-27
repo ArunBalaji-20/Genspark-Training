@@ -1,1 +1,54 @@
-<p>dashboard works!</p>
+<!-- <p>dashboard works!</p> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <h2 class="dashboard-title">Welcome, Admin</h2>
+  <div class="dashboard-row">
+    <div class="card mb-3 dashboard-main-card">
+      <div class="row g-0">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img src="https://thumbs.dreamstime.com/b/admin-user-icon-account-has-virtually-unlimited-access-to-all-programs-isolated-background-vector-illustration-322126763.jpg" class="img-fluid rounded-start admin-img" alt="Admin">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Admin Dashboard</h5>
+            <p class="card-text">View Bug stats and manage your team efficiently.</p>
+            <!-- <p class="card-text"><small class="text-body-secondary">New Notifications - <span class="notif-count">5</span></small></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-custom stats-card">
+      <div class="card-body">
+        <h5 class="card-title">Developers</h5>
+        <p class="card-text stats-number">{{totalDev}}</p>
+      </div>
+    </div>
+    <div class="card card-custom stats-card">
+      <div class="card-body">
+        <h5 class="card-title">Testers</h5>
+        <p class="card-text stats-number">{{totalTesters}}</p>
+      </div>
+    </div>
+    <div class="card card-custom stats-card">
+      <div class="card-body">
+        <h5 class="card-title">Total Bugs</h5>
+        <p class="card-text stats-number">{{TotalBugs}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="chart-container">
+    <canvas id="StatusChart" width="350" height="400"></canvas>
+  </div>
+</div>
+
+</body>
+</html>

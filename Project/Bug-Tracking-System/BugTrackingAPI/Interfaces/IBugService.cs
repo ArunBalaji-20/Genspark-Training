@@ -8,7 +8,8 @@ namespace BugTrackingAPI.Interfaces
         public Task<BugSubmission> SubmitBug(BugSubmission bug, string email);
 
         public Task<IEnumerable<BugResponse>> GetAllBugsList();
+        public  Task<IEnumerable<BugResponse>> GetAllBugsInSubmittedState();
 
-        public  Task<BugResponse> GetBugStatus(long BugId);
+        public Task<BugResponse> GetBugStatus(long BugId);
     }
 }

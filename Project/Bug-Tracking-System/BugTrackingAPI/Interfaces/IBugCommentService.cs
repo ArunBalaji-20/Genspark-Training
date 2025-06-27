@@ -11,6 +11,8 @@ namespace BugTrackingAPI.Interfaces
 
         public Task<IEnumerable<string>> GetAllCommentsForBug(long bugId);
 
-        public Task<string> DeleteComments(long commentId,string email,string role);
+        public Task<IEnumerable<BugAllCommentsResponse>> GetAllCommentsForBugV2(long bugId);
+
+        public Task<string> DeleteComments(long commentId, string email, string role);
     }
 }

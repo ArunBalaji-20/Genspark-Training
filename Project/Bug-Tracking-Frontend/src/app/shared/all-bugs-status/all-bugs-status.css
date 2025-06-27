@@ -1,0 +1,27 @@
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; 
+  padding: 20px;
+  margin-left:5rem;
+}
+
+.no-recipe-container{
+    text-align: center;
+    margin-top: 25%;
+}
+
+.no-recipe-container p{
+    font-size: large;
+}
+
+html, body {
+      min-height: 100vh;
+      background: #d7d7d7;
+    }
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }

@@ -1,0 +1,120 @@
+html, body {
+      min-height: 100vh;
+      background: #e9ecef;
+    }
+ body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+.dashboard-container {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  letter-spacing: 1px;
+}
+
+.dashboard-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-main-card {
+  flex: 2 1 350px;
+  min-width: 340px;
+  max-width: 540px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-radius: 18px;
+  background: #f8f9fa;
+  border: none;
+}
+
+.admin-img {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.card-custom.stats-card {
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 320px;
+  margin: 0;
+  border-radius: 18px;
+  background: #f8f9fa;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-custom .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 2.5rem 1.5rem;
+}
+
+.stats-number {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-top: 1rem;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.chart-container canvas {
+  max-width: 1000px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+}
+
+.notif-count {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .dashboard-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .chart-container {
+    justify-content: center;
+  }
+}

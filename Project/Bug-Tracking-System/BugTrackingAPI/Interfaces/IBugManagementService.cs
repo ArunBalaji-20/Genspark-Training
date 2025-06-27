@@ -9,8 +9,12 @@ namespace BugTrackingAPI.Interfaces
 
         public Task<BugAssignmentResponse> ResolveBugs(long bugId, string email);
 
+        public Task<BugAssignmentResponse> UpdateInProgress(long bugId, string email);
+
         public Task<IEnumerable<AssignedResponse>> GetAssignedList();
 
-        public  Task<IEnumerable<AvailableDev>> GetAvailableDevs();
+        public Task<IEnumerable<AvailableDev>> GetAvailableDevs();
+
+        public Task<IEnumerable<BugResponse>> GetBugsAssignedToMe(string email);
     }
 }

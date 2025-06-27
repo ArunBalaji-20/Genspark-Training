@@ -81,6 +81,65 @@ namespace BugTrackingAPI.Services
             var result=await _bugCommentRepo.Delete(commentId);
             return "Comment Deleted Successfully";
         }
+
+
+        public async Task<IEnumerable<BugAllCommentsResponse>> GetAllCommentsForBugV2(long bugId)
+        {
+            var allComments = await _bugCommentRepo.GetAll();
+            // var comments = allComments
+            // .Where(e => e.BugId == bugId)
+            // .Select(async f => new BugAllCommentsResponse
+            // {
+            //     Comment = f.Comment,
+            //     BugId = f.BugId,
+            //     CommentedOn = f.CommentedOn,
+            //     CommenterId = f.CommenterId,
+            //     CommenterName= await GetCommenterName(f.CommenterId)
+            // })
+            // .ToList();
+            // System.Console.WriteLine(comments);
+
+            // var commentTasks = allComments
+            //     .Where(e => e.BugId == bugId)
+            //     .Select(async f => new BugAllCommentsResponse
+            //     {
+            //         Comment = f.Comment,
+            //         BugId = f.BugId,
+            //         CommentedOn = f.CommentedOn,
+            //         CommenterId = f.CommenterId,
+            //         CommenterName = await GetCommenterName(f.CommenterId)
+            //     });
+
+            // var comments = await Task.WhenAll(commentTasks);
+            
+            var filtered = allComments.Where(e => e.BugId == bugId);
+
+            var comments = new List<BugAllCommentsResponse>();
+
+            foreach (var f in filtered)
+            {
+                var commenterName = await GetCommenterName(f.CommenterId); // Safe: one at a time
+
+                comments.Add(new BugAllCommentsResponse
+                {
+                    Comment = f.Comment,
+                    BugId = f.BugId,
+                    CommentedOn = f.CommentedOn,
+                    CommenterId = f.CommenterId,
+                    CommenterName = commenterName
+                });
+            }
+
+
+            return comments;
+        }
+
+        private async Task<string> GetCommenterName(long id)
+        {
+            var employee = await _employeeRepository.Get(id);
+            var name = employee.Name;
+            return name;
+        }
         private async Task<long> GetBugSubmitterId(string email)
         {
             var result = await _employeeRepository.GetEmployeeByEmail(email);

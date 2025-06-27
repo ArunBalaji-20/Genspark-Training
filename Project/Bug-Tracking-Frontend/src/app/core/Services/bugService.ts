@@ -26,6 +26,41 @@ export class bugService
     });
 }
 
+    getAllBugStatusAPI()
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.get('http://localhost:5258/api/v1/Bugs/ReportedBugs',{
+             headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+
+        });
+    }
+
+    getAllBugsInSubmittedState()
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.get('http://localhost:5258/api/v2/Bugs/Get/InSubmittedState',{
+              headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+
+        });
+    }
+
+    assignBugToDevAPI(data:any)
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.post('http://localhost:5258/api/v1/BugsManagement/Assign',data,{
+             headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+
+        });
+    }
 }
 
 // http://localhost:5258/api/v1/Bugs/Report

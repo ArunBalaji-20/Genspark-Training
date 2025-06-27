@@ -7,6 +7,9 @@ import { provideHttpClient } from '@angular/common/http';
 import { authGuard } from './auth-guard';
 import { bugService } from './core/Services/bugService';
 import { empManageService } from './core/Services/empManageService';
+import { devBugService } from './core/Services/devBugService';
+import { bugCommentService } from './core/Services/bugCommentService';
+import { NotificationService } from './core/Services/notificationService';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +20,10 @@ export const appConfig: ApplicationConfig = {
     authService,
     authGuard,
     bugService,
-    empManageService
+    empManageService,
+    devBugService,
+    bugCommentService,
+    NotificationService
+
   ]
 };

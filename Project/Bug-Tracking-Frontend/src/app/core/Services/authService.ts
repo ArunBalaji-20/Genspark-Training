@@ -16,15 +16,14 @@ export class authService
       const payload = this.parseJwt(token);
       if (payload) {
         this._role.set(payload?.role || '');
+        this._email.set(payload?.email || '')
       }
     }
   }
 
-  // Expose role as signal
   role = computed(() => this._role());
   email=computed(()=> this._email());
 
-  // Public API
   isLoggedIn(): boolean {
     return this._role() !== '';
   }
@@ -33,7 +32,6 @@ export class authService
     this._role.set('');
     this.deleteCookie('access_token');
     this.deleteCookie('refresh_token')
-    // optionally navigate to login page
   }
 
  loginAPI(email: string, password: string) {
@@ -61,7 +59,6 @@ logoutAPI() {
 }
 
 
-  // Called after successful login (when backend returns JWT)
   setAuthToken(token: string,refreshToken:string): void {
     this.setCookie('access_token', token, 1); // 1-day expiry
     this.setCookie('refresh_token',refreshToken,7)
@@ -70,7 +67,6 @@ logoutAPI() {
     this._email.set(payload?.email || '');
   }
 
-  // JWT decode (payload only)
   private parseJwt(token: string): any {
     try {
       const base64Url = token.split('.')[1];
@@ -84,7 +80,7 @@ logoutAPI() {
     }
   }
 
-  // Cookie helpers
+  
   private setCookie(name: string, value: string, days: number): void {
     const expires = new Date(Date.now() + days * 86400000).toUTCString();
     document.cookie = `${name}=${value}; expires=${expires}; path=/`;

@@ -84,7 +84,8 @@ namespace BugTrackingAPI.Services
                 CvssScore = bugDto.CvssScore,
                 SubmittedOn = DateTime.UtcNow,
                 ResolvedAt = null,
-                Status = "ongoing",
+                // Status = "ongoing",
+               Status="Submitted",
                 Screenshot = filePath
 
             };
@@ -94,7 +95,27 @@ namespace BugTrackingAPI.Services
 
         }
 
-        
+        public async Task<IEnumerable<BugResponse>> GetAllBugsInSubmittedState()
+        {
+            var result = await _bugsRepository.GetAll();
+            var sortedBugs = result.Where(e => e.Status == "Submitted").ToList();
+            var bugs = sortedBugs
+            .Select(b => new BugResponse
+            {
+                BugId = b.BugId,
+                BugName = b.BugName,
+                Description = b.Description,
+                Screenshot = b.Screenshot,
+                CvssScore = b.CvssScore,
+                SubmittedOn = b.SubmittedOn,
+                ResolvedAt = b.ResolvedAt,
+                Status = b.Status,
+                SubmittedById = b.SubmittedById
+            })
+            .ToList(); 
+
+            return bugs;   
+        }
         
 
         private async Task<long> GetBugSubmitterId(string email)

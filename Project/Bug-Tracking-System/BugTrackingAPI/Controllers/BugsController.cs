@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.SignalR;
 namespace BugTrackingAPI.Controllers
 {
     [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class BugsController : ControllerBase
@@ -29,6 +30,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpGet("ReportedBugs")]
+        [MapToApiVersion(1.0)]
         [Authorize(Roles = "Admin,Tester,Dev")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -43,7 +45,26 @@ namespace BugTrackingAPI.Controllers
 
 
         }
+
+        [HttpGet("Get/InSubmittedState")]
+        [MapToApiVersion(2.0)]
+        [Authorize(Roles = "Admin")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugResponse>>> BugsInSubmittedState()
+        {
+            var result = await _bugService.GetAllBugsInSubmittedState();
+            return Ok(result);
+
+
+        }
+
         [HttpGet("status")]
+        [MapToApiVersion(1.0)]
         [Authorize(Roles = "Admin,Tester,Dev")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -58,6 +79,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpPost("Report")]
+        [MapToApiVersion(1.0)]
         [Authorize(Roles = "Admin,Tester")]
         [Consumes("multipart/form-data")]
         [CustomExceptionFilter]

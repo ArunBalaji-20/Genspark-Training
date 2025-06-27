@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from "./shared/navbar/navbar";
+import { NotificationService } from './core/Services/notificationService';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,12 @@ import { Navbar } from "./shared/navbar/navbar";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit{
   protected title = 'Bug-Tracking-Frontend';
+  constructor(private notificationService:NotificationService)
+  {}
+
+  ngOnInit(): void {
+    this.notificationService.startConnection();
+  }
 }

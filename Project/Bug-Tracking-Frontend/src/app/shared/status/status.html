@@ -1,1 +1,50 @@
-<p>status works!</p>
+<!-- 
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="getScreenshotUrl()" alt="bug  image cap">
+    <div class="card-body">
+      <h5 class="card-title">Name: {{bug?.bugName}}</h5>
+      <p class="card-text">Description: {{bug?.description}}</p>
+      <p class="card-text">CVSS Score : {{bug?.cvssScore}} </p>
+      <p class="card-text">Submitten On : {{bug?.submittedOn}} </p>
+      @if(bug?.resolvedAt==null){
+              <p class="card-text">resolved At : Yet to be resolved </p>
+      }
+      @else {
+              <p class="card-text">resolved At : {{bug?.resolvedAt}} </p>
+      }
+      <p class="card-text">status : {{bug?.status}} </p>
+      <p class="card-text">Reporter Id : {{bug?.submittedById}} </p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+ -->
+
+ 
+
+<div class="card" 
+     [ngClass]="getStatusClass()" 
+     style="width: 18rem;">
+    <img class="card-img-top" [src]="getScreenshotUrl()" alt="bug image cap" > 
+    <div class="card-body">
+      <h5 class="card-title">Name: {{bug?.bugName}}</h5>
+      <p class="card-text">Description: {{bug?.description}}</p>
+      <p class="card-text">CVSS Score : {{bug?.cvssScore}} </p>
+      <p class="card-text">Submitted On : {{bug?.submittedOn}} </p>
+      <p class="card-text">
+        Resolved At: {{ bug?.resolvedAt ? bug?.resolvedAt : 'Yet to be resolved' }}
+      </p>
+      <p class="card-text">Status : {{bug?.status}} </p>
+      <p class="card-text">Reporter Id : {{bug?.submittedById}} </p>
+    </div>
+</div>
+

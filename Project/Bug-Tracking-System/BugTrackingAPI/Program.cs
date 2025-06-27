@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using BugTrackingAPI.Hubs;
 using System.Threading.RateLimiting;
 using Serilog;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -101,6 +102,7 @@ builder.Services.AddTransient<IRepository<long, BugAssignment>, BugsAssignmentRe
 builder.Services.AddTransient<IRepository<long, BugComment>, BugCommentRepository>();
 builder.Services.AddTransient<IRepository<long, BlackListedToken>, BlackListRepository>();
 builder.Services.AddTransient<IBlackListRepository, BlackListRepository>();
+builder.Services.AddTransient<IBugManagementRepository, BugsAssignmentRepository>();
 #endregion
 
 #region Services
@@ -232,6 +234,14 @@ app.UseMiddleware<RequestLoggingMiddleware>();
 
 // app.UseHttpsRedirection();
 // app.UseRouting();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "screenshots")),
+    RequestPath = "/screenshots"
+});
+
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
