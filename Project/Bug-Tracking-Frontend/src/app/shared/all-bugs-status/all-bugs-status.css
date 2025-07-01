@@ -25,3 +25,14 @@ html, body {
       margin: 0;
       padding: 2rem;
     }
+
+
+@media (max-width: 900px) {
+  .recipe-container{
+    margin-left: 1rem;
+    gap:30px
+  }
+  .custom-inp{
+    max-width: 50%;
+  }
+}

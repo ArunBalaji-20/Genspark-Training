@@ -23,6 +23,18 @@ export class devBugService
         })
     }
 
+    getMyBugsByIdAPI(id:number)
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.get(`http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=${id}`,{
+            
+            headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+        }),
+            observe:'response'
+        })
+    }
+
     getBugStatusAPI(id:number)
     {
         const token=this.authService.getCookie("access_token"); 

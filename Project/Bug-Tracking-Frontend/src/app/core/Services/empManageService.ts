@@ -50,4 +50,38 @@ export class empManageService
         })
 
     }
+
+    getEmployeeDetailsAPI(id:number)
+    {
+        const token=this.authService.getCookie('access_token');
+        return this.http.get(`http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=${id}`,{
+            headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+            }),
+            observe:'response'
+        })
+    }
+
+    getBugsReportedByAPI(id:number)
+    {
+
+        const token=this.authService.getCookie('access_token');
+        return this.http.get(`http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=${id}`,{
+             headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+            }),
+            observe:'response'
+        });
+    }
+
+    getLatestCommentsAPI(id:number)
+    {
+        const token=this.authService.getCookie('access_token');
+        return this.http.get(`http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=${id}`,{
+            headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+            }),
+            observe:'response'
+        });
+    }
 }

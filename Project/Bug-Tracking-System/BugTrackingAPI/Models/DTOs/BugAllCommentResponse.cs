@@ -2,7 +2,7 @@ namespace BugTrackingAPI.Models.DTO
 {
     public class BugAllCommentsResponse
     {
-
+        public long CommentId{ get; set; }
         public string Comment { get; set; } = string.Empty;
 
         public DateTime CommentedOn { get; set; }

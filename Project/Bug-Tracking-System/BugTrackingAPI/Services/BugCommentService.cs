@@ -122,6 +122,7 @@ namespace BugTrackingAPI.Services
 
                 comments.Add(new BugAllCommentsResponse
                 {
+                    CommentId=f.CommentId,
                     Comment = f.Comment,
                     BugId = f.BugId,
                     CommentedOn = f.CommentedOn,
@@ -144,6 +145,29 @@ namespace BugTrackingAPI.Services
         {
             var result = await _employeeRepository.GetEmployeeByEmail(email);
             return result.EmployeeId;
+        }
+
+        public async Task<IEnumerable<BugAllCommentsResponse>> GetLatestComments(long id)
+        {
+            var Comments = await _bugCommentRepo.GetAll();
+            var name = await GetCommenterName(id);
+
+            var latestComments = Comments
+        .Where(e => e.CommenterId == id)
+        .OrderByDescending(e => e.CommentedOn)
+        .Take(3)
+        .Select(e => new BugAllCommentsResponse
+        {
+            CommentId = e.CommentId,
+            Comment = e.Comment,
+            CommentedOn = e.CommentedOn,
+            BugId = e.BugId,
+            CommenterId = e.CommenterId,
+            CommenterName= name
+        })
+        .ToList();
+
+            return latestComments;
         }
     }
 }

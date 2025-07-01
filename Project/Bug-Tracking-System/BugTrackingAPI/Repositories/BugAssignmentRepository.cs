@@ -15,7 +15,7 @@ namespace BugTrackingAPI.Repositories
 
         public override async Task<BugAssignment> Get(long key)
         {
-            return await _bugContext.BugAssignments.FirstOrDefaultAsync(e => e.BugId == key);
+            return await _bugContext.BugAssignments.FirstOrDefaultAsync(e => e.BugId == key); //changed assignmentid to bugid here 
         }
 
         public override async Task<IEnumerable<BugAssignment>> GetAll()

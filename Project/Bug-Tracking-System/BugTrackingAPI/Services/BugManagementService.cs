@@ -228,6 +228,12 @@ namespace BugTrackingAPI.Services
             
         }
 
+        public async Task<IEnumerable<BugResponse>> GetBugsAssignedToDev(long empId)
+        {
+            var bugs = await _bugManagementRepository.GetBugsAssignedToMe(empId);
+            
+            return bugs;
+        }
 
         // public async Task<> UpdateInProgress()
         public async Task<BugAssignmentResponse> UpdateInProgress(long bugId, string email)
@@ -248,9 +254,9 @@ namespace BugTrackingAPI.Services
                 throw new Exception("Bug Not yet assigned");
             }
             if (ResolverId != bugDetails.DevId)
-                {
-                    throw new Exception("You cannot fix this bug because it is not assigned to you");
-                }
+            {
+                throw new Exception("You cannot fix this bug because it is not assigned to you");
+            }
             //updating bug assignment db
             bugDetails.ResolutionStatus = "InProgress";
             bugDetails.ResolvedOn = DateTime.UtcNow;

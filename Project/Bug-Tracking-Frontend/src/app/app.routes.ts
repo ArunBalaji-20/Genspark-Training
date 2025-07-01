@@ -16,6 +16,7 @@ import { AllBugsStatus } from './shared/all-bugs-status/all-bugs-status';
 import { Managebugs } from './developer/managebugs/managebugs';
 import { AllBugsAssign } from './admin/all-bugs-assign/all-bugs-assign';
 import { ChatList } from './shared/chat-list/chat-list';
+import { ViewEmployee } from './admin/view-employee/view-employee';
 
 export const routes: Routes = [
     {path:'login',component:Login},
@@ -37,10 +38,15 @@ export const routes: Routes = [
   },
    {path:'admin/manage/employees',component:Manage,canActivate:[authGuard],data:{roles:['Admin']}},
    {path:'admin/manage/add',component:Add,canActivate:[authGuard],data:{roles:['Admin']}},
+//    /admin/view/employee
+  {path:'admin/manage/employees/view',component:ViewEmployee,canActivate:[authGuard],data:{roles:['Admin']}},
+
+  
 
     {path:'tester/report',component:Report,canActivate:[authGuard],data: { roles: ['Tester']}},
     // {path:'tester/chat',component:Chat,canActivate:[authGuard],data: { roles: ['Tester']}},
     {path:'tester/chatList',component:ChatList,canActivate:[authGuard],data: { roles: ['Tester']}},
+    {path:'tester/status',component:AllBugsStatus,canActivate:[authGuard],data:{roles:['Tester']}},
 
 
     {path:'developer/myBugs',component:MyBugs,canActivate:[authGuard],data: { roles: ['Dev']}},

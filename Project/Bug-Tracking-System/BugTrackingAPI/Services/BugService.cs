@@ -116,7 +116,39 @@ namespace BugTrackingAPI.Services
 
             return bugs;   
         }
-        
+
+        public async Task<IEnumerable<BugResponse>> GetBugsReportedBy(long empId)
+        {
+            var result = await _bugsRepository.GetAll();
+
+            if (result == null)
+            {
+                throw new Exception("No bugs found");
+            }
+            
+            var sortedBugs = result.Where(e => e.SubmittedById == empId).ToList();
+
+            if (sortedBugs == null)
+            {
+                throw new Exception("Invalid EmployeeId");
+            }
+            var bugs = sortedBugs
+            .Select(b => new BugResponse
+            {
+                BugId = b.BugId,
+                BugName = b.BugName,
+                Description = b.Description,
+                Screenshot = b.Screenshot,
+                CvssScore = b.CvssScore,
+                SubmittedOn = b.SubmittedOn,
+                ResolvedAt = b.ResolvedAt,
+                Status = b.Status,
+                SubmittedById = b.SubmittedById
+            })
+            .ToList(); 
+
+            return bugs;  
+        }
 
         private async Task<long> GetBugSubmitterId(string email)
         {

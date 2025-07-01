@@ -38,6 +38,19 @@ export class bugService
         });
     }
 
+    getAllBugsAssignedListAPI()
+    {
+        const token=this.authService.getCookie("access_token"); 
+
+         return this.http.get('http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists',{
+             headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+
+        });
+    }
+
     getAllBugsInSubmittedState()
     {
         const token=this.authService.getCookie("access_token"); 

@@ -44,32 +44,3 @@ export class AllBugsAssign implements OnInit {
 
 }
 
-//  mybugs:BugStatusModel[]=[];
-//   constructor(private devBugService:devBugService,private router:Router)
-//   {}
-//   ngOnInit(): void {
-//     this.devBugService.getMyBugsAPI().subscribe({
-//       next:(data)=>{
-//         console.log(data)
-//         this.mybugs=(data.body as any)?.$values ??[];
-        
-//         // this.employees = (res.body as any)?.$values ?? [];
-//         console.log("from ngonint dev mybugs")
-//       },
-//       error:(err)=>{
-//         console.log(err)
-//       },
-//       complete:()=>{
-//         console.log('completed api dev mybugs')
-//       }
-//     })
-
-//   }
-
-//   updateStatus(id:number)
-//   {
-//     console.log(id)
-//     // this.router.navigateByUrl("/developer/managebugs");
-//     this.router.navigate(['/developer/managebugs'],{queryParams:{id:`${id}`}})
-//     console.log("redirected to manage")
-//   }

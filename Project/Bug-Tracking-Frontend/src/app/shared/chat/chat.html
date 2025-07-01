@@ -14,12 +14,17 @@
 
 @for(msg of comments; track $index)
 {
+    <!-- @if(authService.)
+    {
+
+    } -->
     <div class="chat-message">
       <div class="message-meta">
         <strong>{{msg.commenterName}}</strong> • {{msg.commentedOn}}
       </div>
       <div class="message-content">
         {{msg.comment}}
+        <button id="delete-btn" (click)="confirmDelete(msg.commentId)">Delete</button>
       </div>
     </div>
 }
@@ -30,7 +35,12 @@
     <input type="text" [(ngModel)]="newComment" placeholder="Type your comment..." required />
     <button (click)="handleSend()">Send</button>
   </div>
+
 </div>
+  @if(deleteError)
+{
+    <h3 id="deleteError"></h3>
+}
 
 </body>
 </html>

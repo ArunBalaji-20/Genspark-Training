@@ -41,6 +41,7 @@ import { BugStatusModel } from '../../core/Models/BugStatusModel';
 import { bugService } from '../../core/Services/bugService';
 import { Status } from '../status/status';
 import { FormsModule } from '@angular/forms';
+import { BugAssignmentModel } from '../../core/Models/BugAssignmentModel';
 
 @Component({
   selector: 'app-all-bugs-status',
@@ -51,6 +52,7 @@ import { FormsModule } from '@angular/forms';
 export class AllBugsStatus implements OnInit {
 
     bugs = signal<BugStatusModel[]>([]);
+    assignments=signal<BugAssignmentModel[]>([]);
     searchTerm = signal<string>('');
     statusFilter = signal<string>('');
 
@@ -83,5 +85,20 @@ export class AllBugsStatus implements OnInit {
           console.log(err);
         }
       });
+     this.bugService.getAllBugsAssignedListAPI().subscribe({
+        next:(data:any)=>{
+          console.log(data)
+          this.assignments.set(data.body.$values as BugAssignmentModel[]);
+        },
+        error:(err)=>{
+          console.log(err)
+        },
+        complete:()=>{
+          console.log("completed fetching assigned list api")
+        }
+      })
+     
     }
+
+    
 }

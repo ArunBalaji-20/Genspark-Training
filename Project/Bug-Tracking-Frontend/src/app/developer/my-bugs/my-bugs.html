@@ -13,7 +13,7 @@
       @else {
 
       
-    <table class="table table-hover table-dark custom-table w-100">
+    <table class="table table-hover table-dark custom-table w-75">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -23,7 +23,7 @@
           <th scope="col">submittedOn</th>
           <th scope="col">resolvedAt</th>
           <th scope="col">status</th>
-          <th scope="col">submittedById</th>
+          <!-- <th scope="col">submittedById</th> -->
           <th scope="col">Manage</th>
 
         </tr>
@@ -53,7 +53,7 @@
 
           }
           <td>{{ bug.status }}</td> 
-          <td>{{ bug.submittedById }}</td> 
+          <!-- <td>{{ bug.submittedById }}</td>  -->
 
           @if(bug.status=="Resolved")
           {

@@ -1,0 +1,82 @@
+<!-- <p>view-employee works!</p> -->
+
+<div class="container mt-4">
+  <!-- Profile Card -->
+  <div class="card profile-card mb-4 p-3 d-flex flex-row align-items-center">
+    @if(empDetails.role=="Admin")
+    {
+    <img src="https://thumbs.dreamstime.com/b/admin-user-icon-account-has-virtually-unlimited-access-to-all-programs-isolated-background-vector-illustration-322126763.jpg" alt="Profile Picture" class="profile-img me-4" />
+
+    }
+    @else if (empDetails.role=="Dev") {
+            <img src="https://cdn-icons-png.flaticon.com/512/6840/6840478.png" alt="Profile Picture" class="profile-img me-4" />
+
+    }
+    @else {
+     
+        <img src="https://i.pinimg.com/1200x/5c/0a/e1/5c0ae14e3fbc583dbd28eb154264b224.jpg" alt="Profile Picture" class="profile-img me-4" />
+
+    }
+    
+    <div class="flex-grow-1">
+      <h5>Name: <span class="text-primary">{{empDetails.name}}</span></h5>
+      <p>EmployeeId: <span class="text-dark">{{empDetails.employeeId}}</span></p>
+      <p>Email: <span class="text-dark">{{empDetails.email}}</span></p>
+      <p>Role: <span class="text-dark">{{empDetails.role}}</span></p>
+      <button class="btn btn-danger mt-2" (click)="confirmDelete(empDetails.employeeId)">Delete</button>
+    </div>
+  </div>
+
+
+  <!-- Bugs Section -->
+  <div class="card mb-3 p-3">
+    @if(empDetails.role=="Dev")
+    {
+        <h5>Bugs Assigned </h5>
+        @if(bugsAssignedToMe.length==0)
+        {
+            <h5>No bugs assigned</h5>
+        }
+         <ul>
+         @for (item of bugsAssignedToMe; track $index) {
+      <li>Bug {{$index+1}}: {{item.bugName}} | status : {{item.status}}</li>
+        
+    }
+      
+    </ul>
+    }
+    @else {
+    <h5>Bugs Reported</h5>
+        @if(mybugs.length==0)
+        {
+            <h5>No bugs reported</h5>
+        }
+          <ul>
+         @for (item of mybugs; track $index) {
+      <li>Bug {{$index+1}}: {{item.bugName}} | status : {{item.status}}</li>
+        
+    }
+      
+    </ul>
+    }
+   
+  
+  </div>
+
+  <!-- Latest Comments Section -->
+  <div class="card p-3">
+    <h5>Latest Comments</h5>
+    @if(latestComments.length==0)
+    {
+        <h5>No Comments posted</h5>
+    }
+    <ul>
+        @for (item of latestComments; track $index){
+            <li>bug id: {{item.bugId}}  | Comment: {{item.comment}}</li>
+        }
+      
+      <!-- <li>Please check the UI once more.</li> -->
+      <!-- <li>This is critical. Needs attention.</li> -->
+    </ul>
+  </div>
+</div>

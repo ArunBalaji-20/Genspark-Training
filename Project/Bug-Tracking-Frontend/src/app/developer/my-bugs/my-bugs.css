@@ -19,6 +19,7 @@
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   background: #23272b;
+  margin-left: 10%;
 }
 
 .table thead th {

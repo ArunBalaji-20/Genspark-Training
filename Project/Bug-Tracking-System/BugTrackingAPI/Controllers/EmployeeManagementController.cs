@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BugTrackingAPI.Controllers
 {
     [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     // [Route("api/[controller]")]
     [ApiController]
@@ -24,6 +25,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpGet("GetAll")]
+        [MapToApiVersion("1.0")]
         [Authorize(Roles = "Admin")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -38,6 +40,7 @@ namespace BugTrackingAPI.Controllers
         }
 
         [HttpDelete("Delete")]
+        [MapToApiVersion("1.0")]
         [Authorize(Roles = "Admin")]
         [CustomExceptionFilter]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -50,6 +53,21 @@ namespace BugTrackingAPI.Controllers
             var message = await _employeeManagementService.DeleteEmployee(EmployeeId);
             // return Ok(message);
             return NoContent();
+        }
+
+        [HttpGet("GetEmployee")]
+        [MapToApiVersion("2.0")]
+        [Authorize(Roles = "Admin")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<EmployeeResponse>> GetEmployeeDetails([FromQuery] long EmployeeId)
+        {
+            var result = await _employeeManagementService.GetEmployeeDetails(EmployeeId);
+            return Ok(result);
         }
     }
 }

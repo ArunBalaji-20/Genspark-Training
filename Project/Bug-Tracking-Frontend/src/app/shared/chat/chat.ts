@@ -17,6 +17,8 @@ export class Chat implements OnInit {
     comments:BugCommentModel[]=[];
     bugid:number=0;
     newComment:string="";
+    deleteError:string="";
+    deleteSuccess:string="";
 
     constructor(private bugCommentService:bugCommentService,private router:ActivatedRoute,public authService:authService)
     {
@@ -53,7 +55,7 @@ export class Chat implements OnInit {
             "bugId":this.bugid
         }
 
-      this.bugCommentService.postComment(data).subscribe({
+      this.bugCommentService.postCommentAPI(data).subscribe({
         next:(data)=>{
           console.log(data)
           this.loadComments()
@@ -63,5 +65,34 @@ export class Chat implements OnInit {
         }
         
       })
+  }
+
+   confirmDelete(id: number) {
+  const confirmed = window.confirm('Are you sure you want to delete this comment?');
+
+  if (confirmed) {
+    this.handleDeleteComment(id);
+  }
+}
+
+  handleDeleteComment(id:number)
+  {
+    console.log(id)
+    this.bugCommentService.deleteCommentAPI(id).subscribe({
+      next:(res)=>{
+        console.log(res)
+        window.alert("Comment deleted Successfully")
+        this.loadComments()
+      },
+      error:(err)=>{
+        this.deleteError=err.error.detail;
+        window.alert("Oops! You can only delete your own comments.")
+        console.log(err)
+      },
+      complete:()=>{
+        console.log('completed deleting comment')
+      }
+
+    })
   }
 }

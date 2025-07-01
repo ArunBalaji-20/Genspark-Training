@@ -10,6 +10,8 @@ namespace BugTrackingAPI.Interfaces
         public Task<IEnumerable<BugResponse>> GetAllBugsList();
         public  Task<IEnumerable<BugResponse>> GetAllBugsInSubmittedState();
 
+        public Task<IEnumerable<BugResponse>> GetBugsReportedBy(long empId);
+
         public Task<BugResponse> GetBugStatus(long BugId);
     }
 }

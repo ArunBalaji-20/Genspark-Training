@@ -70,7 +70,7 @@ namespace BugTrackingAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-           public async Task<ActionResult<BugResponse>> BugStatus([FromQuery] long BugId)
+        public async Task<ActionResult<BugResponse>> BugStatus([FromQuery] long BugId)
         {
             var result = await _bugService.GetBugStatus(BugId);
             return Ok(result);
@@ -106,6 +106,23 @@ namespace BugTrackingAPI.Controllers
             await _hubContext.Clients.All.SendAsync("ReceiveNotification", $"New Bug Reported: {result.BugName}");
             // System.Console.WriteLine("after");
             return Created("", result);
+
+        }
+        
+        [HttpGet("Get/reportedBy")]
+        [MapToApiVersion(2.0)]
+        [Authorize(Roles = "Admin,Tester")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugResponse>>> BugsReportedBy([FromQuery] long empId)
+        {
+            var result = await _bugService.GetBugsReportedBy(empId);
+            return Ok(result);
+
 
         }
     }

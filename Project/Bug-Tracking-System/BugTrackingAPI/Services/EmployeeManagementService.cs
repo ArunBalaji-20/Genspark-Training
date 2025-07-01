@@ -7,10 +7,16 @@ namespace BugTrackingAPI.Services
     public class EmployeeManagementService : IEmployeeManagementService
     {
         private readonly IRepository<long, Employee> _employeeRepository;
+        private readonly IRepository<long, BugComment> _BugCommentRepo;
+        private readonly IBugManagementRepository _bugManagementRepository;
 
-        public EmployeeManagementService(IRepository<long, Employee> employeeRepository)
+        public EmployeeManagementService(IRepository<long, Employee> employeeRepository,
+                                        IRepository<long, BugComment> BugCommentRepo,
+                                         IBugManagementRepository bugManagementRepository)
         {
             _employeeRepository = employeeRepository;
+            _BugCommentRepo = BugCommentRepo;
+            _bugManagementRepository = bugManagementRepository;
         }
 
         public async Task<IEnumerable<EmployeeResponse>> GetAllEmployees()
@@ -38,5 +44,40 @@ namespace BugTrackingAPI.Services
 
             return "Employee Deleted Successfully";
         }
+
+        public async Task<EmployeeResponse> GetEmployeeDetails(long id)
+        {
+            var empDetails = await _employeeRepository.Get(id);
+            if (empDetails == null)
+            {
+                throw new KeyNotFoundException("employee not found");
+            }
+            var result = new EmployeeResponse
+            {
+                EmployeeId = empDetails.EmployeeId,
+                Email = empDetails.Email,
+                Role = empDetails.Role,
+                Name = empDetails.Name
+            };
+            return result;
+
+            // var Comments = await _BugCommentRepo.GetAll();
+
+            // var latestComments = Comments.Where(e=>e.CommenterId==id).Select()
+            // var latestComments = Comments
+            // .Where(e => e.CommenterId == id)
+            // .OrderByDescending(e => e.CommentedOn)
+            // .Take(3)
+            // .ToList();
+
+            // if (empDetails.Role == "Dev")
+            // {
+            //      var bugs = await _bugManagementRepository.GetBugsAssignedToMe(id);
+            // }
+            // Console.WriteLine(latestComments);
+            // return "done";
+        }
     }
+
+    
 }

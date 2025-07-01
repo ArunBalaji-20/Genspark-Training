@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { empManageService } from '../../core/Services/empManageService';
 import { EmployeeModel } from '../../core/Models/EmployeeModel';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage',
@@ -13,7 +14,7 @@ export class Manage implements OnInit{
     // employees:EmployeeModel=new EmployeeModel();
     employees: EmployeeModel[] = []; 
     isFetching:boolean=false;
-    constructor(private empservice:empManageService)
+    constructor(private empservice:empManageService,private router:Router)
     {}
 
   ngOnInit(): void {
@@ -35,30 +36,31 @@ export class Manage implements OnInit{
 });
   }
 
-  confirmDelete(id: number) {
-  const confirmed = window.confirm('Are you sure you want to delete this employee?');
+//  s
 
-  if (confirmed) {
-    this.deleteEmployee(id);
-  }
-}
+  // deleteEmployee(id:number)
+  // {
+  //     this.empservice.deleteEmployeeAPI(id).subscribe({
+  //       next:(res)=>{
+  //         console.log(res);
+  //         this.getAllEmployees()
 
-  deleteEmployee(id:number)
+  //       },
+  //       error:(err)=>{
+  //         console.log(err);
+  //       },
+  //       complete:()=>{
+  //         console.log("delete finish")
+  //         this.getAllEmployees();
+  //       }
+  //     })
+  // }
+
+  handleView(id:number)
   {
-      this.empservice.deleteEmployeeAPI(id).subscribe({
-        next:(res)=>{
-          console.log(res);
-          this.getAllEmployees()
-
-        },
-        error:(err)=>{
-          console.log(err);
-        },
-        complete:()=>{
-          console.log("delete finish")
-          this.getAllEmployees();
-        }
-      })
+    console.log(id);
+    this.router.navigate(['/admin/manage/employees/view'],{queryParams:{id:`${id}`}})
+    console.log('redirected...')
   }
 
 

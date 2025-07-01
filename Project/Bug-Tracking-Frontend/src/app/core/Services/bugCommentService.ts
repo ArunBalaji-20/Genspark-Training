@@ -20,7 +20,7 @@ export class bugCommentService
 
     }
 
-    postComment(data:any)
+    postCommentAPI(data:any)
     {
         const token=this.authService.getCookie("access_token"); 
         
@@ -31,6 +31,17 @@ export class bugCommentService
         observe: 'response'
     });
 
+    }
+
+    deleteCommentAPI(id:number)
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.delete(`http://localhost:5258/api/v2/BugComment/Delete?commentId=${id}`,{
+                 headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+    });
     }
 }
 

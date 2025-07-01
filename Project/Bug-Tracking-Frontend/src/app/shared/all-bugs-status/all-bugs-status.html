@@ -21,7 +21,7 @@
 </head>
 <body>
     <div
-  class="d-flex mb-4 gap-3 align-items-center justify-content-center p-3 rounded shadow"
+  class="d-flex mb-4 gap-3 align-items-center justify-content-center p-3 rounded shadow custom-inp"
   style="margin-top: 40px; margin-left: 6%; background-color: #f8f9fa; max-width: 88%;">
   <input
     type="text"
@@ -42,8 +42,10 @@
 
 @if (filteredBugs().length > 0) {
   <div class="recipe-container">
+    <!-- <app-status ></app-status> -->
     @for (item of filteredBugs(); track $index) {
-      <app-status [bug]="item"></app-status>
+
+            <app-status [bug]="item"   [assignmentList]="assignments()"  ></app-status>
     }
   </div>
 }

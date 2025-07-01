@@ -16,5 +16,7 @@ namespace BugTrackingAPI.Interfaces
         public Task<IEnumerable<AvailableDev>> GetAvailableDevs();
 
         public Task<IEnumerable<BugResponse>> GetBugsAssignedToMe(string email);
+
+        public Task<IEnumerable<BugResponse>> GetBugsAssignedToDev(long empId);
     }
 }

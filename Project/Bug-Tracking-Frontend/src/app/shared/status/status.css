@@ -3,4 +3,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
+
+.enter-chat-btn {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+  bottom: 0.5%;
+  width: 40%;
+}
+

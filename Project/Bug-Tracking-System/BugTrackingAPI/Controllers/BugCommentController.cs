@@ -95,7 +95,33 @@ namespace BugTrackingAPI.Controllers
             var result = await _bugCommentService.DeleteComments(commentId, SubmitterEmail, role);
             return Ok(result);
         }
-        
+
+
+        [HttpDelete("Delete")]
+        [MapToApiVersion("2.0")]
+        [CustomExceptionFilter]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<string>> DeleteCommentV2([FromQuery] long commentId)
+        {
+            var SubmitterEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if (SubmitterEmail == null)
+            {
+                throw new Exception("Not logged In");
+            }
+            var result = await _bugCommentService.DeleteComments(commentId, SubmitterEmail, role);
+            return NoContent();
+        }
+
+
+
         [HttpGet("GetComments")] //v2 api
         [MapToApiVersion("2.0")]
         [CustomExceptionFilter]
@@ -111,6 +137,23 @@ namespace BugTrackingAPI.Controllers
             return Ok(result);
 
         }
+
+        [HttpGet("GetComments/latest")] //v2 api
+        [MapToApiVersion("2.0")]
+        [CustomExceptionFilter]
+        [Authorize(Roles = "Admin,Tester,Dev")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugAllCommentsResponse>>> GetLatestComments([FromQuery] long empId)
+        {
+            var result = await _bugCommentService.GetLatestComments(empId);
+            return Ok(result);
+
+        }
+        
 
 
 

@@ -40,11 +40,30 @@
       <p class="card-text">Description: {{bug?.description}}</p>
       <p class="card-text">CVSS Score : {{bug?.cvssScore}} </p>
       <p class="card-text">Submitted On : {{bug?.submittedOn}} </p>
-      <p class="card-text">
+      @if(bug?.status=="Resolved")
+      {
+        <p class="card-text">
         Resolved At: {{ bug?.resolvedAt ? bug?.resolvedAt : 'Yet to be resolved' }}
       </p>
+      }
+      @else if (bug?.status=="InProgress") {
+        <p class="card-text">
+        Last updated At: {{ bug?.resolvedAt ? bug?.resolvedAt : 'Yet to be resolved' }}
+      </p>
+      }
+      @else {
+        <p class="card-text">
+        Resolved At: {{ bug?.resolvedAt ? bug?.resolvedAt : 'Yet to be resolved' }}
+      </p>
+      }
+      
       <p class="card-text">Status : {{bug?.status}} </p>
+      <p class="card-text" *ngIf="bug?.status === 'Assigned'">
+        <p> Assigned Developer: {{ getAssignedDevName() || 'N/A' }}</p>
       <p class="card-text">Reporter Id : {{bug?.submittedById}} </p>
+      <button class="btn btn-dark btn-sm enter-chat-btn" 
+              [disabled]="!bug?.bugId"
+              (click)="handleChatRedirect(bug!.bugId)" >Enter chat </button>
     </div>
 </div>
 

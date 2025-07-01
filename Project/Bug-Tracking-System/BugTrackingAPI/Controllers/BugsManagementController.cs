@@ -127,7 +127,29 @@ namespace BugTrackingAPI.Controllers
             var bugs = await _BugManagementService.GetBugsAssignedToMe(SubmitterEmail);
             return Ok(bugs);
         }
-        
+
+        [HttpGet("assigned/mybugs/byId")]
+        [Authorize(Roles = "Admin")]
+        [MapToApiVersion("2.0")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<IEnumerable<BugResponse>>> GetBugsAssignedToDev([FromQuery] long empId)
+        {
+            // var SubmitterEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            // if (SubmitterEmail == null)
+            // {
+            //     throw new Exception("Not logged In");
+            // }
+
+            var bugs = await _BugManagementService.GetBugsAssignedToDev(empId);
+            return Ok(bugs);
+        }
+
         [HttpPatch("Update/InProgress")]
         [MapToApiVersion(2.0)]
         [Authorize(Roles = "Dev,Admin")]
@@ -154,5 +176,7 @@ namespace BugTrackingAPI.Controllers
             return Ok(result);
         }
 
+
+    
     }
 }
