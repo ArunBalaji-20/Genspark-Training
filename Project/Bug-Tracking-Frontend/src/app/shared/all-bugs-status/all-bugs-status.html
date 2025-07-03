@@ -1,4 +1,4 @@
- <!-- @if (bugs().length > 0) {
+<!-- @if (bugs().length > 0) {
   <div class="recipe-container">
     @for (item of bugs(); track $index) {
        <app-status [bug]="item"></app-status>
@@ -40,13 +40,25 @@
   </select>
 </div>
 
-@if (filteredBugs().length > 0) {
+@if (paginatedBugs().length > 0) {
   <div class="recipe-container">
-    <!-- <app-status ></app-status> -->
-    @for (item of filteredBugs(); track $index) {
-
-            <app-status [bug]="item"   [assignmentList]="assignments()"  ></app-status>
+    @for (item of paginatedBugs(); track $index) {
+      <app-status [bug]="item" [assignmentList]="assignments()"></app-status>
     }
+  </div>
+  <!-- Pagination Controls -->
+  <div class="d-flex justify-content-center align-items-center mt-4 gap-2">
+    <button class="btn btn-outline-primary btn-sm"
+            [disabled]="currentPage() === 1"
+            (click)="setPage(currentPage() - 1)">
+      Previous
+    </button>
+    <span class="mx-2">Page {{currentPage()}} of {{totalPages()}}</span>
+    <button class="btn btn-outline-primary btn-sm"
+            [disabled]="currentPage() === totalPages()"
+            (click)="setPage(currentPage() + 1)">
+      Next
+    </button>
   </div>
 }
 @else {

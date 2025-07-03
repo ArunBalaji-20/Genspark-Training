@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class AllBugsAssign implements OnInit {
   mybugs:BugStatusModel[]=[];
   isFetching:Boolean=false;
+  pageSize: number = 5;
+  currentPage: number = 1;
 
   constructor(private bugService:bugService,private router:Router)
   {
@@ -40,6 +42,21 @@ export class AllBugsAssign implements OnInit {
     console.log(id)
     this.router.navigate(['/admin/bugs/assign'],{queryParams:{id:`${id}`}})
     console.log("redirected ..")
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.mybugs.length / this.pageSize);
+  }
+
+  get paginatedBugs(): BugStatusModel[] {
+    const start = (this.currentPage - 1) * this.pageSize;
+    return this.mybugs.slice(start, start + this.pageSize);
+  }
+
+  setPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
   }
 
 }

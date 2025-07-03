@@ -5,7 +5,14 @@
   color: #6c757d;
   font-weight: 600;
 }
-
+#headingchat{
+  text-align: center;
+  margin: 0;
+  /* margin-top: 2%; */
+  color: #2e68a5;
+  background-color: #f4f7fa;
+  padding: 1%;
+}
 .d-flex {
   justify-content: center;
   align-items: flex-start;
@@ -20,6 +27,7 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   background: #23272b;
   margin-left: 10%;
+  text-align: center;
 }
 
 .table thead th {

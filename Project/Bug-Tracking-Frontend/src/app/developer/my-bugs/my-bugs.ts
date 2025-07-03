@@ -14,6 +14,9 @@ export class MyBugs implements OnInit{
 
   isFetching:Boolean=false;
   mybugs:BugStatusModel[]=[];
+  pageSize: number = 5;
+  currentPage: number = 1;
+
   constructor(private devBugService:devBugService,private router:Router)
   {}
   ngOnInit(): void {
@@ -42,5 +45,20 @@ export class MyBugs implements OnInit{
     this.router.navigate(['/developer/managebugs'],{queryParams:{id:`${id}`}})
     console.log("redirected to manage")
   }
+
+   get totalPages(): number {
+        return Math.ceil(this.mybugs.length / this.pageSize);
+      }
+    
+    get paginatedList(): BugStatusModel[] {
+      const start = (this.currentPage - 1) * this.pageSize;
+      return this.mybugs.slice(start, start + this.pageSize);
+    }
+    
+      setPage(page: number) {
+        if (page >= 1 && page <= this.totalPages) {
+          this.currentPage = page;
+        }
+      }
 }
 

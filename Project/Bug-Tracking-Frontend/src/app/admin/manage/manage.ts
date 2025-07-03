@@ -14,6 +14,8 @@ export class Manage implements OnInit{
     // employees:EmployeeModel=new EmployeeModel();
     employees: EmployeeModel[] = []; 
     isFetching:boolean=false;
+    pageSize: number = 5;
+    currentPage: number = 1;
     constructor(private empservice:empManageService,private router:Router)
     {}
 
@@ -36,25 +38,7 @@ export class Manage implements OnInit{
 });
   }
 
-//  s
 
-  // deleteEmployee(id:number)
-  // {
-  //     this.empservice.deleteEmployeeAPI(id).subscribe({
-  //       next:(res)=>{
-  //         console.log(res);
-  //         this.getAllEmployees()
-
-  //       },
-  //       error:(err)=>{
-  //         console.log(err);
-  //       },
-  //       complete:()=>{
-  //         console.log("delete finish")
-  //         this.getAllEmployees();
-  //       }
-  //     })
-  // }
 
   handleView(id:number)
   {
@@ -63,7 +47,20 @@ export class Manage implements OnInit{
     console.log('redirected...')
   }
 
-
+   get totalPages(): number {
+      return Math.ceil(this.employees.length / this.pageSize);
+    }
+  
+    get paginatedEmployees(): EmployeeModel[] {
+      const start = (this.currentPage - 1) * this.pageSize;
+      return this.employees.slice(start, start + this.pageSize);
+    }
+  
+    setPage(page: number) {
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
+    }
 
     
 }

@@ -1,8 +1,8 @@
-<div class="d-flex justify-content-center mt-4">
+ <h2 id="headingchat">Manage Employees</h2>
+<div class="d-flex justify-content-center ">
   <div style="
       max-height: 500px;          /* Vertical height (rows scroll if too many) */
-      overflow-y: auto;           /* Vertical scroll */
-      overflow-x: auto;           /* Horizontal scroll if table too wide */
+                /* Horizontal scroll if table too wide */
       width: 100%;                /* Full width */
   ">
     <table class="table table-hover table-dark custom-table w-75">
@@ -23,8 +23,11 @@
             <td colspan="6" class="text-center">Loading...</td>
           </tr>
         }
-        <tr *ngFor="let emp of employees; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
+           <!-- <tr *ngFor="let bug of paginatedBugs; let i = index"> 
+           <th scope="row">{{ (currentPage - 1) * pageSize + i + 1 }}</th> -->
+        <tr *ngFor="let emp of paginatedEmployees; let i = index">
+          <th scope="row">{{ (currentPage - 1) * pageSize + i + 1 }}</th>
+          <!-- <th scope="row">{{ i + 1 }}</th> -->
           <!-- <td>{{ emp.employeeId }}</td> -->
           <td>{{ emp.name }}</td>
           <!-- <td>{{ emp.email }}</td> -->
@@ -36,5 +39,20 @@
         </tr>
       </tbody>
     </table>
+     <div class="d-flex justify-content-center align-items-center mt-2 gap-2">
+      <button class="btn btn-outline-primary btn-sm"
+              [disabled]="currentPage === 1"
+              (click)="setPage(currentPage - 1)">
+        Previous
+      </button>
+      <span class="mx-2">Page {{currentPage}} of {{totalPages}}</span>
+      <button class="btn btn-outline-primary btn-sm"
+              [disabled]="currentPage === totalPages"
+              (click)="setPage(currentPage + 1)">
+        Next
+      </button>
+    </div>
   </div>
+  
 </div>
+

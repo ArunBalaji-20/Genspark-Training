@@ -56,6 +56,9 @@ export class AllBugsStatus implements OnInit {
     searchTerm = signal<string>('');
     statusFilter = signal<string>('');
 
+    pageSize = signal<number>(10); // Number of cards per page
+    currentPage = signal<number>(1);
+
     filteredBugs = computed(() => {
       let list = this.bugs();
       const search = this.searchTerm().toLowerCase();
@@ -73,6 +76,21 @@ export class AllBugsStatus implements OnInit {
       }
       return list;
     });
+
+    totalPages = computed(() => {
+      return Math.ceil(this.filteredBugs().length / this.pageSize());
+    });
+
+    paginatedBugs = computed(() => {
+      const start = (this.currentPage() - 1) * this.pageSize();
+      return this.filteredBugs().slice(start, start + this.pageSize());
+    });
+
+    setPage(page: number) {
+      if (page >= 1 && page <= this.totalPages()) {
+        this.currentPage.set(page);
+      }
+    }
 
     constructor(private bugService: bugService) {}
 
@@ -99,6 +117,10 @@ export class AllBugsStatus implements OnInit {
       })
      
     }
+
+    
+   
+
 
     
 }

@@ -5,7 +5,14 @@
   color: #6c757d;
   font-weight: 600;
 }
-
+#headingchat{
+  text-align: center;
+  margin: 0;
+  /* margin-top: 2%; */
+  color: #2e68a5;
+  background-color: #f4f7fa;
+  padding: 1%;
+}
 .d-flex {
   justify-content: center;
   align-items: flex-start;
