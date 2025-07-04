@@ -1,0 +1,59 @@
+
+# docker run -d \
+#   --name mysql-test \
+#   -e MYSQL_ROOT_PASSWORD=rootpass \
+#   -v mydbdata:/var/lib/mysql \
+#   -p 3306:3306 \
+#   mysql:latest
+
+# docker exec -it mysql-test mysql -uroot -prootpass
+
+
+# mysql> create Database demoe
+#     -> ;
+# Query OK, 1 row affected (0.012 sec)
+
+# mysql> use demo;
+# Database changed
+# mysql> create table users(id int,name varchar(20));
+# Query OK, 0 rows affected (0.014 sec)
+
+# mysql> insert into users values(1,'arun');
+# Query OK, 1 row affected (0.010 sec)
+
+# mysql> select * from users;
+# +------+------+
+# | id   | name |
+# +------+------+
+# |    1 | arun |
+# +------+------+
+# 1 row in set (0.000 sec)
+
+
+# stop and remove the mysql-test container
+# > docker stop mysql-test
+# mysql-test
+
+# > docker rm mysql-test
+# mysql-test
+
+# now run a new container with same volume
+# docker run -d \
+#   --name mysql-test \
+#   -e MYSQL_ROOT_PASSWORD=rootpass \
+#   -v mydbdata:/var/lib/mysql \
+#   -p 3306:3306 \
+#   mysql:latest
+
+# mysql> use demo;
+# Reading table information for completion of table and column names
+# You can turn off this feature to get a quicker startup with -A
+
+# Database changed
+# mysql> select * from users;
+# +------+------+
+# | id   | name |
+# +------+------+
+# |    1 | arun |
+# +------+------+
+# 1 row in set (0.001 sec)
