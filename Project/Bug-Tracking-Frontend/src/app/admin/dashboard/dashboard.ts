@@ -5,6 +5,7 @@ import { empManageService } from '../../core/Services/empManageService';
 import { bugService } from '../../core/Services/bugService';
 import { BugStatusModel } from '../../core/Models/BugStatusModel';
 import Chart from 'chart.js/auto';
+import { AvailableDevsResponseModel } from '../../core/Models/AvailableDevsResponseModel';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ import Chart from 'chart.js/auto';
 })
 export class Dashboard {
 
-  
+    availDevs:AvailableDevsResponseModel[]=[];
     employees: EmployeeModel[] = []; 
     bugs:BugStatusModel[]=[];
     isFetching:boolean=false;
@@ -25,6 +26,8 @@ export class Dashboard {
     Resolved:number=0;
     Assigned:number=0;
     TotalBugs:number=0;
+
+    
     constructor(private empservice:empManageService,private bugservice:bugService)
     {}
 
@@ -34,6 +37,11 @@ export class Dashboard {
    
   }
   
+isAvailable(employeeId: number): boolean {
+  return this.availDevs.some(dev => Number(dev.employeeId) === employeeId);
+}
+
+
   getAllEmployees()
   {
       this.empservice.getAllEmployeesAPI().subscribe({
@@ -42,12 +50,31 @@ export class Dashboard {
       this.employees = (res.body as any)?.$values ?? [];
        this.totalDev=this.GetEmployeeCount('Dev');
     this.totalTesters=this.GetEmployeeCount('Tester')
+    this.renderEmployeeChart();
+    this.getAvailEmployees();
   },
   error: (err) => {
     console.error('Error fetching employees', err);
     this.isFetching=true;
   }
 });
+  }
+
+  getAvailEmployees()
+  {
+    this.empservice.getAvailableEmpAPI().subscribe({
+      next:(res)=>{
+        console.log(res);
+        console.log('avail list')
+        this.availDevs=(res.body as any)?.$values ?? [];
+        console.log(this.availDevs)
+
+      },
+      error:(err)=>{
+        console.log(err)
+      }
+      
+    })
   }
 
   getBugData()
@@ -89,11 +116,46 @@ export class Dashboard {
         plugins: {
           legend: { position: 'bottom' ,
             display:false
-          }
+          },
+          title: {
+                display: true,
+                text: ' Bug Stats',
+                // position:'bottom'
+            }
         }
       }
     });
   }
+
+  renderEmployeeChart() {
+    if (typeof Chart === 'undefined') return;
+    const ctx = document.getElementById('EmployeeChart') as HTMLCanvasElement;
+    if (!ctx) return;
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Developers', 'Testers'],
+        datasets: [{
+          data: [this.totalDev, this.totalTesters],
+          backgroundColor: ['#36A2EB', '#FF6384'],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: {
+                display: true,
+                text: 'Employee Ratio'
+            }
+        }
+        
+        
+      }
+    });
+  }
+
 
 
   GetEmployeeCount(role: string): number

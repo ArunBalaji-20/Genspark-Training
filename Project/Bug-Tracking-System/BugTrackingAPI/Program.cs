@@ -223,7 +223,7 @@ if (app.Environment.IsDevelopment())
         foreach (var description in provider.ApiVersionDescriptions)
         {
             options.SwaggerEndpoint(
-                $"/swagger/{description.GroupName}/swagger.json",
+                $"/swagger/{description.GroupName}/swagger.json", 
                 $"BUG TRACKING API {description.GroupName.ToUpperInvariant()}"
             );
         }
@@ -234,7 +234,7 @@ app.UseMiddleware<RequestLoggingMiddleware>();
 
 // app.UseHttpsRedirection();
 // app.UseRouting();
-
+app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(

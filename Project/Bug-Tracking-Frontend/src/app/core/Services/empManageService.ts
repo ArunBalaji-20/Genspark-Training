@@ -23,6 +23,19 @@ export class empManageService
         )
     }
 
+    getAvailableEmpAPI()
+    {
+         const token=this.authService.getCookie('access_token');
+
+        return this.http.get('http://localhost:5258/api/v1/BugsManagement/Available/Devs',{
+             headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+            }),
+
+        observe:'response'
+        })
+    }
+
     deleteEmployeeAPI(id:number)
     {
         const token=this.authService.getCookie('access_token');

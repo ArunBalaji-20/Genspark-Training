@@ -96,6 +96,7 @@ export class Assign implements OnInit {
       next:(res)=>{
         console.log(res)
         this.statusMessage="Bug Assigned To Developer Successfully.."
+        window.alert("Bug assigned Successfully")
       },
       error:(err)=>{
         console.log(err.error.detail)

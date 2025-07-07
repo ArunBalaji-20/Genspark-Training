@@ -101,6 +101,7 @@ export class Managebugs {
           console.log(data)
           console.log("patched")
           this.statusMessage = 'Status updated successfully!';
+          window.alert(this.statusMessage)
         },
         error:(err)=>{
           console.log(err.error.detail)
@@ -121,6 +122,8 @@ export class Managebugs {
           console.log(data);
            console.log("patched")
           this.statusMessage = 'Status updated successfully!';
+          window.alert(this.statusMessage)
+
         },
         error:(err)=>{
           console.log(err);

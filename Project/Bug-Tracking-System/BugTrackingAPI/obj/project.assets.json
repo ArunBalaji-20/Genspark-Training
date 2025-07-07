@@ -4571,11 +4571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
+      "projectUniqueName": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
       "projectName": "BugTrackingAPI",
-      "projectPath": "/Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
+      "projectPath": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
       "packagesPath": "/Users/presidio/.nuget/packages/",
-      "outputPath": "/Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI/obj/",
+      "outputPath": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/presidio/.nuget/NuGet/NuGet.Config"

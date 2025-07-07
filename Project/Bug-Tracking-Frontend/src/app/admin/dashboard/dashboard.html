@@ -48,7 +48,68 @@
   <div class="chart-container">
     <canvas id="StatusChart" width="350" height="400"></canvas>
   </div>
+
+  <div style="display: flex; gap: 20rem; align-items: flex-start; margin-top: 7.5rem; margin-left: 7%;">
+    <div class="available-list" style="flex: 1;">
+      <h3>Developers Status</h3>
+      <table class="table table-striped avail-table">
+        <thead>
+          <tr>
+            <th>Employee Id </th>
+            <th>Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of employees; track $index)
+          {
+            @if(emp.role=='Dev')
+            {
+
+            
+          <tr>
+            <td>{{emp.employeeId}}</td>
+            <td>{{emp.name}}</td>
+            <td>
+    {{ isAvailable(emp.employeeId) ? 'Available' : 'Busy' }}
+  </td>
+            <!-- @if(emp.employeeId in availDevs)
+            {
+            <td>Available</td>
+
+            }
+            @else {
+            <td>Busy</td>
+
+            } -->
+          </tr>
+        }
+        }
+          <!-- <tr>
+            <td>2</td>
+            <td>Bob Smith</td>
+            <td>Not available</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Charlie Lee</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Diana Patel</td>
+            <td>Not Available</td>
+          </tr> -->
+         
+        </tbody>
+      </table>
+    </div>
+    <div class="employee-chart" style="flex: 1;">
+      <canvas id="EmployeeChart" width="100" height="400"></canvas>
+    </div>
+  </div>
 </div>
+
 
 </body>
 </html>
