@@ -1,0 +1,41 @@
+### Steps
+
+1. Create vm in azure , set win11 os 
+2. edit networking to allow inbound  traffic to port 5432 , tcp both source and destination to any
+3. install psql in win11
+4. Configure internal firewall rules in  vm win11 , add new inbound rule allow traffic to port 5432
+5. edit pg_hba.conf to allow all ip or your local machine ip traffic (0.0.0.0/32 - for all)
+6. restart postgre service under services.msc
+7. now connect to the azure psql db from local machine’s pgadmin
+8. use cli tools pg_dump to dump the db and store it a file
+9. use cli tool pg_restore to upload the dumped db to azure
+10. 
+
+```sql
+1) pg_dump -U postgres -h localhost -F c -f bankdb.backup BankDB  
+ 
+
+2)   pg_restore -U postgres -h 20.127.201.216 -d bankdb -F c bankdb.backup
+    
+```
+
+1. now  in the backend api , edit the connection string to connect to db
+2. 
+
+```coq
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "User ID=postgres;Password=sqlserver2025;Host=20.127.201.216;Port=5432;Database=bankdb;"
+  },
+  "AllowedHosts": "*"
+}
+
+```
+
+1. Now run the app and make requests

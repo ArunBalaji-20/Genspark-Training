@@ -1,0 +1,74 @@
+1. You have a file with permissions -rw-r--r--, and you run chmod +x file.sh. What happens?
+Original: -rw-r--r-- (owner: read/write, group: read, others: read)
+chmod +x adds execute permission to owner, group, and others.
+New permissions: -rwxr-xr-x
+ The file becomes executable by everyone.
+
+2. Difference between chmod 744 file.txt and chmod u=rwx,go=r file.txt?
+
+Both are equivalent. They set:
+
+Owner (u): read, write, execute
+Group (g) and Others (o): read only
+
+chmod 744 is numeric (octal) mode
+chmod u=rwx,go=r is symbolic mode
+Same result, different syntax.
+
+3. What is the sticky bit, and when should you use it?
+The sticky bit (t) is a special permission set on directories.
+It allows only the file's owner (or root) to delete or rename files inside the directory—even if others have write access.
+Prevents users from deleting each other’s files in shared directories.
+
+4. Give owner full access, group only execute, others no permissions. What symbolic command achieves this?
+chmod u=rwx,g=x,o= file.txt
+
+
+5. What is umask, and why is it important?
+umask defines default permission masks for new files and directories.
+It "subtracts" permissions from the maximum allowed:
+Files: max is 666 (rw-rw-rw-)
+Directories: max is 777 (rwxrwxrwx)
+ Important to enforce security by restricting default permissions automatically.
+
+6. If the umask is 022, what are the default permissions for a new file and a new directory?
+New file:
+Max: 666
+666 - 022 = 644 -> -rw-r--r--
+New directory:
+Max: 777
+777 - 022 = 755 -> drwxr-xr-x
+Files get read/write for owner, read for others.
+ Directories get full access for owner, read/execute for others.
+
+7. Why is umask often set to 002 in dev and 027 or 077 in prod?
+002 (dev):
+Allows group write access → promotes collaboration among team members in the same group.
+Files: 664 (rw-rw-r--), Dirs: 775 (rwxrwxr-x)
+027 (prod):
+Group: read/execute; Others: none → increases security.
+Files: 640, Dirs: 750
+077 (prod, secure):
+Only owner has access → maximum privacy.
+Files: 600, Dirs: 700
+Tighter umask = better security, looser umask = better collaboration.
+
+8. useradd vs adduser
+Feature	useradd	adduser
+Type	Low-level command (binary)	High-level script (interactive)
+Interactivity	Non-interactive	Interactive (asks for password, etc.)
+Configuration	Needs manual config (home, etc.)	Auto-creates home, shell, group
+Portability	Always available (on all distros)	Only on Debian/Ubuntu
+ Use adduser for ease on Debian/Ubuntu.
+ Use useradd for scripting and finer control.
+
+
+--------------
+If umask = 022(default)
+
+New file:
+Max: 666
+666 - 022 = 644 → -rw-r--r--
+New directory:
+Max: 777
+777 - 022 = 755 → drwxr-xr-x

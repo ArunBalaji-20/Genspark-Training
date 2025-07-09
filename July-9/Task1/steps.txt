@@ -1,0 +1,27 @@
+ip: 20.127.208.212
+
+ssh connection
+1. download key.pem
+2. set permissions to chmod 600 
+3. ssh -i key.pem username@<ip>
+-------------------------
+installed docker and git
+------------------------
+via dockerhub
+1.tag the image : docker tag azuredemoapp 4run/azuredemoapp:latest
+
+2.docker login 
+
+3. push the image to hub: docker push 4run/azuredemoapp:latest
+----------------
+cloned the repo
+git clone <repo>
+
+navigate to project
+
+build docker image and run the container
+docker build -t azuredemoapp . 
+
+docker run -d -p 80:8080 -e ASPNETCORE_ENVIRONMENT=Development azuredemopp
+
+we can now access it from anywhere with this url http://20.127.208.212/api/sample/welcome
