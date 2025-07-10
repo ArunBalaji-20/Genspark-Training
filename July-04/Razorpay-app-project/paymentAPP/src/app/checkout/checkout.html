@@ -1,0 +1,69 @@
+<!-- <div class="checkout-container">
+  <form>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount" placeholder="Enter amount" required min="1">
+    </div>
+    <div class="form-group">
+      <label for="customerName">Customer Name</label>
+      <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="tel" class="form-control" id="contactNumber" placeholder="Enter 10 digit number" pattern="[0-9]{10}" maxlength="10" required>
+      <small class="form-text text-muted">Enter a 10-digit mobile number.</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  </form>
+</div> -->
+
+<div class="checkout-container">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Enter amount" required min="1">
+      <div *ngIf="checkoutForm.get('amount')?.touched && checkoutForm.get('amount')?.invalid" class="text-danger">
+        Amount is required and must be greater than 0.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="customerName">Customer Name</label>
+      <input type="text" class="form-control" id="customerName" formControlName="customerName" placeholder="Enter your name" required>
+      <div *ngIf="checkoutForm.get('customerName')?.touched && checkoutForm.get('customerName')?.invalid" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email" required>
+      <div *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.invalid" class="text-danger">
+        Enter a valid email address.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="tel" class="form-control" id="contactNumber" formControlName="contactNumber" placeholder="Enter 10 digit number" maxlength="10" required>
+      <small class="form-text text-muted">Enter a 10-digit mobile number.</small>
+      <div *ngIf="checkoutForm.get('contactNumber')?.touched && checkoutForm.get('contactNumber')?.invalid" class="text-danger">
+        Enter a valid 10-digit number.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  </form>
+</div>
+
+@if(statusmessage) {
+  <div class="alert alert-success custom-alert" role="alert">
+    {{statusmessage}}
+</div>
+}
+
+@if(errormessage) {
+  <div class="alert alert-danger custom-alert" role="alert">
+   {{errormessage}}
+</div>
+}
