@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
@@ -85,6 +89,10 @@
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Serilog.Sinks.AzureBlobStorage": {
+              "target": "Package",
+              "version": "[4.0.5, )"
             },
             "Serilog.Sinks.Console": {
               "target": "Package",

@@ -17,6 +17,7 @@ export class Status  {
     // @Input() assignmentList: BugAssignmentModel[] = [];
   
   domain:string="http://localhost:5258/screenshots/"
+  // https://arunsac.blob.core.windows.net/screenshots/
   constructor(private router:Router)
   {
      

@@ -20,19 +20,58 @@ using BugTrackingAPI.Hubs;
 using System.Threading.RateLimiting;
 using Serilog;
 using Microsoft.Extensions.FileProviders;
+using Serilog.Sinks.AzureBlobStorage;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 
+//storing logs in azure blob , set aspnetcore environment=development and then run 
+var useAzureBlob = builder.Configuration.GetValue<bool>("Storage:UseAzureBlob");
+System.Console.WriteLine(useAzureBlob);
+if (useAzureBlob)
+{
+    Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .WriteTo.Console()
+        .WriteTo.AzureBlobStorage(
+            connectionString: builder.Configuration["Storage:ConnectionString"],
+            storageContainerName: builder.Configuration["Storage:logs"],
+            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level}] {Message}{NewLine}{Exception}"
+           
+        )
+        .CreateLogger();
+}
+else
+{
+    Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .WriteTo.Console()
+        .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+        .CreateLogger();
+}
 
 // Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
+// Log.Logger = new LoggerConfiguration()
+//     .Enrich.FromLogContext()
+//     .WriteTo.Console()
+//     .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+//     .CreateLogger();
+
+#region key vault
+// var keyVaultUrl = builder.Configuration["AzureBlob:KeyVaultUrl"];
+// if (!string.IsNullOrWhiteSpace(keyVaultUrl))
+// {
+//     builder.Configuration.AddAzureKeyVault(
+//         new Uri(keyVaultUrl),
+//         new DefaultAzureCredential());
+// }
+// var blobConnStr = builder.Configuration["sac-3"];
+// builder.Configuration["Storage:ConnectionString"] = blobConnStr;
+// System.Console.WriteLine(blobConnStr);
+#endregion
 
 builder.Host.UseSerilog();
 
@@ -85,11 +124,27 @@ builder.Services.AddSwaggerGen(opt =>
 
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
+#region connection string from azure vault
+
+var keyVaultUrl = builder.Configuration["AzureBlob:KeyVaultUrl"];
+if (!string.IsNullOrWhiteSpace(keyVaultUrl))
+{
+    builder.Configuration.AddAzureKeyVault(
+        new Uri(keyVaultUrl),
+        new DefaultAzureCredential());
+}
+
+
+var dbConnectionString = builder.Configuration["PostgresConnectionString"];
+#endregion
+
 #region Dbconfiguration
 builder.Services.AddDbContext<BugContext>(opts =>
 {
-    opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));  //from local
+    // opts.UseNpgsql(dbConnectionString); //from azure vault
 });
+System.Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnection"));
 #endregion
 
 #region Repositories
@@ -114,7 +169,10 @@ builder.Services.AddTransient<IBugManagementService, BugManagementService>();
 builder.Services.AddTransient<IBugCommentService, BugCommentService>();
 builder.Services.AddTransient<IEmployeeManagementService, EmployeeManagementService>();
 #endregion
-
+// if (useAzureBlob)
+// {
+//     builder.Services.AddTransient<IScreenshotStorageService, AzureScreenshotStorageService>();
+// }
 
 
 #region Auth

@@ -19,7 +19,7 @@ export class Login {
   {
    this.LoginForm = new FormGroup(
   {
-    email: new FormControl(null, Validators.email),
+    email: new FormControl(null, [Validators.email,Validators.required]),
     password: new FormControl(null, [Validators.required]),
   },
 );

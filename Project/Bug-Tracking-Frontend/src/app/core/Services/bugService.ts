@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { authService } from "./authService";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class bugService
@@ -18,7 +19,7 @@ export class bugService
     const token=this.authService.getCookie("access_token"); 
     // console.log(token);
     
-    return this.http.post("http://localhost:5258/api/v1/Bugs/Report", bugFormData, {
+    return this.http.post(`${environment.apiUrl}/api/v1/Bugs/Report`, bugFormData, {
         headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),
@@ -29,7 +30,7 @@ export class bugService
     getAllBugStatusAPI()
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.get('http://localhost:5258/api/v1/Bugs/ReportedBugs',{
+        return this.http.get(`${environment.apiUrl}/api/v1/Bugs/ReportedBugs`,{
              headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),
@@ -42,7 +43,7 @@ export class bugService
     {
         const token=this.authService.getCookie("access_token"); 
 
-         return this.http.get('http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists',{
+         return this.http.get(`${environment.apiUrl}/api/v1/BugsManagement/Get/Assigned/Lists`,{
              headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),
@@ -54,7 +55,7 @@ export class bugService
     getAllBugsInSubmittedState()
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.get('http://localhost:5258/api/v2/Bugs/Get/InSubmittedState',{
+        return this.http.get(`${environment.apiUrl}/api/v2/Bugs/Get/InSubmittedState`,{
               headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),
@@ -66,7 +67,7 @@ export class bugService
     assignBugToDevAPI(data:any)
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.post('http://localhost:5258/api/v1/BugsManagement/Assign',data,{
+        return this.http.post(`${environment.apiUrl}/api/v1/BugsManagement/Assign`,data,{
              headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { authService } from "./authService";
 import { EmployeeModel } from "../Models/EmployeeModel";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class empManageService
@@ -14,7 +15,7 @@ export class empManageService
     getAllEmployeesAPI()
     {
         const token=this.authService.getCookie('access_token')
-        return this.http.get<EmployeeModel[]>('http://localhost:5258/api/v1/EmployeeManagement/GetAll',{
+        return this.http.get<EmployeeModel[]>(`${environment.apiUrl}/api/v1/EmployeeManagement/GetAll`,{
             headers: new HttpHeaders({
             'Authorization': `Bearer ${token}`
         }),
@@ -27,7 +28,7 @@ export class empManageService
     {
          const token=this.authService.getCookie('access_token');
 
-        return this.http.get('http://localhost:5258/api/v1/BugsManagement/Available/Devs',{
+        return this.http.get(`${environment.apiUrl}/api/v1/BugsManagement/Available/Devs`,{
              headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),
@@ -39,7 +40,7 @@ export class empManageService
     deleteEmployeeAPI(id:number)
     {
         const token=this.authService.getCookie('access_token');
-        return this.http.delete(`http://localhost:5258/api/v1/EmployeeManagement/Delete?EmployeeId=${id}`,{
+        return this.http.delete(`${environment.apiUrl}/api/v1/EmployeeManagement/Delete?EmployeeId=${id}`,{
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),
@@ -53,7 +54,7 @@ export class empManageService
     addEmployeeAPI(data:any)
     {
         const token=this.authService.getCookie('access_token');
-        return this.http.post('http://localhost:5258/api/v1/Authentication/register',data,{
+        return this.http.post(`${environment.apiUrl}/api/v1/Authentication/register`,data,{
              headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),
@@ -67,7 +68,7 @@ export class empManageService
     getEmployeeDetailsAPI(id:number)
     {
         const token=this.authService.getCookie('access_token');
-        return this.http.get(`http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=${id}`,{
+        return this.http.get(`${environment.apiUrl}/api/v2/EmployeeManagement/GetEmployee?EmployeeId=${id}`,{
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),
@@ -79,7 +80,7 @@ export class empManageService
     {
 
         const token=this.authService.getCookie('access_token');
-        return this.http.get(`http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=${id}`,{
+        return this.http.get(`${environment.apiUrl}/api/v2/Bugs/Get/reportedBy?empId=${id}`,{
              headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),
@@ -90,7 +91,7 @@ export class empManageService
     getLatestCommentsAPI(id:number)
     {
         const token=this.authService.getCookie('access_token');
-        return this.http.get(`http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=${id}`,{
+        return this.http.get(`${environment.apiUrl}/api/v2/BugComment/GetComments/latest?empId=${id}`,{
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
             }),

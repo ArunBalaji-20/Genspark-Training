@@ -1,0 +1,328 @@
+2025-07-10 13:41:13.375 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 13:41:13.386 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 13:41:13.486 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=PbXeb08GcPjpMOfWBl0jrQ - 101 null null 15598809.6429ms
+2025-07-10 13:41:13.494 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T08:11:13.4934550Z"
+2025-07-10 13:41:13.508 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:13.512 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 141.4043ms
+2025-07-10 13:41:13.518 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 13:41:13.520 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T08:11:13.5204720Z"
+2025-07-10 13:41:13.521 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:13.521 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 13:41:13.528 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 13:41:13.529 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 10.3658ms
+2025-07-10 13:41:13.660 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=ASubgjK0rH9Q4bI3WFzUiw - null null
+2025-07-10 13:41:13.662 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T08:11:13.6624010Z"
+2025-07-10 13:41:13.662 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:13.663 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 13:41:13.740 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 13:41:13.740 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=ASubgjK0rH9Q4bI3WFzUiw - 101 null null 80.189ms
+2025-07-10 13:41:13.989 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 13:41:13.989 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T08:11:13.9897130Z"
+2025-07-10 13:41:13.989 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:13.990 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 1.0875ms
+2025-07-10 13:41:13.990 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 13:41:13.991 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T08:11:13.9912900Z"
+2025-07-10 13:41:13.991 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:13.992 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 13:41:13.992 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 13:41:13.992 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.4857ms
+2025-07-10 13:41:14.016 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-10 13:41:14.017 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-10 13:41:14.022 +05:30 [INF] Request: OPTIONS /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-10T08:11:14.0223280Z"
+2025-07-10 13:41:14.022 +05:30 [INF] Request: OPTIONS /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-10T08:11:14.0223280Z"
+2025-07-10 13:41:14.022 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.023 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - 204 null null 5.6076ms
+2025-07-10 13:41:14.022 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.024 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - 204 null null 7.7588ms
+2025-07-10 13:41:14.025 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-10 13:41:14.026 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-10 13:41:14.026 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-10T08:11:14.0263780Z"
+2025-07-10 13:41:14.026 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-10T08:11:14.0265150Z"
+2025-07-10 13:41:14.067 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=piZZbIbnMXd0_gfObNyvng - null null
+2025-07-10 13:41:14.068 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T08:11:14.0680870Z"
+2025-07-10 13:41:14.068 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.069 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 13:41:14.373 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 13:41:14.374 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 13:41:14.379 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.379 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.379 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-10 13:41:14.379 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-10 13:41:14.383 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-10 13:41:14.383 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-10 13:41:14.405 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-10 13:41:14.411 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 13:41:14.415 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 32.1978ms
+2025-07-10 13:41:14.416 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-10 13:41:14.424 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 398.04ms
+2025-07-10 13:41:14.445 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-10 13:41:14.447 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 13:41:14.448 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-07-10 13:41:14.448 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 65.0343ms
+2025-07-10 13:41:14.448 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-10 13:41:14.448 +05:30 [INF] Request: OPTIONS /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-07-10T08:11:14.4489680Z"
+2025-07-10 13:41:14.449 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 424.3977ms
+2025-07-10 13:41:14.449 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.449 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Available/Devs - 204 null null 1.5347ms
+2025-07-10 13:41:14.452 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-07-10 13:41:14.453 +05:30 [INF] Request: GET /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-07-10T08:11:14.4529560Z"
+2025-07-10 13:41:14.456 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 13:41:14.457 +05:30 [INF] CORS policy execution successful.
+2025-07-10 13:41:14.457 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-07-10 13:41:14.457 +05:30 [INF] Route matched with {action = "GetAvailableDevs", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AvailableDev]]] GetAvailableDevs() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-07-10 13:41:14.460 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-07-10 13:41:14.462 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-10 13:41:14.467 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AvailableDev, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 13:41:14.469 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI) in 10.8134ms
+2025-07-10 13:41:14.469 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-07-10 13:41:14.469 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - 200 null application/json; charset=utf-8 17.0784ms
+2025-07-10 14:30:04.595 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 14:30:04.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=piZZbIbnMXd0_gfObNyvng - 101 null null 728483.6015ms
+2025-07-10 14:30:04.744 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 14:30:04.750 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T09:00:04.7504910Z"
+2025-07-10 14:30:04.769 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:04.771 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 26.7628ms
+2025-07-10 14:30:04.773 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 14:30:04.790 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T09:00:04.7900220Z"
+2025-07-10 14:30:04.790 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:04.790 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 14:30:04.791 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 14:30:04.825 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 52.1306ms
+2025-07-10 14:30:04.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=CvOn4L_ZQ8M5aVm9DUb7nA - null null
+2025-07-10 14:30:04.872 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T09:00:04.8722680Z"
+2025-07-10 14:30:04.890 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:04.890 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 14:30:04.926 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 14:30:04.933 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=CvOn4L_ZQ8M5aVm9DUb7nA - 101 null null 79.7668ms
+2025-07-10 14:30:05.019 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 14:30:05.019 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T09:00:05.0194000Z"
+2025-07-10 14:30:05.021 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.022 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 3.0463ms
+2025-07-10 14:30:05.023 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 14:30:05.023 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T09:00:05.0238580Z"
+2025-07-10 14:30:05.024 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.026 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 14:30:05.027 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 14:30:05.027 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 3.9137ms
+2025-07-10 14:30:05.035 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-10 14:30:05.035 +05:30 [INF] Request: OPTIONS /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-10T09:00:05.0356140Z"
+2025-07-10 14:30:05.035 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.036 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - 204 null null 1.0749ms
+2025-07-10 14:30:05.036 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-10 14:30:05.037 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-10 14:30:05.038 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-10T09:00:05.0384620Z"
+2025-07-10 14:30:05.038 +05:30 [INF] Request: OPTIONS /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-10T09:00:05.0385410Z"
+2025-07-10 14:30:05.039 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.040 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - 204 null null 3.7451ms
+2025-07-10 14:30:05.042 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-10 14:30:05.044 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-10T09:00:05.0439700Z"
+2025-07-10 14:30:05.069 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=s4W4FP2JdD3WP6fiRaADxw - null null
+2025-07-10 14:30:05.069 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T09:00:05.0698120Z"
+2025-07-10 14:30:05.070 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.070 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 14:30:05.135 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 14:30:05.136 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 14:30:05.136 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.136 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-10 14:30:05.136 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.136 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-10 14:30:05.136 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-10 14:30:05.137 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-10 14:30:05.146 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-10 14:30:05.149 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 14:30:05.150 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 13.42ms
+2025-07-10 14:30:05.150 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-10 14:30:05.150 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 113.2733ms
+2025-07-10 14:30:05.155 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-10 14:30:05.156 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 14:30:05.157 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 19.8644ms
+2025-07-10 14:30:05.157 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-10 14:30:05.158 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 115.3154ms
+2025-07-10 14:30:05.244 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-07-10 14:30:05.244 +05:30 [INF] Request: OPTIONS /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-07-10T09:00:05.2449350Z"
+2025-07-10 14:30:05.245 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.245 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Available/Devs - 204 null null 0.7891ms
+2025-07-10 14:30:05.246 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - null null
+2025-07-10 14:30:05.246 +05:30 [INF] Request: GET /api/v1/BugsManagement/Available/Devs by Anonymous at "2025-07-10T09:00:05.2465140Z"
+2025-07-10 14:30:05.251 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-10 14:30:05.252 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:30:05.255 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-07-10 14:30:05.255 +05:30 [INF] Route matched with {action = "GetAvailableDevs", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AvailableDev]]] GetAvailableDevs() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-07-10 14:30:05.257 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-07-10 14:30:05.260 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-10 14:30:05.262 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AvailableDev, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-10 14:30:05.263 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI) in 7.4558ms
+2025-07-10 14:30:05.263 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAvailableDevs (BugTrackingAPI)'
+2025-07-10 14:30:05.263 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Available/Devs - 200 null application/json; charset=utf-8 17.6333ms
+2025-07-10 14:50:37.125 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 14:50:37.140 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T09:20:37.1400350Z"
+2025-07-10 14:50:37.151 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:50:37.153 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 29.3899ms
+2025-07-10 14:50:37.159 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 14:50:37.159 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T09:20:37.1596290Z"
+2025-07-10 14:50:37.159 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:50:37.161 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 14:50:37.166 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 14:50:37.167 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 7.7256ms
+2025-07-10 14:50:37.176 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=DrePIKiWOh-Yv07-2A4dRg - null null
+2025-07-10 14:50:37.177 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T09:20:37.1778360Z"
+2025-07-10 14:50:37.178 +05:30 [INF] CORS policy execution successful.
+2025-07-10 14:50:37.180 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 14:50:37.475 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 14:50:37.476 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=DrePIKiWOh-Yv07-2A4dRg - 101 null null 299.9951ms
+2025-07-10 17:36:59.349 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:36:59.371 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:06:59.3701890Z"
+2025-07-10 17:36:59.401 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:36:59.412 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 68.1625ms
+2025-07-10 17:36:59.415 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 17:36:59.429 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:06:59.4297850Z"
+2025-07-10 17:36:59.430 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:36:59.430 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 17:36:59.438 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 17:36:59.438 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 23.1735ms
+2025-07-10 17:36:59.449 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 17:36:59.449 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=s4W4FP2JdD3WP6fiRaADxw - 101 null null 11214263.5377ms
+2025-07-10 17:36:59.469 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=Erhjd9K15iR0Ff5U86wI_g - null null
+2025-07-10 17:36:59.478 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:06:59.4780860Z"
+2025-07-10 17:36:59.478 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:36:59.478 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 17:36:59.657 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 17:36:59.657 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=Erhjd9K15iR0Ff5U86wI_g - 101 null null 188.6777ms
+2025-07-10 17:36:59.982 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:36:59.983 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:06:59.9831360Z"
+2025-07-10 17:36:59.983 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:36:59.983 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.9361ms
+2025-07-10 17:36:59.984 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 17:36:59.984 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:06:59.9846380Z"
+2025-07-10 17:36:59.984 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:36:59.984 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 17:36:59.984 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 17:36:59.985 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5719ms
+2025-07-10 17:37:00.049 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=x6m98Dajtq090ZJOWnWR4w - null null
+2025-07-10 17:37:00.050 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:07:00.0502850Z"
+2025-07-10 17:37:00.050 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:37:00.050 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 17:45:39.946 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:45:39.950 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:15:39.9502380Z"
+2025-07-10 17:45:39.951 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:39.953 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 7.0379ms
+2025-07-10 17:45:39.984 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 17:45:39.989 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:15:39.9895090Z"
+2025-07-10 17:45:40.003 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 17:45:40.019 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:40.020 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=x6m98Dajtq090ZJOWnWR4w - 101 null null 197169.6433ms
+2025-07-10 17:45:40.022 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 17:45:40.046 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 17:45:40.049 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 65.3922ms
+2025-07-10 17:45:40.063 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=9QNVC4xkkdcPI6edT2D7eg - null null
+2025-07-10 17:45:40.076 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:15:40.0767260Z"
+2025-07-10 17:45:40.077 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:40.095 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 17:45:40.114 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 17:45:40.131 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=9QNVC4xkkdcPI6edT2D7eg - 101 null null 67.79ms
+2025-07-10 17:45:40.234 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:45:40.234 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:15:40.2345930Z"
+2025-07-10 17:45:40.236 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:40.242 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 7.8413ms
+2025-07-10 17:45:40.242 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 17:45:40.243 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:15:40.2434860Z"
+2025-07-10 17:45:40.246 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:40.246 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 17:45:40.247 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 17:45:40.248 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 5.5334ms
+2025-07-10 17:45:40.312 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=O0-IDVicz6lAcMAZP2KmHw - null null
+2025-07-10 17:45:40.312 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:15:40.3129300Z"
+2025-07-10 17:45:40.313 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:45:40.313 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 17:49:22.928 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 17:49:22.928 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=O0-IDVicz6lAcMAZP2KmHw - 101 null null 123792.1363ms
+2025-07-10 17:49:22.933 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:49:22.936 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:19:22.9366130Z"
+2025-07-10 17:49:22.942 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:49:22.942 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 10.0066ms
+2025-07-10 17:49:23.037 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 17:49:23.041 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:19:23.0412700Z"
+2025-07-10 17:49:23.041 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:49:23.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 4.2577ms
+2025-07-10 17:49:23.046 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 17:49:23.046 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:19:23.0462960Z"
+2025-07-10 17:49:23.046 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:49:23.047 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 17:49:23.047 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 17:49:23.047 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.3529ms
+2025-07-10 17:49:23.059 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=ZLiQ3aSJ9-BLTNk6tEjWDA - null null
+2025-07-10 17:49:23.075 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:19:23.0755910Z"
+2025-07-10 17:49:23.076 +05:30 [INF] CORS policy execution successful.
+2025-07-10 17:49:23.076 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 18:01:06.985 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 18:01:06.989 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 18:01:06.989 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:31:06.9887530Z"
+2025-07-10 18:01:06.990 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=ZLiQ3aSJ9-BLTNk6tEjWDA - 101 null null 585585.6663ms
+2025-07-10 18:01:06.991 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.068 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 82.8858ms
+2025-07-10 18:01:07.071 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 18:01:07.072 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:31:07.0722240Z"
+2025-07-10 18:01:07.072 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.072 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 18:01:07.076 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 18:01:07.077 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 5.3295ms
+2025-07-10 18:01:07.253 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=ivA40UFCYU75IfTNVpBiyg - null null
+2025-07-10 18:01:07.254 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:31:07.2540750Z"
+2025-07-10 18:01:07.254 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.255 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-10 18:01:07.259 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-10 18:01:07.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=ivA40UFCYU75IfTNVpBiyg - 101 null null 6.279ms
+2025-07-10 18:01:07.458 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-10 18:01:07.458 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-10T12:31:07.4589080Z"
+2025-07-10 18:01:07.459 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.459 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.6849ms
+2025-07-10 18:01:07.460 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-10 18:01:07.460 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-10T12:31:07.4604000Z"
+2025-07-10 18:01:07.460 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.460 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-10 18:01:07.461 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-10 18:01:07.461 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.1096ms
+2025-07-10 18:01:07.497 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=E1wEHvZOZoGCvg0NcPTlNQ - null null
+2025-07-10 18:01:07.497 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-10T12:31:07.4975530Z"
+2025-07-10 18:01:07.497 +05:30 [INF] CORS policy execution successful.
+2025-07-10 18:01:07.510 +05:30 [INF] Executing endpoint '/notificationHub'

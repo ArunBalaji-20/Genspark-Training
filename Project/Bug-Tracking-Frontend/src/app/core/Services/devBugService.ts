@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { authService } from "./authService";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class devBugService
@@ -15,7 +16,7 @@ export class devBugService
     getMyBugsAPI()
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.get('http://localhost:5258/api/v2/BugsManagement/assigned/mybugs',{
+        return this.http.get(`${environment.apiUrl}/api/v2/BugsManagement/assigned/mybugs`,{
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
         }),
@@ -26,7 +27,7 @@ export class devBugService
     getMyBugsByIdAPI(id:number)
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.get(`http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=${id}`,{
+        return this.http.get(`${environment.apiUrl}/api/v2/BugsManagement/assigned/mybugs/byId?empId=${id}`,{
             
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
@@ -38,7 +39,7 @@ export class devBugService
     getBugStatusAPI(id:number)
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.get(`http://localhost:5258/api/v1/Bugs/status?BugId=${id}`,{
+        return this.http.get(`${environment.apiUrl}/api/v1/Bugs/status?BugId=${id}`,{
             headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
         }),
@@ -49,7 +50,7 @@ export class devBugService
     patchBugStatusResolveAPI(id:number)
     {
         const token=this.authService.getCookie("access_token"); 
-        return this.http.patch(`http://localhost:5258/api/v1/BugsManagement/Resolve?BugId=${id}`,{},{
+        return this.http.patch(`${environment.apiUrl}/api/v1/BugsManagement/Resolve?BugId=${id}`,{},{
                headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
         }),
@@ -61,7 +62,7 @@ export class devBugService
     {
         const token=this.authService.getCookie("access_token");
 
-        return this.http.patch(`http://localhost:5258/api/v2/BugsManagement/Update/InProgress?BugId=${id}`,{},{
+        return this.http.patch(`${environment.apiUrl}/api/v2/BugsManagement/Update/InProgress?BugId=${id}`,{},{
                headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
         }),
@@ -72,7 +73,7 @@ export class devBugService
     getAvailableDevsAPI()
     {
         const token=this.authService.getCookie("access_token");
-        return this.http.get('http://localhost:5258/api/v1/BugsManagement/Available/Devs',{
+        return this.http.get(`${environment.apiUrl}/api/v1/BugsManagement/Available/Devs`,{
                   headers:new HttpHeaders({
                 'Authorization': `Bearer ${token}`
         }),

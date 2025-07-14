@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { computed, inject, Injectable, signal } from "@angular/core";
+import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class authService
@@ -36,7 +37,8 @@ export class authService
 
  loginAPI(email: string, password: string) {
   return this.http.post<{ accessToken: string ,refreshToken:string}>(
-    'http://localhost:5258/api/v1/Authentication/login',
+    // 'http://localhost:5258/api/v1/Authentication/login',
+    `${environment.apiUrl}/api/v1/Authentication/login`,
     { email, password },
     { observe: 'response' }
   );
@@ -47,7 +49,8 @@ logoutAPI() {
   const refreshToken = this.getCookie('refresh_token');
 
   return this.http.post<{ refreshToken: string }>(
-    'http://localhost:5258/api/v1/Authentication/logout',
+    // 'http://localhost:5258/api/v1/Authentication/logout',
+    `${environment.apiUrl}/api/v1/Authentication/logout`,
     { refreshToken: refreshToken }, 
     {
       headers: new HttpHeaders({
