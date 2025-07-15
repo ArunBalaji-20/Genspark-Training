@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Bug-Tracking-Frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - bugnet
+
+  backend:
+    build:
+      context: ./Bug-Tracking-System/BugTrackingAPI/
+      dockerfile: Dockerfile
+    ports:
+      - "5258:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RUN_MIGRATIONS=true
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=bugtrackerdb;Username=postgres;Password=postgres
+    depends_on:
+       db:
+        condition: service_healthy
+    networks:
+      - bugnet
+
+  db:
+    image: postgres:15
+    container_name: bugtracker-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: bugtrackerdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # - ./Bug-Tracking-System/BugTrackingAPI/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+    networks:
+      - bugnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d bugtrackerdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  
+
+volumes:
+  pgdata:
+
+networks:
+  bugnet:
+    driver: bridge

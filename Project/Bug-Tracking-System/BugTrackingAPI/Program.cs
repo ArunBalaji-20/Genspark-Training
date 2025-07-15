@@ -269,6 +269,8 @@ builder.Services.AddRateLimiter(options =>
 });
 #endregion
 
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -281,12 +283,34 @@ if (app.Environment.IsDevelopment())
         foreach (var description in provider.ApiVersionDescriptions)
         {
             options.SwaggerEndpoint(
-                $"/swagger/{description.GroupName}/swagger.json", 
+                $"/swagger/{description.GroupName}/swagger.json",
                 $"BUG TRACKING API {description.GroupName.ToUpperInvariant()}"
             );
         }
     });
 }
+
+#region running miragrations on docker env
+if (builder.Configuration["RUN_MIGRATIONS"] == "true")
+{
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<BugContext>();
+    db.Database.Migrate();
+    if (!db.Employees.Any())
+    {
+        db.Employees.Add(new Employee
+        {
+            Name = "Admin",
+            Email = "admin@gmail.com",
+            Role = "Admin",
+            PasswordHash="$2a$11$wW0pknOYdn2XcbgQzjFtp.EBvGu/q7m8suqbRSbkS.v2UWkqHRMJ6"
+            
+        });
+
+        db.SaveChanges();
+    }
+}
+#endregion
 
 app.UseMiddleware<RequestLoggingMiddleware>();
 
