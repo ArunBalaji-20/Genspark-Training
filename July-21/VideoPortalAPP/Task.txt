@@ -1,0 +1,126 @@
+Objective
+Develop a Training Video Portal where:
+ 
+Users can upload training videos (e.g., company induction videos).
+ 
+Users can browse and stream videos directly in the Angular app.
+ 
+Video metadata is stored in Azure SQL/PostgreSQL.
+ 
+Videos themselves are stored in Azure Blob Storage and streamed via public or SAS URLs.
+ 
+Scope Overview
+Backend (.NET 8 Web API)
+Endpoints:
+ 
+POST /api/videos/upload
+ 
+Accepts video file + metadata (Title, Description).
+ 
+Saves video to Blob Storage.
+Saves metadata and blob URL to the DB.
+ 
+GET /api/videos
+ 
+Returns a list of videos (Title, Description, URL).
+ 
+GET /api/videos/{id}/stream
+ 
+(Optional) Returns a streaming response from Blob Storage.
+ 
+Or, the Angular app can stream directly via Blob URL.
+ 
+Database Table:
+ 
+CREATE TABLE TrainingVideos (
+  Id INT IDENTITY PRIMARY KEY,
+  Title NVARCHAR(200),
+  Description NVARCHAR(500),
+  UploadDate DATETIME,
+  BlobUrl NVARCHAR(500)
+);
+Frontend (Angular)
+Video List Page
+ 
+Shows:
+ 
+Title
+ 
+Description
+ 
+Video player embedded (HTML5 <video> tag).
+ 
+User can click a video to stream.
+ 
+Upload Page
+ 
+Form to upload:
+ 
+Title
+ 
+Description
+ 
+Video File
+ 
+Functional Requirements
+User can upload videos to Blob Storage.
+ 
+Video metadata saved to DB.
+ 
+User can stream videos from Blob Storage.
+ 
+Frontend shows embedded video players.
+ 
+Azure Blob Storage
+Container: training-videos
+ 
+Upload files (MP4 recommended).
+ 
+Use either:
+ 
+Public container (for simpler streaming), or
+ 
+Generate SAS tokens for secured access.
+ 
+Tech Requirements
+.NET 8 Web API
+ 
+Angular 17
+ 
+Azure SQL/PostgreSQL
+ 
+Azure Blob Storage SDK
+ 
+Swagger for API testing
+ 
+Estimated Time Allocation (~5 Hours)
+Task	Estimated Time
+API project scaffolding, DB migration, blob config	45 min
+Upload endpoint + Blob Storage integration	45 min
+List endpoint	20 min
+Streaming endpoint (or SAS URL logic)	30 min
+Angular project scaffold	30 min
+Video List page with <video> players	45 min
+Upload form with file picker	45 min
+Buffer / Debug	20 min
+ 
+Deliverables
+Participants should submit:
+ 
+Backend repo with:
+ 
+Upload and list endpoints.
+ 
+Azure Blob Storage integration.
+ 
+Angular repo:
+ 
+Video list displaying embedded players.
+ 
+Upload form.
+ 
+Screenshots showing:
+ 
+Videos stored in Blob Storage.
+ 
+Videos successfully streaming in the app.

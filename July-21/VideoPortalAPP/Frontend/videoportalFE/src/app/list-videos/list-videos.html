@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let item of portalVideos">
+      <div class="card video-card h-100">
+        <div class="video-wrapper">
+          <video controls>
+            <source [src]="item.blobUrl" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text"><small class="text-muted">{{ item.uploadDate | date:'medium' }}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
