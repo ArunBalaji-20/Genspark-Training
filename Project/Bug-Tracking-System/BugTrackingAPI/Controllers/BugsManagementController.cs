@@ -65,7 +65,43 @@ namespace BugTrackingAPI.Controllers
                 throw new Exception("Not logged In");
             }
 
+            var dev = await _BugManagementService.GetAssignedList();
+            dev = dev.Where(a => a.bugId == BugId);
+            Console.WriteLine("Dev : ",dev);
+            
+
             var result = await _BugManagementService.ResolveBugs(BugId, SubmitterEmail);
+            if (result == null)
+            {
+                throw new Exception("error occured while submmitting bug");
+            }
+            return Ok(result);
+        }
+
+        [HttpPatch("Resolve/Admin")]
+        [MapToApiVersion("2.0")]
+        [Authorize(Roles = "Admin")]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult<BugAssignmentResponse>> ResolveBugsByAdmin([FromQuery] long BugId)
+        {
+            var SubmitterEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (SubmitterEmail == null)
+            {
+                throw new Exception("Not logged In");
+            }
+
+            // var dev = await _BugManagementService.GetAssignedList();
+            // dev = dev.Where(a => a.bugId == BugId);
+            // Console.WriteLine("Dev : ",dev);
+            
+
+            var result = await _BugManagementService.ResolveBugsByAdmin(BugId, SubmitterEmail);
             if (result == null)
             {
                 throw new Exception("error occured while submmitting bug");

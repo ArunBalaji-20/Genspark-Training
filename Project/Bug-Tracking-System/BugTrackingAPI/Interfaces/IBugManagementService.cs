@@ -8,6 +8,7 @@ namespace BugTrackingAPI.Interfaces
         public Task<BugAssignmentResponse> AssignBugToDevs(long bugId, long devId, string email);
 
         public Task<BugAssignmentResponse> ResolveBugs(long bugId, string email);
+        public Task<BugAssignmentResponse> ResolveBugsByAdmin(long bugId, string email);
 
         public Task<BugAssignmentResponse> UpdateInProgress(long bugId, string email);
 

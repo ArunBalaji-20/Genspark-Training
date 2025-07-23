@@ -58,6 +58,17 @@ export class devBugService
         })
     }
 
+    patchBugStatusResolveAdminAPI(id:number)
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.patch(`${environment.apiUrl}/api/v2/BugsManagement/Resolve/Admin?BugId=${id}`,{},{
+               headers:new HttpHeaders({
+                'Authorization': `Bearer ${token}`
+        }),
+            observe:'response'
+        })
+    }
+
     patchBugStatusInProgressAPI(id:number)
     {
         const token=this.authService.getCookie("access_token");

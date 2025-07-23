@@ -75,6 +75,8 @@ export class bugService
 
         });
     }
+
+    
 }
 
 // http://localhost:5258/api/v1/Bugs/Report
