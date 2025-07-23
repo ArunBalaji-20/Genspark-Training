@@ -20,7 +20,7 @@ namespace BugTrackingAPI.Repositories
 
         public override async Task<IEnumerable<BugAssignment>> GetAll()
         {
-            return await _bugContext.BugAssignments.ToListAsync();
+            return await _bugContext.BugAssignments.Include(a=>a.Bug).ToListAsync();
 
         }
 

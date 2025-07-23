@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj": {}
+    "/Users/muckesh/Muckesh/Collab/Genspark-Training/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj": {}
   },
   "projects": {
-    "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj": {
+    "/Users/muckesh/Muckesh/Collab/Genspark-Training/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
+        "projectUniqueName": "/Users/muckesh/Muckesh/Collab/Genspark-Training/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
         "projectName": "BugTrackingAPI",
-        "projectPath": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
-        "packagesPath": "/Users/presidio/.nuget/packages/",
-        "outputPath": "/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/obj/",
+        "projectPath": "/Users/muckesh/Muckesh/Collab/Genspark-Training/Project/Bug-Tracking-System/BugTrackingAPI/BugTrackingAPI.csproj",
+        "packagesPath": "/Users/muckesh/.nuget/packages/",
+        "outputPath": "/Users/muckesh/Muckesh/Collab/Genspark-Training/Project/Bug-Tracking-System/BugTrackingAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/presidio/.nuget/NuGet/NuGet.Config"
+          "/Users/muckesh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -118,20 +117,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-x64",
-              "version": "[8.0.16, 8.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -140,7 +125,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

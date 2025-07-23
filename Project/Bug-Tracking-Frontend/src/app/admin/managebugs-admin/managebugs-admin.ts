@@ -8,10 +8,10 @@ import { NotificationService } from '../../core/Services/notificationService';
 @Component({
   selector: 'app-managebugs',
   imports: [FormsModule,ReactiveFormsModule],
-  templateUrl: './managebugs.html',
-  styleUrl: './managebugs.css'
+  templateUrl: './managebugs-admin.html',
+  styleUrl: './managebugs-admin.css'
 })
-export class Managebugs {
+export class ManagebugsAdmin {
   bugId:number=0;
 
   bugUpdateForm!: FormGroup;
@@ -24,7 +24,7 @@ export class Managebugs {
   statusMessage = '';
   errorMessage = '';
 
-  constructor(private route:ActivatedRoute,private fb: FormBuilder,private devbugService:devBugService)
+  constructor(private route:ActivatedRoute,private fb: FormBuilder,private devbugService:devBugService,private notificationService:NotificationService)
   {
   }
 
@@ -96,13 +96,14 @@ export class Managebugs {
 
     if(newStatus=="Resolved")
     {
-      this.devbugService.patchBugStatusResolveAPI(this.bugId).subscribe({
+      this.devbugService.patchBugStatusResolveAdminAPI(this.bugId).subscribe({
         next:(data)=>{
           
           console.log(data)
           console.log("patched")
           this.statusMessage = 'Status updated successfully!';
           window.alert(this.statusMessage)
+          this.notificationService.updateNotifications([`${this.bug?.bugName} is Resolved.`]);
         },
         error:(err)=>{
           console.log(err.error.detail)
