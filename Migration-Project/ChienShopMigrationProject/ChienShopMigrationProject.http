@@ -1,0 +1,6 @@
+@ChienShopMigrationProject_HostAddress = http://localhost:5244
+
+GET {{ChienShopMigrationProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
