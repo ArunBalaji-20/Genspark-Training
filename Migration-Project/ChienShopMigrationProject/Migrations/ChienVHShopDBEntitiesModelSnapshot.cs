@@ -157,6 +157,9 @@ namespace ChienShopMigrationProject.Migrations
                     b.Property<string>("OrderName")
                         .HasColumnType("text");
 
+                    b.Property<string>("PaymentSessionId")
+                        .HasColumnType("text");
+
                     b.Property<string>("PaymentType")
                         .HasColumnType("text");
 
@@ -170,13 +173,13 @@ namespace ChienShopMigrationProject.Migrations
 
             modelBuilder.Entity("ChienVHShopOnline.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("OrderID")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderID"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
-                    b.Property<int?>("OrderID1")
+                    b.Property<int>("OrderID")
                         .HasColumnType("integer");
 
                     b.Property<double?>("Price")
@@ -188,9 +191,9 @@ namespace ChienShopMigrationProject.Migrations
                     b.Property<int?>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("OrderID");
+                    b.HasKey("id");
 
-                    b.HasIndex("OrderID1");
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("ProductID");
 
@@ -283,7 +286,9 @@ namespace ChienShopMigrationProject.Migrations
                 {
                     b.HasOne("ChienVHShopOnline.Models.Order", "Order")
                         .WithMany("OrderDetails")
-                        .HasForeignKey("OrderID1");
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ChienVHShopOnline.Models.Product", "Product")
                         .WithMany("OrderDetails")

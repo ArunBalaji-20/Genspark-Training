@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rXdMRK9/ICg=",
+  "dgSpecHash": "SkfZN+QCFs0=",
   "success": true,
   "projectFilePath": "/Users/presidio/Documents/Sample-migration-project/Migration-Project/ChienShopMigrationProject/ChienShopMigrationProject.csproj",
   "expectedPackageFiles": [
     "/Users/presidio/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.3.0/microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.16/microsoft.aspnetcore.authentication.jwtbearer.8.0.16.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.aspnetcore.authorization/2.3.0/microsoft.aspnetcore.authorization.2.3.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.aspnetcore.authorization.policy/2.3.0/microsoft.aspnetcore.authorization.policy.2.3.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.aspnetcore.connections.abstractions/2.3.0/microsoft.aspnetcore.connections.abstractions.2.3.0.nupkg.sha512",
@@ -52,6 +53,12 @@
     "/Users/presidio/.nuget/packages/microsoft.extensions.objectpool/8.0.11/microsoft.extensions.objectpool.8.0.11.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.abstractions/7.1.2/microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.1.2/microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.logging/7.1.2/microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.protocols/7.1.2/microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.identitymodel.tokens/7.1.2/microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.net.http.headers/2.3.0/microsoft.net.http.headers.2.3.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.openapi/1.6.23/microsoft.openapi.1.6.23.nupkg.sha512",
     "/Users/presidio/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
@@ -59,6 +66,7 @@
     "/Users/presidio/.nuget/packages/npgsql/8.0.6/npgsql.8.0.6.nupkg.sha512",
     "/Users/presidio/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.11/npgsql.entityframeworkcore.postgresql.8.0.11.nupkg.sha512",
     "/Users/presidio/.nuget/packages/paypal/1.9.1/paypal.1.9.1.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/questpdf/2025.7.0/questpdf.2025.7.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/swashbuckle.aspnetcore/8.1.4/swashbuckle.aspnetcore.8.1.4.nupkg.sha512",
     "/Users/presidio/.nuget/packages/swashbuckle.aspnetcore.swagger/8.1.4/swashbuckle.aspnetcore.swagger.8.1.4.nupkg.sha512",
     "/Users/presidio/.nuget/packages/swashbuckle.aspnetcore.swaggergen/8.1.4/swashbuckle.aspnetcore.swaggergen.8.1.4.nupkg.sha512",
@@ -72,6 +80,7 @@
     "/Users/presidio/.nuget/packages/system.composition.hosting/6.0.0/system.composition.hosting.6.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.composition.runtime/6.0.0/system.composition.runtime.6.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.composition.typedparts/6.0.0/system.composition.typedparts.6.0.0.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.net.websockets.websocketprotocol/5.1.0/system.net.websockets.websocketprotocol.5.1.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
@@ -80,9 +89,9 @@
     "/Users/presidio/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/presidio/.nuget/packages/system.threading.channels/8.0.0/system.threading.channels.8.0.0.nupkg.sha512",
+    "/Users/presidio/.nuget/packages/microsoft.netcore.app.ref/8.0.16/microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
     "/Users/presidio/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.16/microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512",
-    "/Users/presidio/.nuget/packages/microsoft.netcore.app.host.osx-x64/8.0.16/microsoft.netcore.app.host.osx-x64.8.0.16.nupkg.sha512",
-    "/Users/presidio/.nuget/packages/microsoft.netcore.app.ref/8.0.16/microsoft.netcore.app.ref.8.0.16.nupkg.sha512"
+    "/Users/presidio/.nuget/packages/microsoft.netcore.app.host.osx-x64/8.0.16/microsoft.netcore.app.host.osx-x64.8.0.16.nupkg.sha512"
   ],
   "logs": [
     {

@@ -11,7 +11,8 @@ namespace ChienVHShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +20,7 @@ namespace ChienVHShopOnline.Models
         {
             this.OrderDetails = new HashSet<OrderDetail>();
         }
-    
+        [Key]
         public int OrderID { get; set; }
         public string OrderName { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
@@ -29,6 +30,7 @@ namespace ChienVHShopOnline.Models
         public string CustomerPhone { get; set; }
         public string CustomerEmail { get; set; }
         public string CustomerAddress { get; set; }
+        public string PaymentSessionId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

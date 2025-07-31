@@ -11,9 +11,11 @@ namespace ChienVHShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ContactU
     {
+        [Key]
         public int id { get; set; }
         public string name { get; set; }
         public string email { get; set; }

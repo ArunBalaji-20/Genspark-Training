@@ -9,13 +9,16 @@ namespace ChienVHShopOnline.Services
     public class UserService : IUserService
     {
         private readonly IRepository<int, User> _userRepository;
+        private readonly ITokenService _tokenService;
 
-        public UserService(IRepository<int, User> userRepository)
+        public UserService(IRepository<int, User> userRepository,
+                            ITokenService tokenService)
         {
             _userRepository = userRepository;
+            _tokenService = tokenService;
         }
 
-        public async Task<User> Register(RegisterUserDto user)
+        public async Task<UserLoginResponse> Register(RegisterUserDto user)
         {
             var allUsers = await _userRepository.GetAll();
             bool check = allUsers.Any(e => e.Username == user.Username);
@@ -33,27 +36,40 @@ namespace ChienVHShopOnline.Services
 
             var newUser = await _userRepository.Add(newUserEntity);
 
-            return newUser;
+             var token = await _tokenService.GenerateToken(newUser);
+
+            return new UserLoginResponse
+            {
+                Email = user.Username,
+                AccessToken = token.AccessToken
+            };
+
+
         }
 
-        public async Task<User> Login(RegisterUserDto user)
+        public async Task<UserLoginResponse> Login(RegisterUserDto user)
         {
             var allUsers = await _userRepository.GetAll();
             bool check = allUsers.Any(e => e.Username == user.Username && e.Password == user.Password);
 
             if (check)
             {
-                var newUserEntity = new User
-                {
+                var userData = allUsers.FirstOrDefault(e => e.Username == user.Username && e.Password == user.Password);
 
+                // var newUser = await _userRepository.Add(newUserEntity);
+                var userlogin = new User
+                {
                     Username = user.Username,
                     Password = user.Password
-
                 };
 
-                var newUser = await _userRepository.Add(newUserEntity);
+                 var token = await _tokenService.GenerateToken(userlogin);
 
-                return newUser;
+                return new UserLoginResponse
+                {
+                    Email = user.Username,
+                    AccessToken = token.AccessToken
+                };
             }
             else
             {

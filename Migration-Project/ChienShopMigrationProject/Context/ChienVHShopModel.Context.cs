@@ -19,12 +19,12 @@ namespace ChienVHShopOnline.Models
         //     : base()
         // {
         // }
-        
-         public ChienVHShopDBEntities(DbContextOptions contextOptions) : base(contextOptions)
+
+        public ChienVHShopDBEntities(DbContextOptions contextOptions) : base(contextOptions)
         {
 
         }
-    
+
         // protected override void OnModelCreating(DbModelBuilder modelBuilder)
         // {
         //     throw new UnintentionalCodeFirstException();
@@ -39,5 +39,45 @@ namespace ChienVHShopOnline.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ContactU> ContactUs { get; set; }
+
+
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     base.OnModelCreating(modelBuilder);
+
+        //     modelBuilder.Entity<Product>()
+        //         .HasOne(p => p.Model)
+        //         .WithMany()
+        //         .HasForeignKey(p => p.ModelId)
+        //         .OnDelete(DeleteBehavior.SetNull);
+
+        //     modelBuilder.Entity<Product>()
+        //         .HasOne(p => p.Category)
+        //         .WithMany()
+        //         .HasForeignKey(p => p.CategoryId)
+        //         .OnDelete(DeleteBehavior.SetNull);
+
+        //     modelBuilder.Entity<Product>()
+        //         .HasOne(p => p.Color)
+        //         .WithMany()
+        //         .HasForeignKey(p => p.ColorId)
+        //         .OnDelete(DeleteBehavior.SetNull);
+
+        //     modelBuilder.Entity<Product>()
+        //         .HasOne(p => p.User)
+        //         .WithMany()
+        //         .HasForeignKey(p => p.UserId)
+        //         .OnDelete(DeleteBehavior.SetNull);
+
+        //     modelBuilder.Entity<News>()
+        //         .HasOne(p => p.User)
+        //         .WithMany()
+        //         .HasForeignKey(p => p.UserId)
+        //         .OnDelete(DeleteBehavior.SetNull);
+
+
+            
+        // }
+
     }
 }

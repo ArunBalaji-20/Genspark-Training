@@ -12,16 +12,22 @@ namespace ChienVHShopOnline.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class OrderDetail
     {
+
         [Key]
+        public int id { get; set; }
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public Nullable<double> Price { get; set; }
         public Nullable<int> Quantity { get; set; }
-    
+
+         [ForeignKey("OrderID")]
         public virtual Order Order { get; set; }
+
+         [ForeignKey("ProductID")]
         public virtual Product Product { get; set; }
     }
 }

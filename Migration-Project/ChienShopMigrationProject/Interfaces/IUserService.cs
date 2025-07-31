@@ -6,6 +6,7 @@ namespace ChienShopMigrationProject.Interfaces;
 
 public interface IUserService
 {
-    public Task<User> Register(RegisterUserDto user);
-    public Task<User> Login(RegisterUserDto user);
+    // public Task<User> Register(RegisterUserDto user);
+    Task<UserLoginResponse> Register(RegisterUserDto user);
+    Task<UserLoginResponse> Login(RegisterUserDto user);
 }

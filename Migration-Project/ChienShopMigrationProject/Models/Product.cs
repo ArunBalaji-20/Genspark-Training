@@ -11,7 +11,9 @@ namespace ChienVHShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +21,7 @@ namespace ChienVHShopOnline.Models
         {
             this.OrderDetails = new HashSet<OrderDetail>();
         }
-    
+        [Key]
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string Image { get; set; }
@@ -32,12 +34,15 @@ namespace ChienVHShopOnline.Models
         public Nullable<System.DateTime> SellStartDate { get; set; }
         public Nullable<System.DateTime> SellEndDate { get; set; }
         public Nullable<int> IsNew { get; set; }
-    
+
         public virtual Category Category { get; set; }
+
         public virtual Color Color { get; set; }
+
         public virtual Model Model { get; set; }
+
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual User User { get; set; }
     }
 }

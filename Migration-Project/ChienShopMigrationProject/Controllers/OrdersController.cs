@@ -1,5 +1,8 @@
+using System.Threading.Tasks;
+using ChienShopMigrationProject.Dtos;
 using ChienShopMigrationProject.Interfaces;
 using ChienVHShopOnline.Models;
+using ChienVHShopOnline.Models.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,11 +34,11 @@ namespace ChienShopMigrationProject.Controllers
             return order == null ? NotFound() : Ok(order);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Order order)
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromBody] OrderCreateDto order)
         {
             await _service.AddAsync(order);
-            return CreatedAtAction(nameof(Get), new { id = order.OrderID }, order);
+            return CreatedAtAction(nameof(Get), new { id = order }, order);
         }
 
         [HttpPut("{id}")]
@@ -53,5 +56,52 @@ namespace ChienShopMigrationProject.Controllers
             await _service.DeleteAsync(id);
             return NoContent();
         }
+
+        [HttpPost("payments/create")]
+        public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentDto paymentDto)
+        {
+            try
+            {
+                var paymentSessionId = await _service.CreatePaymentSession(paymentDto.OrderId);
+                return Ok(new { PaymentSessionId = paymentSessionId, RedirectUrl = $"https://fake.payment.gateway/checkout/{paymentSessionId}" });
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
+
+        [HttpGet("payments/execute")]
+        public async Task<IActionResult> ExecutePayment([FromQuery] string sessionId)
+        {
+            bool paymentSuccess = true;
+            if (paymentSuccess)
+            {
+                await _service.MarkOrderAsPaidAsync(sessionId);
+                return Ok(new { Message = "Payment successful" });
+            }
+
+            return BadRequest(new { Message = "Payment failed" });
+        }
+
+        [HttpGet("Export/pdf")]
+        public async Task<IActionResult> ExportPDF()
+        {
+            try
+            {
+                var fileContent = await _service.ExportToPdf();
+                var filename = $"OrderExport_{DateTime.Now:yyyyMMDD}.pdf";
+                return File(fileContent, "application/pdf", filename);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
     }
 }

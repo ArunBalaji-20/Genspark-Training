@@ -19,7 +19,7 @@ namespace ChienShopMigrationProject.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<ActionResult<User>> RegisterUser(RegisterUserDto user)
+        public async Task<ActionResult<UserLoginResponse>> RegisterUser(RegisterUserDto user)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace ChienShopMigrationProject.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ActionResult<User>> Login(RegisterUserDto user)
+        public async Task<ActionResult<UserLoginResponse>> Login(RegisterUserDto user)
         {
             try
             {
