@@ -271,7 +271,9 @@
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/obj/Debug/net8.0/BugTrackingAPI.genruntimeconfig.cache
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/obj/Debug/net8.0/ref/BugTrackingAPI.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Core.dll
+/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Identity.dll
+/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Security.KeyVault.Secrets.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Storage.Blobs.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Storage.Common.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Microsoft.Identity.Client.dll
@@ -282,5 +284,3 @@
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/System.Memory.Data.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
 /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll
-/Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI/bin/Debug/net8.0/Azure.Security.KeyVault.Secrets.dll

@@ -41,7 +41,7 @@ namespace BugTrackingAPI.Services
             {
                 throw new Exception(" Bug is fixed.");
             }
-            if (isBugResolved.Status == "InProgress" )
+            if (isBugResolved.Status == "InProgress")
             {
                 throw new Exception("Developer is working on the bug");
             }
@@ -79,7 +79,7 @@ namespace BugTrackingAPI.Services
                 DevId = devId,
                 AssignedById = adminId,
                 // ResolutionStatus = "ongoing",
-                ResolutionStatus="Assigned",
+                ResolutionStatus = "Assigned",
                 ResolvedOn = null
 
             };
@@ -87,7 +87,7 @@ namespace BugTrackingAPI.Services
             await _bugAssignment.Add(bugAssignment);
 
             isBugResolved.Status = "Assigned";
-            await _bugsRepository.Update(isBugResolved.BugId,isBugResolved);
+            await _bugsRepository.Update(isBugResolved.BugId, isBugResolved);
 
             var bugAssignmentResponse = new BugAssignmentResponse
             {
@@ -106,10 +106,10 @@ namespace BugTrackingAPI.Services
                     SubmittedOn = isBugResolved.SubmittedOn,
                     ResolvedAt = isBugResolved.ResolvedAt,
                     Status = isBugResolved.Status,
-                    SubmittedById=isBugResolved.SubmittedById
+                    SubmittedById = isBugResolved.SubmittedById
                 }
             };
-       
+
             return bugAssignmentResponse;
 
 
@@ -133,9 +133,9 @@ namespace BugTrackingAPI.Services
                 throw new Exception("Bug Not yet assigned");
             }
             if (ResolverId != bugDetails.DevId)
-                {
-                    throw new Exception("You cannot fix this bug because it is not assigned to you");
-                }
+            {
+                throw new Exception("You cannot fix this bug because it is not assigned to you");
+            }
             //updating bug assignment db
             bugDetails.ResolutionStatus = "Resolved";
             bugDetails.ResolvedOn = DateTime.UtcNow;
@@ -176,7 +176,7 @@ namespace BugTrackingAPI.Services
             var bugAssignments = await _bugAssignment.GetAll();
 
             var notAvailableDevIds = bugAssignments
-                .Where(b => b.ResolutionStatus == "InProgress" || b.ResolutionStatus=="Assigned")
+                .Where(b => b.ResolutionStatus == "InProgress" || b.ResolutionStatus == "Assigned")
                 .GroupBy(b => b.DevId)
                 .Where(g => g.Count() >= 3)
                 .Select(g => g.Key)
@@ -198,25 +198,25 @@ namespace BugTrackingAPI.Services
 
         public async Task<IEnumerable<AssignedResponse>> GetAssignedList()
         {
-                var allAssignments = await _bugAssignment.GetAll();
+            var allAssignments = await _bugAssignment.GetAll();
 
-                var assignedResponses = new List<AssignedResponse>();
+            var assignedResponses = new List<AssignedResponse>();
 
-                foreach (var assignment in allAssignments)
+            foreach (var assignment in allAssignments)
+            {
+                var bug = await _bugsRepository.Get(assignment.BugId);
+                var dev = await _employeeRepository.Get(assignment.DevId);
+
+                assignedResponses.Add(new AssignedResponse
                 {
-                    var bug = await _bugsRepository.Get(assignment.BugId);
-                    var dev = await _employeeRepository.Get(assignment.DevId);
-
-                    assignedResponses.Add(new AssignedResponse
-                    {
-                        bugId = assignment.BugId,
-                        BugName = bug.BugName,   
-                        DevId = assignment.DevId,
-                        DevName = dev.Name
-                    });
-                }
-
-                return assignedResponses;
+                    bugId = assignment.BugId,
+                    BugName = bug?.BugName ?? "N/A",
+                    DevId = assignment.DevId,
+                    DevName = dev?.Name ?? "N/A"
+                });
+            }
+            System.Console.WriteLine(assignedResponses);
+            return assignedResponses;
         }
 
         public async Task<IEnumerable<BugResponse>> GetBugsAssignedToMe(string email)
@@ -225,13 +225,13 @@ namespace BugTrackingAPI.Services
 
             var bugs = await _bugManagementRepository.GetBugsAssignedToMe(DevId);
             return bugs;
-            
+
         }
 
         public async Task<IEnumerable<BugResponse>> GetBugsAssignedToDev(long empId)
         {
             var bugs = await _bugManagementRepository.GetBugsAssignedToMe(empId);
-            
+
             return bugs;
         }
 
@@ -291,11 +291,18 @@ namespace BugTrackingAPI.Services
             return bugAssignmentResponse;
 
         }
-        
+
         private async Task<long> GetBugSubmitterId(string email)
         {
             var result = await _employeeRepository.GetEmployeeByEmail(email);
             return result.EmployeeId;
+        }
+
+        public async Task<int> GetOngoingTaskList(long id)
+        {
+            var allList = await _bugAssignment.GetAll();
+            var result = allList.Count(e => e.DevId == id && e.ResolutionStatus != "Resolved");
+            return result;
         }
 
         

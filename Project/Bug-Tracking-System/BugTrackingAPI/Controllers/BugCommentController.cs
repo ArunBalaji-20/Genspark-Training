@@ -54,6 +54,7 @@ namespace BugTrackingAPI.Controllers
             {
                 throw new Exception("error occured while submmitting bug");
             }
+              await _hubContext.Clients.All.SendAsync("ReceiveNotification", $"New Comment: {result.Comment} - Posted By {email} On BugId {result.BugId}");
             return Created("", result);
         }
 

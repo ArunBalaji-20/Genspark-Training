@@ -1,38 +1,448 @@
-2025-07-04 17:03:45.638 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2025-07-04 17:03:45.835 +05:30 [ERR] Hosting failed to start
-System.IO.IOException: Failed to bind to address http://127.0.0.1:5258: address already in use.
- ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
- ---> System.Net.Sockets.SocketException (48): Address already in use
-   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
-   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
-   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
-   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
-   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
-   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
-2025-07-04 17:04:36.420 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2025-07-04 17:04:36.654 +05:30 [INF] Now listening on: http://localhost:5258
-2025-07-04 17:04:36.659 +05:30 [INF] Application started. Press Ctrl+C to shut down.
-2025-07-04 17:04:36.661 +05:30 [INF] Hosting environment: Development
-2025-07-04 17:04:36.661 +05:30 [INF] Content root path: /Users/presidio/Documents/Project/Bug-Tracking-System/BugTrackingAPI
-2025-07-04 17:04:44.405 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/index.html?urls.primaryName=BUG+TRACKING+API+V1 - null null
-2025-07-04 17:04:44.576 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/index.html?urls.primaryName=BUG+TRACKING+API+V1 - 200 null text/html;charset=utf-8 173.2911ms
-2025-07-04 17:04:44.645 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - null null
-2025-07-04 17:04:44.833 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 189.0055ms
-2025-07-04 17:04:49.043 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/v2/swagger.json - null null
-2025-07-04 17:04:49.093 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 49.4038ms
-2025-07-04 17:04:57.071 +05:30 [INF] Application is shutting down...
+2025-07-04 09:13:02.670 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-04 09:13:02.742 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=IbytqqqioIMZyrobou5RDw - 101 null null 413014.8352ms
+2025-07-04 09:13:02.889 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-04 09:13:02.891 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-04T03:43:02.8911840Z"
+2025-07-04 09:13:02.893 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:02.893 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 3.9788ms
+2025-07-04 09:13:02.906 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-04 09:13:02.907 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-04T03:43:02.9079340Z"
+2025-07-04 09:13:02.908 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:02.908 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-04 09:13:02.912 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-04 09:13:02.912 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 5.6609ms
+2025-07-04 09:13:02.933 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=PKBtMyMAZquDyu0k24X7SA - null null
+2025-07-04 09:13:02.934 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-04T03:43:02.9345350Z"
+2025-07-04 09:13:02.934 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:02.934 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-04 09:13:09.673 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-04 09:13:09.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=PKBtMyMAZquDyu0k24X7SA - 101 null null 6748.1608ms
+2025-07-04 09:13:09.673 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null null
+2025-07-04 09:13:09.682 +05:30 [INF] Request: OPTIONS /notificationHub/negotiate by Anonymous at "2025-07-04T03:43:09.6822830Z"
+2025-07-04 09:13:09.685 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:09.685 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 204 null null 11.9294ms
+2025-07-04 09:13:09.697 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - null 0
+2025-07-04 09:13:09.699 +05:30 [INF] Request: POST /notificationHub/negotiate by Anonymous at "2025-07-04T03:43:09.6992450Z"
+2025-07-04 09:13:09.700 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:09.700 +05:30 [INF] Executing endpoint '/notificationHub/negotiate'
+2025-07-04 09:13:09.701 +05:30 [INF] Executed endpoint '/notificationHub/negotiate'
+2025-07-04 09:13:09.702 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 4.3247ms
+2025-07-04 09:13:10.331 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/notificationHub?id=SKWdGtLRNZPRPV5CSw9pGw - null null
+2025-07-04 09:13:10.332 +05:30 [INF] Request: GET /notificationHub by Anonymous at "2025-07-04T03:43:10.3327030Z"
+2025-07-04 09:13:10.333 +05:30 [INF] CORS policy execution successful.
+2025-07-04 09:13:10.334 +05:30 [INF] Executing endpoint '/notificationHub'
+2025-07-04 10:43:05.524 +05:30 [INF] Executed endpoint '/notificationHub'
+2025-07-04 10:43:05.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/notificationHub?id=SKWdGtLRNZPRPV5CSw9pGw - 101 null null 4497553.8729ms
+2025-07-04 14:01:31.920 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-07-04 14:01:32.489 +05:30 [INF] Now listening on: http://localhost:5258
+2025-07-04 14:01:32.492 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-04 14:01:32.493 +05:30 [INF] Hosting environment: Development
+2025-07-04 14:01:32.493 +05:30 [INF] Content root path: /Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI
+2025-07-04 14:01:37.283 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - null null
+2025-07-04 14:01:37.376 +05:30 [INF] Request: OPTIONS /api/v1/Authentication/login by Anonymous at "2025-07-04T08:31:37.3751280Z"
+2025-07-04 14:01:37.447 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:37.458 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Authentication/login - 204 null null 175.8762ms
+2025-07-04 14:01:37.462 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - application/json 47
+2025-07-04 14:01:37.472 +05:30 [INF] Request: POST /api/v1/Authentication/login by Anonymous at "2025-07-04T08:31:37.4721340Z"
+2025-07-04 14:01:37.473 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:37.474 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-07-04 14:01:37.495 +05:30 [INF] Route matched with {action = "UserLogin", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.UserLoginResponse]] UserLogin(BugTrackingAPI.Models.DTO.UserLoginRequest) on controller BugTrackingAPI.Controllers.AuthenticationController (BugTrackingAPI).
+2025-07-04 14:01:38.954 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."Email" = @__email_0
+LIMIT 1
+2025-07-04 14:01:39.457 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?', @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("EmployeeId", "RefreshToken", "RefreshTokenExpiryTime")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-07-04 14:01:39.483 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.UserLoginResponse'.
+2025-07-04 14:01:39.497 +05:30 [INF] Executed action BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI) in 1998.6336ms
+2025-07-04 14:01:39.497 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.AuthenticationController.UserLogin (BugTrackingAPI)'
+2025-07-04 14:01:39.506 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5258/api/v1/Authentication/login - 200 null application/json; charset=utf-8 2043.6283ms
+2025-07-04 14:01:39.523 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:39.523 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:39.525 +05:30 [INF] Request: OPTIONS /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:39.5251280Z"
+2025-07-04 14:01:39.525 +05:30 [INF] Request: OPTIONS /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:39.5251390Z"
+2025-07-04 14:01:39.529 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:39.529 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:39.529 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - 204 null null 6.3572ms
+2025-07-04 14:01:39.529 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - 204 null null 5.78ms
+2025-07-04 14:01:39.532 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:39.532 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:39.543 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:39.5433670Z"
+2025-07-04 14:01:39.543 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:39.5433670Z"
+2025-07-04 14:01:39.640 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:39.652 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:39.652 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:39.656 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-04 14:01:39.664 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-04 14:01:39.667 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:39.672 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:39.674 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:39.674 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:39.677 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 21.4768ms
+2025-07-04 14:01:39.678 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:39.679 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 146.711ms
+2025-07-04 14:01:39.679 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:39.693 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:39.719 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:39.733 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 53.7629ms
+2025-07-04 14:01:39.733 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:39.734 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 201.8882ms
+2025-07-04 14:01:45.149 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v2/Bugs/Get/InSubmittedState - null null
+2025-07-04 14:01:45.150 +05:30 [INF] Request: OPTIONS /api/v2/Bugs/Get/InSubmittedState by Anonymous at "2025-07-04T08:31:45.1499510Z"
+2025-07-04 14:01:45.150 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:45.150 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v2/Bugs/Get/InSubmittedState - 204 null null 1.6671ms
+2025-07-04 14:01:45.151 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v2/Bugs/Get/InSubmittedState - null null
+2025-07-04 14:01:45.153 +05:30 [INF] Request: GET /api/v2/Bugs/Get/InSubmittedState by Anonymous at "2025-07-04T08:31:45.1531400Z"
+2025-07-04 14:01:45.220 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:45.221 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:45.221 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.BugsInSubmittedState (BugTrackingAPI)'
+2025-07-04 14:01:45.224 +05:30 [INF] Route matched with {action = "BugsInSubmittedState", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] BugsInSubmittedState() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:45.241 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:45.243 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:45.243 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.BugsInSubmittedState (BugTrackingAPI) in 18.5167ms
+2025-07-04 14:01:45.243 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.BugsInSubmittedState (BugTrackingAPI)'
+2025-07-04 14:01:45.244 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v2/Bugs/Get/InSubmittedState - 200 null application/json; charset=utf-8 92.1804ms
+2025-07-04 14:01:48.640 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:48.641 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-07-04 14:01:48.641 +05:30 [INF] Request: OPTIONS /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:48.6417970Z"
+2025-07-04 14:01:48.642 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:48.642 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - 204 null null 1.9866ms
+2025-07-04 14:01:48.642 +05:30 [INF] Request: OPTIONS /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-07-04T08:31:48.6428890Z"
+2025-07-04 14:01:48.643 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:48.643 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:48.643 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 204 null null 2.4613ms
+2025-07-04 14:01:48.644 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:48.6444950Z"
+2025-07-04 14:01:48.644 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - null null
+2025-07-04 14:01:48.646 +05:30 [INF] Request: GET /api/v1/BugsManagement/Get/Assigned/Lists by Anonymous at "2025-07-04T08:31:48.6464570Z"
+2025-07-04 14:01:48.646 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:48.647 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:48.648 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:48.648 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:48.649 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:48.650 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:48.650 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-07-04 14:01:48.650 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:48.651 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:48.652 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 3.2776ms
+2025-07-04 14:01:48.652 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:48.652 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 8.8314ms
+2025-07-04 14:01:48.655 +05:30 [INF] Route matched with {action = "GetAssignedList", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.AssignedResponse]]] GetAssignedList() on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-07-04 14:01:48.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/523699e5-4553-4ef1-a86f-4a3fe534ab40.png - null null
+2025-07-04 14:01:48.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/7e810d8d-f06a-4ada-96cd-991a81986458.png - null null
+2025-07-04 14:01:48.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/f247873a-9566-4476-971e-95124b8a8859.png - null null
+2025-07-04 14:01:48.668 +05:30 [INF] Request: GET /screenshots/523699e5-4553-4ef1-a86f-4a3fe534ab40.png by Anonymous at "2025-07-04T08:31:48.6685420Z"
+2025-07-04 14:01:48.668 +05:30 [INF] Request: GET /screenshots/f247873a-9566-4476-971e-95124b8a8859.png by Anonymous at "2025-07-04T08:31:48.6687130Z"
+2025-07-04 14:01:48.668 +05:30 [INF] Request: GET /screenshots/7e810d8d-f06a-4ada-96cd-991a81986458.png by Anonymous at "2025-07-04T08:31:48.6685420Z"
+2025-07-04 14:01:48.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/7eea8964-7f22-459b-9211-bf839900f583.png - null null
+2025-07-04 14:01:48.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/80ac43c6-bef2-4e0a-af8d-6a212e5a5436.png - null null
+2025-07-04 14:01:48.669 +05:30 [INF] Request: GET /screenshots/7eea8964-7f22-459b-9211-bf839900f583.png by Anonymous at "2025-07-04T08:31:48.6698170Z"
+2025-07-04 14:01:48.669 +05:30 [INF] Request: GET /screenshots/80ac43c6-bef2-4e0a-af8d-6a212e5a5436.png by Anonymous at "2025-07-04T08:31:48.6699620Z"
+2025-07-04 14:01:48.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/1458a996-eb88-4873-98bc-717b14ee2d24.png - null null
+2025-07-04 14:01:48.671 +05:30 [INF] Request: GET /screenshots/1458a996-eb88-4873-98bc-717b14ee2d24.png by Anonymous at "2025-07-04T08:31:48.6716580Z"
+2025-07-04 14:01:48.674 +05:30 [INF] The file /7eea8964-7f22-459b-9211-bf839900f583.png was not modified
+2025-07-04 14:01:48.674 +05:30 [INF] The file /7e810d8d-f06a-4ada-96cd-991a81986458.png was not modified
+2025-07-04 14:01:48.674 +05:30 [INF] The file /523699e5-4553-4ef1-a86f-4a3fe534ab40.png was not modified
+2025-07-04 14:01:48.674 +05:30 [INF] The file /80ac43c6-bef2-4e0a-af8d-6a212e5a5436.png was not modified
+2025-07-04 14:01:48.674 +05:30 [INF] The file /f247873a-9566-4476-971e-95124b8a8859.png was not modified
+2025-07-04 14:01:48.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/523699e5-4553-4ef1-a86f-4a3fe534ab40.png - 304 null image/png 6.8162ms
+2025-07-04 14:01:48.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/7e810d8d-f06a-4ada-96cd-991a81986458.png - 304 null image/png 6.744ms
+2025-07-04 14:01:48.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/80ac43c6-bef2-4e0a-af8d-6a212e5a5436.png - 304 null image/png 5.9724ms
+2025-07-04 14:01:48.674 +05:30 [INF] The file /1458a996-eb88-4873-98bc-717b14ee2d24.png was not modified
+2025-07-04 14:01:48.675 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/dcc32fe6-9cb2-4902-b67a-d5c2b460f2ae.png - null null
+2025-07-04 14:01:48.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/f247873a-9566-4476-971e-95124b8a8859.png - 304 null image/png 6.779ms
+2025-07-04 14:01:48.674 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/7eea8964-7f22-459b-9211-bf839900f583.png - 304 null image/png 6.0214ms
+2025-07-04 14:01:48.676 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/1458a996-eb88-4873-98bc-717b14ee2d24.png - 304 null image/png 4.9812ms
+2025-07-04 14:01:48.677 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/15bbbe51-ec6f-4db9-a2b9-a1916ac92b4f.png - null null
+2025-07-04 14:01:48.676 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/58f2fcfa-9ded-4280-bb9f-23a89b7fdf50.png - null null
+2025-07-04 14:01:48.678 +05:30 [INF] Request: GET /screenshots/15bbbe51-ec6f-4db9-a2b9-a1916ac92b4f.png by Anonymous at "2025-07-04T08:31:48.6787210Z"
+2025-07-04 14:01:48.679 +05:30 [INF] Request: GET /screenshots/58f2fcfa-9ded-4280-bb9f-23a89b7fdf50.png by Anonymous at "2025-07-04T08:31:48.6790460Z"
+2025-07-04 14:01:48.676 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/screenshots/bce2adee-f267-4418-94d1-dab90b475780.png - null null
+2025-07-04 14:01:48.676 +05:30 [INF] Request: GET /screenshots/dcc32fe6-9cb2-4902-b67a-d5c2b460f2ae.png by Anonymous at "2025-07-04T08:31:48.6764950Z"
+2025-07-04 14:01:48.679 +05:30 [INF] The file /15bbbe51-ec6f-4db9-a2b9-a1916ac92b4f.png was not modified
+2025-07-04 14:01:48.681 +05:30 [INF] The file /dcc32fe6-9cb2-4902-b67a-d5c2b460f2ae.png was not modified
+2025-07-04 14:01:48.680 +05:30 [INF] The file /58f2fcfa-9ded-4280-bb9f-23a89b7fdf50.png was not modified
+2025-07-04 14:01:48.682 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/15bbbe51-ec6f-4db9-a2b9-a1916ac92b4f.png - 304 null image/png 4.0047ms
+2025-07-04 14:01:48.682 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/dcc32fe6-9cb2-4902-b67a-d5c2b460f2ae.png - 304 null image/png 6.2992ms
+2025-07-04 14:01:48.680 +05:30 [INF] Request: GET /screenshots/bce2adee-f267-4418-94d1-dab90b475780.png by Anonymous at "2025-07-04T08:31:48.6807290Z"
+2025-07-04 14:01:48.682 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/58f2fcfa-9ded-4280-bb9f-23a89b7fdf50.png - 304 null image/png 5.7904ms
+2025-07-04 14:01:48.683 +05:30 [INF] The file /bce2adee-f267-4418-94d1-dab90b475780.png was not modified
+2025-07-04 14:01:48.684 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/screenshots/bce2adee-f267-4418-94d1-dab90b475780.png - 304 null image/png 8.0034ms
+2025-07-04 14:01:48.690 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."AssignmentId", b."AssignedById", b."AssignedDate", b."BugId", b."DevId", b."ResolutionStatus", b."ResolvedOn"
+FROM "BugAssignments" AS b
+2025-07-04 14:01:48.746 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.757 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.767 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.769 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.769 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.770 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.771 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.772 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.801 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+WHERE b."BugId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.803 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:48.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.AssignedResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:48.805 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI) in 149.2783ms
+2025-07-04 14:01:48.805 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetAssignedList (BugTrackingAPI)'
+2025-07-04 14:01:48.806 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/BugsManagement/Get/Assigned/Lists - 200 null application/json; charset=utf-8 161.5942ms
+2025-07-04 14:01:50.539 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:50.540 +05:30 [INF] Request: OPTIONS /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:50.5399580Z"
+2025-07-04 14:01:50.540 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:50.540 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - 204 null null 1.2649ms
+2025-07-04 14:01:50.541 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:50.542 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:50.5423830Z"
+2025-07-04 14:01:50.544 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:50.545 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:50.545 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:50.545 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-04 14:01:50.548 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-04 14:01:50.548 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:50.548 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 2.8862ms
+2025-07-04 14:01:50.549 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:50.549 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 7.4777ms
+2025-07-04 14:01:52.040 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=1 - null null
+2025-07-04 14:01:52.041 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=1 - null null
+2025-07-04 14:01:52.041 +05:30 [INF] Request: OPTIONS /api/v2/EmployeeManagement/GetEmployee by Anonymous at "2025-07-04T08:31:52.0412670Z"
+2025-07-04 14:01:52.041 +05:30 [INF] Request: OPTIONS /api/v2/Bugs/Get/reportedBy by Anonymous at "2025-07-04T08:31:52.0414020Z"
+2025-07-04 14:01:52.041 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.041 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=1 - 204 null null 0.8812ms
+2025-07-04 14:01:52.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=1 - 204 null null 1.2892ms
+2025-07-04 14:01:52.042 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=1 - null null
+2025-07-04 14:01:52.043 +05:30 [INF] Request: OPTIONS /api/v2/BugComment/GetComments/latest by Anonymous at "2025-07-04T08:31:52.0431740Z"
+2025-07-04 14:01:52.043 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.043 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=1 - 204 null null 1.4462ms
+2025-07-04 14:01:52.044 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=1 - null null
+2025-07-04 14:01:52.044 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=1 - null null
+2025-07-04 14:01:52.044 +05:30 [INF] Request: GET /api/v2/Bugs/Get/reportedBy by Anonymous at "2025-07-04T08:31:52.0447840Z"
+2025-07-04 14:01:52.044 +05:30 [INF] Request: OPTIONS /api/v2/BugsManagement/assigned/mybugs/byId by Anonymous at "2025-07-04T08:31:52.0449440Z"
+2025-07-04 14:01:52.045 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=1 - null null
+2025-07-04 14:01:52.045 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=1 - null null
+2025-07-04 14:01:52.045 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.045 +05:30 [INF] Request: GET /api/v2/EmployeeManagement/GetEmployee by Anonymous at "2025-07-04T08:31:52.0455910Z"
+2025-07-04 14:01:52.046 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=1 - 204 null null 2.4851ms
+2025-07-04 14:01:52.048 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=1 - null null
+2025-07-04 14:01:52.049 +05:30 [INF] Request: GET /api/v2/BugsManagement/assigned/mybugs/byId by Anonymous at "2025-07-04T08:31:52.0493440Z"
+2025-07-04 14:01:52.049 +05:30 [INF] Request: GET /api/v2/BugComment/GetComments/latest by Anonymous at "2025-07-04T08:31:52.0493420Z"
+2025-07-04 14:01:52.049 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:52.050 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:52.050 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.050 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.BugsReportedBy (BugTrackingAPI)'
+2025-07-04 14:01:52.050 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.050 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetEmployeeDetails (BugTrackingAPI)'
+2025-07-04 14:01:52.051 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:52.051 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:52.052 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.052 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:52.052 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetLatestComments (BugTrackingAPI)'
+2025-07-04 14:01:52.052 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetBugsAssignedToDev (BugTrackingAPI)'
+2025-07-04 14:01:52.058 +05:30 [INF] Route matched with {action = "BugsReportedBy", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] BugsReportedBy(Int64) on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:52.058 +05:30 [INF] Route matched with {action = "GetEmployeeDetails", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BugTrackingAPI.Models.DTO.EmployeeResponse]] GetEmployeeDetails(Int64) on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-04 14:01:52.059 +05:30 [INF] Route matched with {action = "GetLatestComments", controller = "BugComment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugAllCommentsResponse]]] GetLatestComments(Int64) on controller BugTrackingAPI.Controllers.BugCommentController (BugTrackingAPI).
+2025-07-04 14:01:52.060 +05:30 [INF] Route matched with {action = "GetBugsAssignedToDev", controller = "BugsManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] GetBugsAssignedToDev(Int64) on controller BugTrackingAPI.Controllers.BugsManagementController (BugTrackingAPI).
+2025-07-04 14:01:52.069 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:52.070 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:52.070 +05:30 [INF] Executing OkObjectResult, writing value of type 'BugTrackingAPI.Models.DTO.EmployeeResponse'.
+2025-07-04 14:01:52.070 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:52.071 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetEmployeeDetails (BugTrackingAPI) in 12.4742ms
+2025-07-04 14:01:52.071 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.BugsReportedBy (BugTrackingAPI) in 12.6821ms
+2025-07-04 14:01:52.071 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetEmployeeDetails (BugTrackingAPI)'
+2025-07-04 14:01:52.071 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.BugsReportedBy (BugTrackingAPI)'
+2025-07-04 14:01:52.071 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v2/EmployeeManagement/GetEmployee?EmployeeId=1 - 200 null application/json; charset=utf-8 26.8089ms
+2025-07-04 14:01:52.071 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v2/Bugs/Get/reportedBy?empId=1 - 200 null application/json; charset=utf-8 27.6801ms
+2025-07-04 14:01:52.092 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."CommentId", b."BugId", b."Comment", b."CommentedOn", b."CommenterId"
+FROM "BugComments" AS b
+2025-07-04 14:01:52.101 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+WHERE e."EmployeeId" = @__key_0
+LIMIT 1
+2025-07-04 14:01:52.106 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugAllCommentsResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:52.109 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugCommentController.GetLatestComments (BugTrackingAPI) in 48.91ms
+2025-07-04 14:01:52.109 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugCommentController.GetLatestComments (BugTrackingAPI)'
+2025-07-04 14:01:52.110 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v2/BugComment/GetComments/latest?empId=1 - 200 null application/json; charset=utf-8 64.923ms
+2025-07-04 14:01:52.162 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[p0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM GetBugsAssignedToDev(@p0);
+2025-07-04 14:01:52.165 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:52.165 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsManagementController.GetBugsAssignedToDev (BugTrackingAPI) in 104.4067ms
+2025-07-04 14:01:52.165 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsManagementController.GetBugsAssignedToDev (BugTrackingAPI)'
+2025-07-04 14:01:52.165 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v2/BugsManagement/assigned/mybugs/byId?empId=1 - 200 null application/json; charset=utf-8 117.0368ms
+2025-07-04 14:01:54.002 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:54.002 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:54.0027540Z"
+2025-07-04 14:01:54.004 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:54.005 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:54.005 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:54.005 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-04 14:01:54.006 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-04 14:01:54.007 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:54.008 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 2.3987ms
+2025-07-04 14:01:54.008 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:54.009 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 7.0067ms
+2025-07-04 14:01:56.541 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:56.541 +05:30 [INF] Request: OPTIONS /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:56.5415620Z"
+2025-07-04 14:01:56.541 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:56.542 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/Bugs/ReportedBugs - 204 null null 1.0599ms
+2025-07-04 14:01:56.543 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:56.544 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:56.5441310Z"
+2025-07-04 14:01:56.546 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:56.548 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:56.548 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:56.548 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:56.550 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:56.551 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:56.551 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 2.6215ms
+2025-07-04 14:01:56.551 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:56.552 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 8.4686ms
+2025-07-04 14:01:57.655 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:57.655 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - null null
+2025-07-04 14:01:57.655 +05:30 [INF] Request: OPTIONS /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:57.6557570Z"
+2025-07-04 14:01:57.656 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:57.656 +05:30 [INF] Request: GET /api/v1/Bugs/ReportedBugs by Anonymous at "2025-07-04T08:31:57.6560870Z"
+2025-07-04 14:01:57.656 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5258/api/v1/EmployeeManagement/GetAll - 204 null null 1.0474ms
+2025-07-04 14:01:57.657 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - null null
+2025-07-04 14:01:57.658 +05:30 [INF] Request: GET /api/v1/EmployeeManagement/GetAll by Anonymous at "2025-07-04T08:31:57.6580450Z"
+2025-07-04 14:01:57.659 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:57.659 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "BlackListedTokens" AS b
+    WHERE b."Token" = @__token_0)
+2025-07-04 14:01:57.660 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:57.661 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:57.662 +05:30 [INF] CORS policy execution successful.
+2025-07-04 14:01:57.662 +05:30 [INF] Route matched with {action = "ListAllReportedBugs", controller = "Bugs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.BugResponse]]] ListAllReportedBugs() on controller BugTrackingAPI.Controllers.BugsController (BugTrackingAPI).
+2025-07-04 14:01:57.662 +05:30 [INF] Executing endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:57.662 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "EmployeeManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[BugTrackingAPI.Models.DTO.EmployeeResponse]]] GetAllEmployees() on controller BugTrackingAPI.Controllers.EmployeeManagementController (BugTrackingAPI).
+2025-07-04 14:01:57.663 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."BugId", b."BugName", b."CvssScore", b."Description", b."ResolvedAt", b."Screenshot", b."Status", b."SubmittedById", b."SubmittedOn"
+FROM "Bugs" AS b
+2025-07-04 14:01:57.663 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT e."EmployeeId", e."Email", e."Name", e."PasswordHash", e."Role"
+FROM "Employees" AS e
+2025-07-04 14:01:57.664 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.EmployeeResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:57.664 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BugTrackingAPI.Models.DTO.BugResponse, BugTrackingAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-04 14:01:57.664 +05:30 [INF] Executed action BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI) in 1.8313ms
+2025-07-04 14:01:57.664 +05:30 [INF] Executed action BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI) in 2.4414ms
+2025-07-04 14:01:57.664 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.EmployeeManagementController.GetAllEmployees (BugTrackingAPI)'
+2025-07-04 14:01:57.665 +05:30 [INF] Executed endpoint 'BugTrackingAPI.Controllers.BugsController.ListAllReportedBugs (BugTrackingAPI)'
+2025-07-04 14:01:57.665 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/EmployeeManagement/GetAll - 200 null application/json; charset=utf-8 7.7473ms
+2025-07-04 14:01:57.665 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/api/v1/Bugs/ReportedBugs - 200 null application/json; charset=utf-8 10.1574ms
+2025-07-04 17:04:08.251 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/index.html?urls.primaryName=BUG+TRACKING+API+V1 - null null
+2025-07-04 17:04:08.447 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/index.html?urls.primaryName=BUG+TRACKING+API+V1 - 200 null text/html;charset=utf-8 199.4033ms
+2025-07-04 17:04:08.556 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - null null
+2025-07-04 17:04:08.931 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5258/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 374.5338ms
+2025-07-04 17:04:25.299 +05:30 [INF] Application is shutting down...

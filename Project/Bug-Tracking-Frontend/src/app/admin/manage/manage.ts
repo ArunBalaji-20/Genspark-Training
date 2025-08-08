@@ -14,7 +14,7 @@ export class Manage implements OnInit{
     // employees:EmployeeModel=new EmployeeModel();
     employees: EmployeeModel[] = []; 
     isFetching:boolean=false;
-    pageSize: number = 5;
+    pageSize: number = 8;
     currentPage: number = 1;
     constructor(private empservice:empManageService,private router:Router)
     {}

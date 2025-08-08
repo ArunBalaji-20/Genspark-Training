@@ -138,4 +138,8 @@ html, body {
   .chart-container {
     justify-content: center;
   }
+
+  .employee-chart canvas{
+    display: none;
+  }
 }

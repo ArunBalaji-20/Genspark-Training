@@ -165,6 +165,9 @@ namespace BugTrackingAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -216,7 +219,7 @@ namespace BugTrackingAPI.Migrations
                         .IsRequired();
 
                     b.HasOne("BugTrackingAPI.Models.Bugs", "Bug")
-                        .WithMany("Assignments")
+                        .WithMany()
                         .HasForeignKey("BugId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -237,7 +240,7 @@ namespace BugTrackingAPI.Migrations
             modelBuilder.Entity("BugTrackingAPI.Models.BugComment", b =>
                 {
                     b.HasOne("BugTrackingAPI.Models.Bugs", "Bug")
-                        .WithMany("Comments")
+                        .WithMany()
                         .HasForeignKey("BugId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -256,7 +259,7 @@ namespace BugTrackingAPI.Migrations
             modelBuilder.Entity("BugTrackingAPI.Models.Bugs", b =>
                 {
                     b.HasOne("BugTrackingAPI.Models.Employee", "SubmittedBy")
-                        .WithMany("SubmittedBugs")
+                        .WithMany()
                         .HasForeignKey("SubmittedById")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -275,20 +278,11 @@ namespace BugTrackingAPI.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("BugTrackingAPI.Models.Bugs", b =>
-                {
-                    b.Navigation("Assignments");
-
-                    b.Navigation("Comments");
-                });
-
             modelBuilder.Entity("BugTrackingAPI.Models.Employee", b =>
                 {
                     b.Navigation("AssignedBugs");
 
                     b.Navigation("AssignedByAdmin");
-
-                    b.Navigation("SubmittedBugs");
                 });
 #pragma warning restore 612, 618
         }

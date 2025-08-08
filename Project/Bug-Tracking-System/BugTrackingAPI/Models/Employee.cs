@@ -16,6 +16,8 @@ namespace BugTrackingAPI.Models
 
         public string PasswordHash { get; set; } = string.Empty;
 
+        public bool IsDeleted { get; set; } = false;
+
 
         public ICollection<BugAssignment>? AssignedBugs { get; set; } //to dev
         public ICollection<BugAssignment>? AssignedByAdmin { get; set; } // ← maps to Admin

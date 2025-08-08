@@ -31,4 +31,3 @@ ENTRYPOINT ["dotnet", "BugTrackingAPI.dll"]
 # docker build -t firstapi . 
 
 # docker run -d -p 5001:8080 -e ASPNETCORE_ENVIRONMENT=Development firstap
-

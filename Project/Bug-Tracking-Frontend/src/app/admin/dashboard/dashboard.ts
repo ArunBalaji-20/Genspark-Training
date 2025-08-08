@@ -26,6 +26,8 @@ export class Dashboard {
     Resolved:number=0;
     Assigned:number=0;
     TotalBugs:number=0;
+    bugCountMap: { [employeeId: number]: number } = {};
+
 
     
     constructor(private empservice:empManageService,private bugservice:bugService)
@@ -40,6 +42,24 @@ export class Dashboard {
 isAvailable(employeeId: number): boolean {
   return this.availDevs.some(dev => Number(dev.employeeId) === employeeId);
 }
+// GetbugsCount(empId:number):number{
+//   this.bugservice.getAssignedBugsCountAPI(empId).subscribe({
+//     next:(res)=>{
+//       console.log(res);
+//       console.log('assigned bugs count')
+//       return res.body as number;
+//     },
+//     error:(err)=>{
+//       console.error('Error fetching assigned bugs count', err);
+//       return 0;
+//     }
+//   });
+//   return 0; // Default return value if the API call fails
+// }
+
+GetbugsCount(empId: number): number {
+  return this.bugCountMap[empId] ?? 0;
+}
 
 
   getAllEmployees()
@@ -52,6 +72,22 @@ isAvailable(employeeId: number): boolean {
     this.totalTesters=this.GetEmployeeCount('Tester')
     this.renderEmployeeChart();
     this.getAvailEmployees();
+
+
+    // counting dev assingemnts
+    const devs = this.employees.filter(emp => emp.role === 'Dev');
+
+    for (let dev of devs) {
+      this.bugservice.getAssignedBugsCountAPI(dev.employeeId).subscribe({
+        next: (res) => {
+          this.bugCountMap[dev.employeeId] =  Number(res.body ?? 0);
+        },
+        error: (err) => {
+          console.error(`Error loading bug count for ${dev.employeeId}`, err);
+          this.bugCountMap[dev.employeeId] = 0;
+        }
+      });
+    }
   },
   error: (err) => {
     console.error('Error fetching employees', err);

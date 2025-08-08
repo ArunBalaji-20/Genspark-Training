@@ -75,6 +75,18 @@ export class bugService
 
         });
     }
+
+    getAssignedBugsCountAPI(id:number)
+    {
+        const token=this.authService.getCookie("access_token"); 
+        return this.http.get(`${environment.apiUrl}/api/v1/BugsManagement/Get/Ongoing/List/${id}`,{
+             headers: new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+        }),
+        observe: 'response'
+
+        });
+    }
 }
 
 // http://localhost:5258/api/v1/Bugs/Report

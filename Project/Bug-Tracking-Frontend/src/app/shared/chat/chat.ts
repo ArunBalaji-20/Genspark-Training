@@ -59,6 +59,7 @@ export class Chat implements OnInit {
         next:(data)=>{
           console.log(data)
           this.loadComments()
+          this.newComment="";
         },
         error:(err)=>{
           console.log(err)

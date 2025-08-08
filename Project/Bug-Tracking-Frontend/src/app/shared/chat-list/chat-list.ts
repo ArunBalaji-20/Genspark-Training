@@ -14,7 +14,7 @@ export class ChatList implements OnInit {
 
   isFetching:Boolean=false;
   mybugs:BugStatusModel[]=[];
-  pageSize: number = 5;
+  pageSize: number = 8;
     currentPage: number = 1;
   constructor(private bugService:bugService,private router:Router)
   {}

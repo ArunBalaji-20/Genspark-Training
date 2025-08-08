@@ -1,7 +1,7 @@
 <h2 id="headingchat">Assign Bugs</h2>
 <div class="d-flex justify-content-center ">
   <div style="
-      max-height: 500px;          /* Vertical height (rows scroll if too many) */
+           max-height: 500px;   /* Vertical height (rows scroll if too many) */
                 /* Horizontal scroll if table too wide */
       width: 100%;                /* Full width */
   ">
@@ -17,13 +17,13 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">bugName</th>
-          <th scope="col">description</th>
-          <th scope="col">cvssScore</th>
-          <th scope="col">submittedOn</th>
-          <th scope="col">resolvedAt</th>
-          <th scope="col">status</th>
-          <th scope="col">submittedById</th>
+          <th scope="col">BugName</th>
+          <!-- <th scope="col">Description</th> -->
+          <th scope="col">CvssScore</th>
+          <th scope="col">SubmittedOn</th>
+          <th scope="col">ResolvedAt</th>
+          <th scope="col">Status</th>
+          <!-- <th scope="col">submittedById</th> -->
           <th scope="col">Assign</th>
 
         </tr>
@@ -40,12 +40,12 @@
             <tr *ngFor="let bug of paginatedBugs; let i = index"> 
            <th scope="row">{{ (currentPage - 1) * pageSize + i + 1 }}</th>
           <td>{{ bug.bugName }}</td>
-          <td>{{ bug.description }}</td>
+          <!-- <td>{{ bug.description }}</td> -->
           <td>{{ bug.cvssScore }}</td>
-          <td>{{ bug.submittedOn }}</td> 
+          <td>{{ bug.submittedOn |date: 'medium' }}</td> 
           @if(bug.resolvedAt)
           {
-          <td>{{ bug.resolvedAt }}</td> 
+          <td>{{ bug.resolvedAt | date: 'medium'}}</td> 
 
           }
           @else {
@@ -53,7 +53,7 @@
 
           }
           <td>{{ bug.status }}</td> 
-          <td>{{ bug.submittedById }}</td> 
+          <!-- <td>{{ bug.submittedById }}</td>  -->
 
           @if(bug.status=="Resolved")
           {
@@ -73,7 +73,8 @@
       </tbody>
     </table>
     <!-- Pagination Controls -->
-    <div class="d-flex justify-content-center align-items-center mt-2 gap-2">
+     
+    <!-- <div class="d-flex justify-content-center align-items-center mt-2 gap-2">
       <button class="btn btn-outline-primary btn-sm"
               [disabled]="currentPage === 1"
               (click)="setPage(currentPage - 1)">
@@ -85,21 +86,24 @@
               (click)="setPage(currentPage + 1)">
         Next
       </button>
-    </div>
+    </div> -->
+
+    <div class="pagination-buttons">
+  <button class="btn btn-outline-primary btn-sm"
+          [disabled]="currentPage === 1"
+          (click)="setPage(currentPage - 1)">
+    Previous
+  </button>
+  <span class="mx-2">Page {{currentPage}} of {{totalPages}}</span>
+  <button class="btn btn-outline-primary btn-sm"
+          [disabled]="currentPage === totalPages"
+          (click)="setPage(currentPage + 1)">
+    Next
+  </button>
+</div>
+
 }
   </div>
 </div>
 
-  <!-- "$id": "1",
-  "$values": [
-    {
-      "$id": "2",
-      "bugId": 1,
-      "bugName": "SQL Injection",
-      "description": "Time based Sql Injection found in dashboard",
-      "screenshot": "/Users/presidio/Documents/Repo/june6-project/Bug-Tracking-System/BugTrackingAPI/screenshots/bf7eae7a-9216-4f68-9337-9ec934b1a881.png",
-      "cvssScore": 9,
-      "submittedOn": "2025-06-09T14:34:14.673572Z",
-      "resolvedAt": "2025-06-09T17:51:52.385667Z",
-      "status": "Resolved",
-      "submittedById": 1 -->
+ 

@@ -20,7 +20,7 @@
     } -->
     <div class="chat-message">
       <div class="message-meta">
-        <strong>{{msg.commenterName}}</strong> • {{msg.commentedOn}}
+        <strong>{{msg.commenterName}}</strong> • {{msg.commentedOn | date: 'medium' }}
       </div>
       <div class="message-content">
         {{msg.comment}}

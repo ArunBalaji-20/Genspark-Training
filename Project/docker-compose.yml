@@ -38,7 +38,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
-      # - ./Bug-Tracking-System/BugTrackingAPI/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./Bug-Tracking-System/BugTrackingAPI/sqlfunction.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5433:5432"
     networks:

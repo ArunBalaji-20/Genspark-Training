@@ -18,10 +18,10 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">bugName</th>
-          <th scope="col">description</th>
+          <!-- <th scope="col">description</th> -->
           <th scope="col">cvssScore</th>
           <th scope="col">submittedOn</th>
-          <th scope="col">resolvedAt</th>
+          <th scope="col">UpdatedAt</th>
           <th scope="col">status</th>
           <!-- <th scope="col">submittedById</th> -->
           <th scope="col">Manage</th>
@@ -41,12 +41,12 @@
                <th scope="row">{{ (currentPage - 1) * pageSize + i + 1 }}</th> 
            <!-- <th scope="row">{{ i + 1 }}</th> -->
           <td>{{ bug.bugName }}</td>
-          <td>{{ bug.description }}</td>
+          <!-- <td>{{ bug.description }}</td> -->
           <td>{{ bug.cvssScore }}</td>
-          <td>{{ bug.submittedOn }}</td> 
+          <td>{{ bug.submittedOn | date: 'medium' }}</td> 
           @if(bug.resolvedAt)
           {
-          <td>{{ bug.resolvedAt }}</td> 
+          <td>{{ bug.resolvedAt |date: 'medium' }}</td> 
 
           }
           @else {
@@ -73,7 +73,7 @@
        
       </tbody>
     </table>
-     <div class="d-flex justify-content-center align-items-center mt-2 gap-2">
+     <!-- <div class="d-flex justify-content-center align-items-center mt-2 gap-2">
       <button class="btn btn-outline-primary btn-sm"
               [disabled]="currentPage === 1"
               (click)="setPage(currentPage - 1)">
@@ -85,7 +85,22 @@
               (click)="setPage(currentPage + 1)">
         Next
       </button>
-    </div>
+    </div> -->
+
+    <div class="pagination-buttons">
+  <button class="btn btn-outline-primary btn-sm"
+          [disabled]="currentPage === 1"
+          (click)="setPage(currentPage - 1)">
+    Previous
+  </button>
+  <span class="mx-2">Page {{currentPage}} of {{totalPages}}</span>
+  <button class="btn btn-outline-primary btn-sm"
+          [disabled]="currentPage === totalPages"
+          (click)="setPage(currentPage + 1)">
+    Next
+  </button>
+</div>
+    
 }
   </div>
 

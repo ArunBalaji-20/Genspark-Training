@@ -36,11 +36,15 @@ namespace BugTrackingAPI.Services
 
         public async Task<string> DeleteEmployee(long employeeId)
         {
-            var deletedEmployee = await _employeeRepository.Delete(employeeId);
-            if (deletedEmployee == null)
+            var emp = await _employeeRepository.Get(employeeId);
+            if (emp == null)
             {
                 throw new KeyNotFoundException("Employee not found or already deleted.");
             }
+            emp.IsDeleted = true;
+            await _employeeRepository.Update(employeeId, emp);
+            // var deletedEmployee = await _employeeRepository.Delete(employeeId);
+            
 
             return "Employee Deleted Successfully";
         }

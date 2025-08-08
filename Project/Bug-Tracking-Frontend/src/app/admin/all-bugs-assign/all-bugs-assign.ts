@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class AllBugsAssign implements OnInit {
   mybugs:BugStatusModel[]=[];
   isFetching:Boolean=false;
-  pageSize: number = 5;
+  pageSize: number = 8;
   currentPage: number = 1;
 
   constructor(private bugService:bugService,private router:Router)

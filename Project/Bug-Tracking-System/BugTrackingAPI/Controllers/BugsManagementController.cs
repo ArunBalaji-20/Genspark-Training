@@ -176,6 +176,20 @@ namespace BugTrackingAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("Get/Ongoing/List/{id}")]
+        [MapToApiVersion("1.0")]
+        [Authorize]
+        [CustomExceptionFilter]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<ActionResult> GetongoingList(long id)
+        {
+            var result = await _BugManagementService.GetOngoingTaskList(id);
+            return Ok(result);
+        }
 
     
     }

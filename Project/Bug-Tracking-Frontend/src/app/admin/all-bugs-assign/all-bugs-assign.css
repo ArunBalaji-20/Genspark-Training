@@ -14,12 +14,15 @@
   padding: 1%;
 }
 
+
+
 .d-flex {
   justify-content: center;
   align-items: flex-start;
-  min-height: 80vh;
+  min-height: 85vh;
   background: #f4f7fa;
   padding: 2rem 0;
+  overflow-y: hidden;
 }
 
 .custom-table {
@@ -73,12 +76,34 @@
   border-radius: 8px;
 }
 
+.pagination-buttons {
+  position: absolute;
+  bottom: 20rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem; 
+  z-index: 10;
+}
+
+
 @media (max-width: 900px) {
   .custom-table {
     font-size: 0.95rem;
   }
   .d-flex {
     padding: 0.5rem 0;
+  }
+  .pagination-buttons{
+    bottom: 4rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1400px) {
+  .pagination-buttons {
+    bottom: 3rem;
   }
 }
 

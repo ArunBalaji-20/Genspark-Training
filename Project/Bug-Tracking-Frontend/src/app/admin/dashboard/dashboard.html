@@ -57,6 +57,7 @@
           <tr>
             <th>Employee Id </th>
             <th>Name</th>
+            <th>Bugs assigned</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -70,6 +71,8 @@
           <tr>
             <td>{{emp.employeeId}}</td>
             <td>{{emp.name}}</td>
+            <!-- <td>{{GetbugsCount(emp.employeeId)}}</td> -->
+             <td>{{ bugCountMap[emp.employeeId] || 0 }}</td>
             <td>
     {{ isAvailable(emp.employeeId) ? 'Available' : 'Busy' }}
   </td>

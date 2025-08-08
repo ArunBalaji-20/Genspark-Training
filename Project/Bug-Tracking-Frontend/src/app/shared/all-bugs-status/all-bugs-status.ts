@@ -56,7 +56,7 @@ export class AllBugsStatus implements OnInit {
     searchTerm = signal<string>('');
     statusFilter = signal<string>('');
 
-    pageSize = signal<number>(10); // Number of cards per page
+    pageSize = signal<number>(8); // Number of cards per page
     currentPage = signal<number>(1);
 
     filteredBugs = computed(() => {

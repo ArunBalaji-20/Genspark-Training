@@ -15,7 +15,7 @@
 nav.navbar {
   background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  border-radius: 0 0 18px 18px;
+  /* border-radius: 0 0 18px 18px; */
   padding: 0.5rem 0;
 }
 
