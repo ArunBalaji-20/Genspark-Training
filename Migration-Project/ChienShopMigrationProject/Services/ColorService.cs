@@ -20,6 +20,11 @@ public class ColorService : IColorService
        
     }
 
+    public async Task<IEnumerable<Color>> GetAll()
+    {
+        return await _ColorRepo.GetAll();
+    }
+
 
     public async Task<Color> GetByIdAsync(int id)
     {

@@ -13,4 +13,6 @@ public interface IColorService
 
     Task UpdateAsync(ColorAddDto dto, int id);
 
+    Task<IEnumerable<Color>> GetAll();
+
 }

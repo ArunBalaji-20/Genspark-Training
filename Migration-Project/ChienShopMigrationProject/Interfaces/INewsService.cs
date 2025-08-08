@@ -17,4 +17,6 @@ public interface INewsService
     Task DeleteAsync(int id);
 
     Task<byte[]> ExportToCSV();
+
+    Task<byte[]> ExportToCExcel();
 }

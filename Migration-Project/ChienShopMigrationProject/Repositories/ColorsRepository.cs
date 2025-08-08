@@ -28,6 +28,7 @@ public class ColorsRepository:Repository<int,Color>
     public override async Task<IEnumerable<Color>> GetAll()
     {
         return await _ChienVHShopDBEntities.Colors
+        .Include(e=>e.Products)
         .ToListAsync();
     }
 }

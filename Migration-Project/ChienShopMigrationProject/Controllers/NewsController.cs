@@ -89,10 +89,26 @@ namespace ChienShopMigrationProject.Controllers
         {
             try
             {
-               var fileContent= await _newService.ExportToCSV();
-               var fileName = $"NewsListing_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
-    
+                var fileContent = await _newService.ExportToCSV();
+                var fileName = $"NewsListing_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+
                 return File(fileContent, "text/csv", fileName);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        [HttpGet("Export/Excel")]
+        public async Task<IActionResult> ExportAsExcel()
+        {
+            try
+            {
+               var fileContent= await _newService.ExportToCExcel();
+               var fileName = $"NewsListing_{DateTime.Now:yyyyMMdd_HHmmss}.xls";
+    
+                return File(fileContent, "application/vnd.ms-excel", fileName);
             }
             catch (Exception e)
             {

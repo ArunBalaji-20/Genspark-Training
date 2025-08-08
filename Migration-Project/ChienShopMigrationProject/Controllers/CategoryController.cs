@@ -30,6 +30,21 @@ namespace ChienShopMigrationProject.Controllers
             }
         }
 
+         [HttpGet("Details")]
+        public async Task<ActionResult> GetAll()
+        {
+            try
+            {
+                var result = await _categoryService.GetAll();
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+
         [HttpGet("Details/{id}")]
         public async Task<ActionResult> Get(int id)
         {

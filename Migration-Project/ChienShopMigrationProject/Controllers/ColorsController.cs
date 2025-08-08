@@ -20,6 +20,20 @@ namespace ChienShopMigrationProject.Controllers
             _colorService = colorService;
         }
 
+        [HttpGet("Details")]
+        public async Task<IActionResult> GetALL()
+        {
+            try
+            {
+                var result = await _colorService.GetAll();
+                return result == null ? NotFound() : Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {

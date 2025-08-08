@@ -21,7 +21,11 @@ public class CategoryService : ICategoryService
 
     }
 
-
+    public async Task<IEnumerable<Category>> GetAll()
+    {
+        var res = await _CategoryRepo.GetAll();
+        return res;
+    }
     public async Task<Category> GetByIdAsync(int id)
     {
         var res = await _CategoryRepo.Get(id);

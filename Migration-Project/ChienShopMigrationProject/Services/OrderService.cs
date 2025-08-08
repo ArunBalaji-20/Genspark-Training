@@ -40,7 +40,7 @@ public class OrderService : IOrderService
         return await _orderRepository.Get(id);
     }
 
-    public async Task AddAsync(OrderCreateDto dto)
+    public async Task<Order> AddAsync(OrderCreateDto dto)
     {
         foreach (var productId in dto.OrderDetails.Select(d => d.ProductID))
         {
@@ -56,7 +56,7 @@ public class OrderService : IOrderService
             Quantity = d.Quantity,
             Price = await GetUnitPrice(d.ProductID)
         }));
-        
+
         var order = new Order
         {
             OrderName = dto.OrderName,
@@ -70,6 +70,8 @@ public class OrderService : IOrderService
             OrderDetails = orderDetails.ToList()
         };
         await _orderRepository.Add(order);
+
+        return order;
 
         
     }

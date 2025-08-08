@@ -25,6 +25,7 @@ public class CategoryRepository : Repository<int, Category>
     public override async Task<IEnumerable<Category>> GetAll()
     {
         return await _ChienVHShopDBEntities.Categories
+        .Include(e => e.Products)
         .ToListAsync();
     }
 }

@@ -29,7 +29,9 @@ public class OrderRepository:Repository<int,Order>,IOrderRepository
     public override async Task<Order> Get(int key)
     {
         // throw new NotImplementedException();
-        return await _ChienVHShopDBEntities.Orders.FirstOrDefaultAsync(e => e.OrderID == key);
+        return await _ChienVHShopDBEntities.Orders.
+        Include(e=>e.OrderDetails).
+        FirstOrDefaultAsync(e => e.OrderID == key);
     }
 
     public override async Task<IEnumerable<Order>> GetAll()

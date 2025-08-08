@@ -30,15 +30,31 @@ namespace ChienShopMigrationProject.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var order = await _service.GetByIdAsync(id);
-            return order == null ? NotFound() : Ok(order);
+           
+             try
+            {
+                var order = await _service.GetByIdAsync(id);
+                return order == null ? NotFound() : Ok(order);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpPost("Create")]
         public async Task<IActionResult> Create([FromBody] OrderCreateDto order)
         {
-            await _service.AddAsync(order);
-            return CreatedAtAction(nameof(Get), new { id = order }, order);
+            try
+            {
+                var createdOrder=await _service.AddAsync(order);
+                return CreatedAtAction(nameof(Get), new { id = createdOrder.OrderID }, createdOrder);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+  
         }
 
         [HttpPut("{id}")]
@@ -53,8 +69,16 @@ namespace ChienShopMigrationProject.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
-            return NoContent();
+
+            try
+            {
+                await _service.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpPost("payments/create")]
