@@ -1,0 +1,15 @@
+2025-07-20 17:08:08.813 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2025-07-20 17:08:12.590 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5011/hubs/notifications?id=bc6k-QKREaraUOQZS7JEUA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIwMTk4MGQ5OC05NmZmLTdlZjUtOGNkMi0xN2VjYjIzOGM1NmMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc1MjgyNDg2NywiZXhwIjoxNzUzMTcwNDY3LCJpYXQiOjE3NTI4MjQ4Njd9.ClCm5smwzOfKvIJjuVUgm36NTNVjYfHzbAQDCPjEIj8 - 101 null null 1169367.2286ms
+2025-07-20 21:48:31.087 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2025-07-20 21:48:32.592 +05:30 [INF] CORS policy execution successful.
+2025-07-20 21:48:32.817 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 1997.7992ms
+2025-07-20 21:48:32.885 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2025-07-20 21:48:34.521 +05:30 [INF] CORS policy execution successful.
+2025-07-20 21:48:34.548 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2025-07-20 21:48:34.642 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2025-07-20 21:48:34.642 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 1784.7062ms
+2025-07-20 21:48:34.776 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5011/hubs/notifications?id=5zPwLX-2VCaf5OLYp7E7TA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIwMTk4MGQ5OC05NmZmLTdlZjUtOGNkMi0xN2VjYjIzOGM1NmMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc1MjgyNDg2NywiZXhwIjoxNzUzMTcwNDY3LCJpYXQiOjE3NTI4MjQ4Njd9.ClCm5smwzOfKvIJjuVUgm36NTNVjYfHzbAQDCPjEIj8 - null null
+2025-07-20 21:48:34.813 +05:30 [INF] CORS policy execution successful.
+2025-07-20 21:48:34.813 +05:30 [INF] Executing endpoint '/hubs/notifications'
+2025-07-20 22:53:22.470 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2025-07-20 22:53:22.516 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5011/hubs/notifications?id=5zPwLX-2VCaf5OLYp7E7TA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIwMTk4MGQ5OC05NmZmLTdlZjUtOGNkMi0xN2VjYjIzOGM1NmMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc1MjgyNDg2NywiZXhwIjoxNzUzMTcwNDY3LCJpYXQiOjE3NTI4MjQ4Njd9.ClCm5smwzOfKvIJjuVUgm36NTNVjYfHzbAQDCPjEIj8 - 101 null null 72610.3724ms

@@ -1,0 +1,40 @@
+2025-08-04 21:50:09.707 +05:30 [INF] User profile is available. Using '/Users/presidio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-04 21:50:09.826 +05:30 [WRN] Overriding address(es) 'http://localhost:5009'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-08-04 21:50:09.842 +05:30 [INF] Now listening on: http://[::]:5011
+2025-08-04 21:50:09.842 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 21:50:09.842 +05:30 [INF] Hosting environment: Development
+2025-08-04 21:50:09.842 +05:30 [INF] Content root path: /Users/presidio/Documents/feature-addition/Capstone-1/RealEstateApi
+2025-08-04 21:50:58.003 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:50:58.057 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-08-04 21:50:58.095 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:50:58.095 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:50:58.099 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 97.6827ms
+2025-08-04 21:51:21.470 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:21.474 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:21.474 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:21.474 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 4.8115ms
+2025-08-04 21:51:22.021 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:22.024 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:22.024 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:22.024 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 3.1127ms
+2025-08-04 21:51:22.170 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:22.171 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:22.171 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:22.171 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 0.4564ms
+2025-08-04 21:51:36.159 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5011/swagger/index.html - null null
+2025-08-04 21:51:36.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5011/swagger/index.html - 200 null text/html;charset=utf-8 100.4389ms
+2025-08-04 21:51:36.576 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - null null
+2025-08-04 21:51:36.719 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 143.0896ms
+2025-08-04 21:51:39.102 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:39.103 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:39.103 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:39.103 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 0.6306ms
+2025-08-04 21:51:39.605 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:39.606 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:39.606 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:39.606 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 0.4647ms
+2025-08-04 21:51:45.570 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - null null
+2025-08-04 21:51:45.570 +05:30 [INF] CORS policy execution failed.
+2025-08-04 21:51:45.570 +05:30 [INF] Request origin http://localhost:52367 does not have permission to access the resource.
+2025-08-04 21:51:45.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/v1/auth/login - 204 null null 0.5306ms
+2025-08-04 21:52:52.801 +05:30 [INF] Application is shutting down...

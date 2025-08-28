@@ -1,0 +1,111 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">
+            <i class="bi bi-plus-circle me-2"></i>
+            Create New Discount Codes
+          </h4>
+        </div>
+        
+        <div class="card-body">
+          <form [formGroup]="DiscountForm" (ngSubmit)="submit()">
+            
+            <div class="mb-4">
+              <h5 class="border-bottom pb-2 mb-3">Code Creation </h5>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Code *</label>
+                  <input type="text" class="form-control" formControlName="Code" 
+                  [class.is-invalid]="f['Code'].invalid && (f['Code'].dirty || f['Code'].touched)">
+                  <div *ngIf="f['Code'].invalid && (f['Code'].dirty || f['Code'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['Code'].errors?.['required']">Code is required</div>
+                  </div>
+              </div>
+
+                 <div class="col-md-6 mb-3">
+                  <label class="form-label">Available *</label>
+                  <input type="number" class="form-control" formControlName="Remaining"
+                   [class.is-invalid]="f['Remaining'].invalid && (f['Remaining'].dirty || f['Remaining'].touched)">
+                  <div *ngIf="f['Remaining'].invalid && (f['Remaining'].dirty || f['Remaining'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['Remaining'].errors?.['required']">Available is required</div>
+                  </div>
+              </div>
+              
+
+              </div>
+
+               <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Discount Percentage *</label>
+                  <input type="number" class="form-control" formControlName="DiscountPercentage" 
+                      [class.is-invalid]="f['DiscountPercentage'].invalid && (f['DiscountPercentage'].dirty || f['DiscountPercentage'].touched)">
+                  <div *ngIf="f['DiscountPercentage'].invalid && (f['DiscountPercentage'].dirty || f['DiscountPercentage'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['DiscountPercentage'].errors?.['required']">Discount Percentage is required</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">ExpiryDate *</label>
+                  <input type="date" class="form-control" formControlName="ExpiryDate" 
+                     [class.is-invalid]="f['ExpiryDate'].invalid && (f['ExpiryDate'].dirty || f['ExpiryDate'].touched)">
+                  <div *ngIf="f['ExpiryDate'].invalid && (f['ExpiryDate'].dirty || f['ExpiryDate'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['ExpiryDate'].errors?.['required']">Expiry Date  is required</div>
+                  <div *ngIf="DiscountForm.get('ExpiryDate')?.errors?.['notFutureDate'] && DiscountForm.get('ExpiryDate')?.touched" class="text-danger">
+                     Expiry date must be in the future.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+
+              
+            </div>
+
+           
+
+
+            <!-- Form Actions -->
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-secondary"
+                      (click)="router.navigate(['/admin/discountcodes'])">
+                <i class="bi bi-arrow-left me-1"></i> Cancel
+              </button>
+              <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                <span *ngIf="!isSubmitting">
+                  <i class="bi bi-check-circle me-1"></i> Create Code
+                </span>
+                <span *ngIf="isSubmitting">
+                  <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                  Creating...
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@if(errorMessage)
+{
+       <div class="d-flex justify-content-center">
+  <div class="alert alert-danger col-md-7 mt-2" role="alert">
+       <p id="error-block">{{errorMessage}}</p>
+  </div>
+</div>
+}
+
+@if(successMessage)
+{
+   
+    <div class="d-flex justify-content-center">
+  <div class="alert alert-success col-md-7 mt-2" role="alert">
+    <p id="success-block">{{successMessage}}</p>
+  </div>
+</div>
+
+}

@@ -1,0 +1,13 @@
+2025-07-19 10:56:11.632 +05:30 [INF] Executed endpoint '/hubs/notifications'
+2025-07-19 10:56:12.768 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5011/hubs/notifications?id=Kan6j07R8ovHffGNqaI32g&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIwMTk4MGQ5OC05NmZmLTdlZjUtOGNkMi0xN2VjYjIzOGM1NmMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc1MjgyNDg2NywiZXhwIjoxNzUzMTcwNDY3LCJpYXQiOjE3NTI4MjQ4Njd9.ClCm5smwzOfKvIJjuVUgm36NTNVjYfHzbAQDCPjEIj8 - 101 null null 629710.9042ms
+2025-07-19 10:56:20.072 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - null null
+2025-07-19 10:56:20.086 +05:30 [INF] CORS policy execution successful.
+2025-07-19 10:56:20.087 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - 204 null null 15.2576ms
+2025-07-19 10:56:20.099 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - null 0
+2025-07-19 10:56:20.148 +05:30 [INF] CORS policy execution successful.
+2025-07-19 10:56:20.148 +05:30 [INF] Executing endpoint '/hubs/notifications/negotiate'
+2025-07-19 10:56:20.154 +05:30 [INF] Executed endpoint '/hubs/notifications/negotiate'
+2025-07-19 10:56:20.154 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5011/hubs/notifications/negotiate?negotiateVersion=1 - 200 316 application/json 56.4872ms
+2025-07-19 10:56:20.164 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5011/hubs/notifications?id=bc6k-QKREaraUOQZS7JEUA&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIwMTk4MGQ5OC05NmZmLTdlZjUtOGNkMi0xN2VjYjIzOGM1NmMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc1MjgyNDg2NywiZXhwIjoxNzUzMTcwNDY3LCJpYXQiOjE3NTI4MjQ4Njd9.ClCm5smwzOfKvIJjuVUgm36NTNVjYfHzbAQDCPjEIj8 - null null
+2025-07-19 10:56:20.165 +05:30 [INF] CORS policy execution successful.
+2025-07-19 10:56:20.167 +05:30 [INF] Executing endpoint '/hubs/notifications'
